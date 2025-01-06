@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './layout.scss';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -28,6 +29,9 @@ export default function RootLayout({
         {children}
         {footer}
       </body>
+      <Script strategy="lazyOnload" id="animate">
+        {`document.documentElement.classList.add('animate');`}
+      </Script>
     </html>
   );
 }
