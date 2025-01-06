@@ -57,5 +57,9 @@ $_speeds: (
     }
   }
 
-  transition: $val;
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.animate) & {
+      transition: $val;
+    }
+  }
 }

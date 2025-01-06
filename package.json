@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
+    "npm": "^11",
     "node": "^22"
   },
   "engineStrict": true,

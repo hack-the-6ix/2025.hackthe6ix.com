@@ -1,9 +1,4 @@
-import {
-  ComponentPropsWithRef,
-  CSSProperties,
-  ElementType,
-  ReactNode,
-} from 'react';
+import { CSSProperties, ElementType, ReactNode } from 'react';
 import cn from 'classnames';
 import { Color, getColor } from '@/styles';
 import Flex, { FlexProps } from '../Flex';
