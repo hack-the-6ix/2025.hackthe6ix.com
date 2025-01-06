@@ -10,19 +10,19 @@ import Flex, { FlexProps } from '../Flex';
 import styles from './Container.module.scss';
 
 export type ContainerProps<T extends ElementType> = {
-  contentProps?: Omit<FlexProps<T>, 'children' | 'ref' | 'as'>;
+  contentProps?: Omit<FlexProps<'div'>, 'children' | 'ref' | 'as'>;
   backgroundColor?: Color;
   fullWidth?: boolean;
   after?: ReactNode;
-} & ComponentPropsWithRef<'div'>;
+} & FlexProps<T>;
 
-export default function Container<T extends ElementType = 'div'>({
+export default function Container({
   backgroundColor,
   contentProps,
   fullWidth,
   after,
   ...props
-}: ContainerProps<T>) {
+}: ContainerProps<ElementType>) {
   return (
     <Flex
       {...props}
@@ -33,6 +33,7 @@ export default function Container<T extends ElementType = 'div'>({
         } as CSSProperties
       }
       className={cn(styles.container, props.className)}
+      as={props.as ?? 'div'}
       justify="center"
     >
       <Flex
