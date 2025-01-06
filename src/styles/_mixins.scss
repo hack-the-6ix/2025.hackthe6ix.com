@@ -1,0 +1,61 @@
+@use 'sass:meta';
+
+$_speeds: (
+  slow: 350ms,
+  normal: 250ms,
+  fast: 150ms,
+);
+
+@mixin create-utility-classes($prop, $vals, $prefix: null) {
+  @if meta.type-of($vals) == map {
+    @each $key, $val in $vals {
+      .#{$prefix}#{$key} {
+        #{$prop}: $val;
+      }
+    }
+  } @else {
+    @each $val in $vals {
+      .#{$prefix}#{$val} {
+        #{$prop}: $val;
+      }
+    }
+  }
+}
+
+@function map-get-default($map, $key, $default: null) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  } @else {
+    @return $default;
+  }
+}
+
+@mixin transition($attrs, $speed: normal, $ease: ease, $delay: 0s) {
+  $val: ();
+  @each $attr in $attrs {
+    $type: meta.type-of($attr);
+    @if $type == string {
+      $val: append(
+        '#{$attr} #{map-get-default($_speeds, $speed, $speed)} #{$ease} #{$delay}',
+        $val,
+        ','
+      );
+    } @else if $type == map {
+      $a: map-get($type, 'prop');
+      @if $a == null {
+        @error ('[@mixins.transition] Complex attribute must have a prop');
+      }
+
+      $s: map-get-default($type, 'speed', $speed);
+      $val: append(
+        '#{$a} #{map-get-default($_speeds, $s, $s)} #{map-get-default($type, 'ease', $ease)} #{map-get-default($type, 'delay', $delay)}',
+        $val,
+        ','
+      );
+    } @else {
+      @error ('[@mixins.transition] Attributes should be map or string');
+    }
+  }
+
+  transition: $val;
+}

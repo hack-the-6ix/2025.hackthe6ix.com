@@ -1,0 +1,38 @@
+@use '@/styles/mixins';
+@use '@/styles/spacing';
+
+@layer flex {
+  %gap {
+    gap: var(--flex-gap);
+  }
+
+  .flex {
+    @extend %gap;
+    display: flex;
+  }
+
+  .inline {
+    @extend %gap;
+    display: inline-flex;
+  }
+
+  .wrap {
+    flex-wrap: wrap;
+  }
+
+  @include mixins.create-utility-classes(
+    flex-direction,
+    column row column-reverse row-reverse,
+    'direction--'
+  );
+  @include mixins.create-utility-classes(
+    justify-content,
+    flex-start flex-end center space-between space-evenly space-around stretch,
+    'justify--'
+  );
+  @include mixins.create-utility-classes(
+    align-items,
+    flex-start flex-end center stretch,
+    'align--'
+  );
+}

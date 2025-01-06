@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    useLightningcss: true,
+  },
+  sassOptions: {
+    implementation: 'sass-embedded',
+  },
 };
 
 export default nextConfig;

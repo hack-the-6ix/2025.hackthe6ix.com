@@ -1,0 +1,21 @@
+@use '@/styles/spacing';
+@use '@/styles/mixins';
+
+@layer container, flex;
+
+@layer container {
+  .container {
+    padding-right: spacing.getSpacing(3x-big);
+    padding-left: spacing.getSpacing(3x-big);
+    background-color: var(--bg);
+  }
+
+  .content {
+    max-width: 92rem;
+    width: 100%;
+  }
+
+  .full {
+    max-width: unset;
+  }
+}
