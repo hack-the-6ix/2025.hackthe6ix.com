@@ -15,14 +15,34 @@ export type Spacing =
   | 'huge'
   | 'x-huge';
 
-export type Color = string;
+const colorTags = [
+  'neutral',
+  'primary',
+  'secondary',
+  'blue',
+  'success',
+  'warning',
+  'error',
+  'shade',
+] as const;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const colorLevels = [100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
+type ColorTags = (typeof colorTags)[number];
+type ColorLevels = (typeof colorLevels)[number];
+export type Color =
+  | `${Exclude<ColorTags, 'shade'>}-${ColorLevels}`
+  | `${Extract<ColorTags, 'shade'>}-${0 | 100}`
+  | Exclude<ColorTags, 'shade' | 'blue'>
+  | 'black'
+  | 'white';
 
 export function getSpacing(spacing?: Spacing) {
   if (!spacing) return undefined;
   return `var(--${spacing})`;
 }
 
-export function getColor(color?: Color) {
-  if (!color) return undefined;
-  return `var(--${color})`;
+// Very loose check
+export function isColor(color: string): color is Color {
+  if (['black', 'white'].includes(color)) return true;
+  return colorTags.includes(color.split('-')[0] as ColorTags);
 }

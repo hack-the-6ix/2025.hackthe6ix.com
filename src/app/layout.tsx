@@ -1,10 +1,7 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import './layout.scss';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Hack the 6ix',
@@ -24,7 +21,7 @@ export default function RootLayout({
 }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         {navigation}
         {children}
         {footer}

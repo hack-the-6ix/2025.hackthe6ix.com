@@ -1,10 +1,23 @@
 @use 'sass:meta';
+@use 'sass:map';
 
 $_speeds: (
   slow: 350ms,
   normal: 250ms,
   fast: 150ms,
 );
+
+$_media: (
+  mobile: 425px,
+  tablet: 820px,
+  laptop: 1024px,
+);
+
+@mixin media($bp) {
+  @media screen and (max-width: map.get($_media, $bp)) {
+    @content;
+  }
+}
 
 @mixin create-utility-classes($prop, $vals, $prefix: null) {
   @if meta.type-of($vals) == map {

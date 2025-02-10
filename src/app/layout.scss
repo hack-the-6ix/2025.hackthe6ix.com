@@ -1,5 +1,17 @@
+@use '@/styles/mixins';
+@use '@/styles/colors';
+
+:root {
+  @include colors.init;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  font-size: 16px;
+
+  @include mixins.media(tablet) {
+    font-size: 12.8px;
+  }
 }

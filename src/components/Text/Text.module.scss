@@ -1,0 +1,94 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '@/styles/colors';
+@use '@/styles/mixins';
+
+$_font-type-styles: (
+  display: (
+    size: 3.75rem,
+    spacing: -0.022,
+    spacing-m: -0.022,
+  ),
+  heading-lg: (
+    size: 3rem,
+    spacing: -0.022,
+    spacing-m: -0.022,
+  ),
+  heading-sm: (
+    size: 2.5rem,
+    spacing: -0.022,
+    spacing-m: -0.022,
+  ),
+  subtitle-lg: (
+    size: 2rem,
+    spacing: -0.022,
+    spacing-m: -0.02,
+  ),
+  subtitle-sm: (
+    size: 1.625rem,
+    spacing: -0.02,
+    spacing-m: -0.017,
+  ),
+  paragraph-lg: (
+    size: 1.25rem,
+    spacing: 0,
+    spacing-m: 0,
+  ),
+  paragraph-sm: (
+    size: 1rem,
+    spacing: 0,
+    spacing-m: 0,
+  ),
+  label: (
+    size: 0.875rem,
+    spacing: 0,
+    spacing-m: 0,
+  ),
+);
+
+@function _round($size, $unit) {
+  @return math.round(math.div($size, $unit)) * $unit;
+}
+
+@layer text {
+  .text {
+    margin: 0;
+  }
+
+  @each $tag, $config in $_font-type-styles {
+    .type--#{$tag} {
+      font-size: map.get($config, size);
+      line-height: math.div(_round(map.get($config, size) * 16, 4), 16);
+      letter-spacing: map.get($config, spacing) * 1rem;
+
+      @include mixins.media(tablet) {
+        letter-spacing: map.get($config, spacing-m) * 1rem;
+      }
+    }
+  }
+
+  @include mixins.create-utility-classes(
+    font-weight,
+    (
+      regular: 400,
+      medium: 500,
+      semi-bold: 600,
+      bold: 700,
+      extra-bold: 800,
+      'black': 900,
+    ),
+    'wght--'
+  );
+
+  @include mixins.create-utility-classes(
+    color,
+    (
+      primary: colors.getColorVar(secondary, 700),
+      secondary: colors.getColorVar(neutral, 700),
+      accent: colors.getColorVar(warning, 600),
+      'white': colors.getColorVar(shades, 0),
+      'black': colors.getColorVar(shades, 100),
+    ),
+    'color--'
+  );
+}
