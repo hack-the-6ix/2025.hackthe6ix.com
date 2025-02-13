@@ -9,21 +9,36 @@ export const metadata: Metadata = {
 };
 
 export interface RootLayoutProps {
-  children: ReactNode;
   navigation: ReactNode;
   footer: ReactNode;
+  about: ReactNode;
+  contact: ReactNode;
+  home: ReactNode;
+  faq: ReactNode;
+  showcase: ReactNode;
+  sponsors: ReactNode;
 }
 
 export default function RootLayout({
-  children,
   navigation,
   footer,
+  about,
+  contact,
+  home,
+  faq,
+  showcase,
+  sponsors,
 }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
         {navigation}
-        {children}
+        {about}
+        {contact}
+        {home}
+        {faq}
+        {showcase}
+        {sponsors}
         {footer}
       </body>
       <Script strategy="lazyOnload" id="animate">
