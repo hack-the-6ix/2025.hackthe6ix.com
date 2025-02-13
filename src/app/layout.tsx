@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './layout.scss';
@@ -8,37 +8,21 @@ export const metadata: Metadata = {
   description: 'owo',
 };
 
-export interface RootLayoutProps {
+export interface RootLayoutProps extends PropsWithChildren {
   navigation: ReactNode;
   footer: ReactNode;
-  about: ReactNode;
-  contact: ReactNode;
-  home: ReactNode;
-  faq: ReactNode;
-  showcase: ReactNode;
-  sponsors: ReactNode;
 }
 
 export default function RootLayout({
   navigation,
+  children,
   footer,
-  about,
-  contact,
-  home,
-  faq,
-  showcase,
-  sponsors,
 }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
         {navigation}
-        {about}
-        {contact}
-        {home}
-        {faq}
-        {showcase}
-        {sponsors}
+        {children}
         {footer}
       </body>
       <Script strategy="lazyOnload" id="animate">
