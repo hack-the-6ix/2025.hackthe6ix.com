@@ -1,32 +1,17 @@
-import Text from '@/components/Text';
+import Card from '@/components/Card';
 
 export default function LandingPage() {
   return (
     <main>
-      <Text textType="display" as="p">
-        Display
-      </Text>
-      <Text textType="heading-lg" as="p">
-        Heading Large
-      </Text>
-      <Text textType="heading-sm" as="p">
-        Heading Small
-      </Text>
-      <Text textType="subtitle-lg" as="p">
-        Subtitle Large
-      </Text>
-      <Text textType="subtitle-sm" as="p">
-        Subtitle Small
-      </Text>
-      <Text textType="paragraph-lg" as="p">
-        Paragraph Large
-      </Text>
-      <Text textType="paragraph-sm" as="p">
-        Paragraph Small
-      </Text>
-      <Text textType="label" as="p">
-        Label
-      </Text>
+      <Card
+        radius={6}
+        borderWidth={1}
+        pixelSize={8}
+        style={{ width: 100, height: 100 }}
+        borderColor="neutral-400"
+      >
+        owo
+      </Card>
     </main>
   );
 }

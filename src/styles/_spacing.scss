@@ -21,3 +21,9 @@ $spacing: (
 @function getSpacing($space) {
   @return map.get($spacing, $space);
 }
+
+@mixin init() {
+  @each $tag, $size in $spacing {
+    --#{$tag}: #{$size};
+  }
+}

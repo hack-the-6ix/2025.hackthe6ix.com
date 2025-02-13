@@ -5,19 +5,15 @@ import {
 } from 'react';
 
 declare module 'react' {
-  export type PolyComponentPropsWithoutRef<T extends ElementType, Props> = Omit<
-    ComponentPropsWithoutRef<T>,
-    keyof Props
-  > &
-    Props & {
-      as?: T;
-    };
+  export type MergeProps<A, B> = Omit<A, keyof B> & B;
 
-  export type PolyComponentPropsWithRef<T extends ElementType, Props> = Omit<
-    ComponentPropsWithRef<T>,
-    keyof Props
-  > &
-    Props & {
-      as?: T;
-    };
+  export type PolyComponentPropsWithoutRef<
+    T extends ElementType,
+    Props,
+  > = MergeProps<MergeProps<ComponentPropsWithoutRef<T>, Props>, { as?: T }>;
+
+  export type PolyComponentPropsWithRef<
+    T extends ElementType,
+    Props,
+  > = MergeProps<MergeProps<ComponentPropsWithRef<T>, Props>, { as?: T }>;
 }

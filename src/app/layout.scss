@@ -1,8 +1,10 @@
+@use '@/styles/spacing';
 @use '@/styles/mixins';
 @use '@/styles/colors';
 
 :root {
   @include colors.init;
+  @include spacing.init;
 }
 
 html,
