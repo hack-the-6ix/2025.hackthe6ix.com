@@ -4,6 +4,11 @@
 @use '@/styles/mixins';
 
 $_font-type-styles: (
+  title: (
+    size: 4.5rem,
+    spacing: -0.022,
+    spacing-m: -0.022,
+  ),
   display: (
     size: 3.75rem,
     spacing: -0.022,
@@ -83,9 +88,9 @@ $_font-type-styles: (
   @include mixins.create-utility-classes(
     color,
     (
-      primary: colors.getColorVar(secondary, 700),
-      secondary: colors.getColorVar(neutral, 700),
-      accent: colors.getColorVar(warning, 600),
+      'primary': colors.getColorVar(secondary, 800),
+      'secondary': colors.getColorVar(neutral, 700),
+      'accent': colors.getColorVar(warning, 600),
       'white': colors.getColorVar(shades, 0),
       'black': colors.getColorVar(shades, 100),
     ),
