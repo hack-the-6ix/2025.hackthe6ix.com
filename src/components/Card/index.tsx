@@ -13,6 +13,8 @@ export type CardProps<T extends ElementType> = PolyComponentPropsWithRef<
     radius?: number;
     borderWidth?: number;
     borderColor?: Color;
+    padding?: number;
+    backgroundColor?: string;
   }
 >;
 
@@ -21,6 +23,8 @@ export default function Card<T extends ElementType = 'div'>({
   borderWidth = 1,
   radius = 1,
   borderColor,
+  padding = 4,
+  backgroundColor = "#fff",
   children,
   as,
   ...props
@@ -44,11 +48,13 @@ export default function Card<T extends ElementType = 'div'>({
         ...props.style,
         '--card-outer': outerClipPath,
         '--card-inner': innerClipPath,
-        '--card-offset': borderWidth * pixelSize,
+        '--card-offset': borderWidth * pixelSize + padding,
         backgroundColor: borderColor ? `var(--${borderColor})` : undefined,
       }}
     >
-      <div className={styles.content}>{children}</div>
+      <div className={styles.content} style={{backgroundColor}}>
+        {children}
+      </div>
     </Flex>
   );
 }

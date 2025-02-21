@@ -1,17 +1,53 @@
-.hero-text-container{
+@use '@/styles/mixins';
+
+.hero-text-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    gap: var(--2x-big);
-    color: var(--secondary-800)
+    gap: var(--x-big);
+    color: var(--secondary-800);
+    background: linear-gradient(to bottom, #e5eeda, #cfedaf);
+
+    @include mixins.media(mobile) {
+        gap: var(--m);
+    }
 }
 
-.application-container{
-    background-color: "#1D3D1DCC";
-    color: white;
-    text-align: center;
-    border: 1px solid black;
+.application-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--big);
+
+    @include mixins.media(mobile) {
+        gap: 0px;
+    }
+}
+
+
+.hero-tree-left {
+    position: absolute;
+    top: 90px;
+    left: -110px;
+
+    @include mixins.media(mobile) {
+        width: 25%;
+        top: -160px;
+        left: 0px;
+    }
+}
+.hero-tree-right {
+    position: absolute;
+    top: 90px;
+    right: -80px;
+
+    @include mixins.media(mobile) {
+        width: 25%;
+        top: -250px;
+        right: -15px;
+    }
 }

@@ -5,47 +5,56 @@
 
 $_font-type-styles: (
   title: (
-    size: 4.5rem,
+    size: 6rem,
+    size-m: 3.5rem,
     spacing: -0.022,
     spacing-m: -0.022,
   ),
   display: (
     size: 3.75rem,
+    size-m: 2.5rem,
     spacing: -0.022,
     spacing-m: -0.022,
   ),
   heading-lg: (
     size: 3rem,
+    size-m: 2rem,
     spacing: -0.022,
     spacing-m: -0.022,
   ),
   heading-sm: (
     size: 2.5rem,
+    size-m: 1.75rem,
     spacing: -0.022,
     spacing-m: -0.022,
   ),
   subtitle-lg: (
     size: 2rem,
+    size-m: 1.5rem,
     spacing: -0.022,
     spacing-m: -0.02,
   ),
   subtitle-sm: (
     size: 1.625rem,
+    size-m: 1.25rem,
     spacing: -0.02,
     spacing-m: -0.017,
   ),
   paragraph-lg: (
     size: 1.25rem,
+    size-m: 1rem,
     spacing: 0,
     spacing-m: 0,
   ),
   paragraph-sm: (
     size: 1rem,
+    size-m: 0.875rem,
     spacing: 0,
     spacing-m: 0,
   ),
   label: (
     size: 0.875rem,
+    size-m: 0.75rem,
     spacing: 0,
     spacing-m: 0,
   ),
@@ -68,6 +77,10 @@ $_font-type-styles: (
 
       @include mixins.media(tablet) {
         letter-spacing: map.get($config, spacing-m) * 1rem;
+      }
+
+      @include mixins.media(mobile) {
+        font-size: map.get($config, size-m);
       }
     }
   }

@@ -90,6 +90,9 @@ $_primitives: (
     0: #ffffff,
     100: #000000,
   ),
+  randoms: (
+    100: #324e2e,
+  ),
 );
 
 @function getColor($color, $level) {
@@ -109,6 +112,7 @@ $core: (
   white: getColorVar(shade, 0),
   black: getColorVar(shade, 100),
   neutral: getColorVar(neutral, 500),
+  random: getColorVar(neutral, 0),
 );
 
 @mixin init {
