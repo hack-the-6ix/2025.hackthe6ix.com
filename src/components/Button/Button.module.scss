@@ -7,11 +7,11 @@
   }
 
   .content:hover{
-    background-color: var(--content-color-hover,white);;
+    background-color: var(--content-color-hover,white);
+    cursor: pointer;
   }
 
   .content:active {
-    background-color: var(--content-color-active,white);;
-
+    background-color: var(--content-color-active,white);
   }
 }
