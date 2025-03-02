@@ -1,14 +1,12 @@
 import { ElementType, PolyComponentPropsWithRef } from 'react';
 import cn from 'classnames';
 import { Color } from '@/styles';
-import { getClipPath } from '@/styles/pixel';
-import Flex from '../Flex';
+import Card from '../Card';
 import styles from './Button.module.scss';
 
 export type ButtonProps<T extends ElementType> = PolyComponentPropsWithRef<
   T,
   {
-    // For doing the pixel stuff
     pixelSize?: number;
     radius?: number;
     borderWidth?: number;
@@ -18,10 +16,10 @@ export type ButtonProps<T extends ElementType> = PolyComponentPropsWithRef<
   }
 >;
 
-export default function Button<T extends ElementType = 'div'>({
+export default function Button<T extends ElementType = 'button'>({
   pixelSize = 4,
-  borderWidth = 1,
   radius = 1,
+  borderWidth = 1,
   borderColor,
   contentColor,
   buttonPadding = 0,
@@ -30,34 +28,24 @@ export default function Button<T extends ElementType = 'div'>({
   ...props
 }: ButtonProps<T>) {
   const level = 500;
-  const outerClipPath = getClipPath(radius, pixelSize);
-  const innerClipPath = getClipPath(
-    radius - borderWidth,
-    pixelSize,
-    borderWidth,
-  );
-
   return (
-    <Flex
+    <Card
       {...props}
-      className={cn(props.className, styles.card)}
-      as={as as 'div'}
-      align="center"
-      justify="center"
-      inline
+      className={cn(props.className, styles.content)}
+      as={as as 'button'}
+      pixelSize={pixelSize as number}
+      borderWidth={borderWidth as number}
+      radius={radius as number}
+      borderColor={borderColor as Color}
+      padding={buttonPadding as number}
       style={{
         ...props.style,
-        '--button-outer': outerClipPath,
-        '--button-inner': innerClipPath,
-        '--button-offset': borderWidth * pixelSize + buttonPadding,
         '--content-color': `var(--${contentColor}-${level})`,
         '--content-color-hover': `var(--${contentColor}-${level + 100})`,
         '--content-color-active': `var(--${contentColor}-${level + 200})`,
-
-        backgroundColor: borderColor ? `var(--${borderColor})` : undefined,
       }}
     >
-      <button className={styles.content}>{children}</button>
-    </Flex>
+      <div>{children}</div>
+    </Card>
   );
 }

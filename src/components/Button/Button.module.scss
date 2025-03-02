@@ -1,21 +1,9 @@
 @layer  button, flex;
 
 @layer button {
-  .button {
-    clip-path: polygon(var(--button-outer));
-    overflow: hidden;
-    position: relative;
-  }
 
   .content {
-    clip-path: polygon(var(--button-inner));
-    overflow: hidden;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: calc(var(--button-offset) * 1px);
     background-color: var(--content-color,white);
-    margin: auto;
   }
 
   .content:hover{
