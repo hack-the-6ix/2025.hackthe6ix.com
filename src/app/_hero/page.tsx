@@ -68,7 +68,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero-wrapper">
+    <section className="hero-wrapper" style={{overflowX: "hidden"}}>
       <div className="hero-text-container">
         <Text textType="subtitle-sm" textColor="primary" as="h2" style={{ textAlign: "center", margin: "0px 16px" }}>
           July 18-20, 2025 • In-person event • location
@@ -80,7 +80,7 @@ export default function Hero() {
           Embark on a quest to <span className="rotating-word">[{typedWord}]</span>
         </Text>
 
-        <div className="application-card-container">
+        <div className="application-card-container" style={{overflowX: "hidden"}}>
           <Card pixelSize={4} radius={10} borderWidth={1} padding={25} borderColor='randoms-100' backgroundColor='#43603f'>
             <Text textType={'label'} textColor='white'>
               Applications open soon! Sign up to receive the
@@ -97,7 +97,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="background-images">
+      <div className="background-images" style={{overflowX: "hidden"}}>
         <Image src={HeroTree} alt="Left Tree" width={520} height={827} className="hero-tree-left" />
         <Image src={HeroTreeRight} alt="Right Tree" width={506} height={988} className="hero-tree-right" />
         <Image src={HeroPatch} alt="Patch" width={134} height={36} className="hero-patch-1" />
