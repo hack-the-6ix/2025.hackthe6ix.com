@@ -125,7 +125,7 @@ export default function Hero() {
           alt="Right Tree"
           width={506}
           height={988}
-          className="absolute sm:top-[60px] sm:right-[-40px] w-[25%] top-[-250px] right-[-15px]"
+          className="z-10 absolute sm:top-[60px] sm:right-[-40px] w-[25%] top-[-250px] right-[-15px]"
         />
         <Image
           src={HeroPatch}
@@ -139,14 +139,14 @@ export default function Hero() {
           alt="Patch"
           width={300}
           height={94}
-          className="absolute sm:top-[90%] sm:left-[38%] w-[25%]"
+          className="absolute z-10 sm:top-[90%] sm:left-[38%] w-[25%]"
         />
         <Image
           src={Fire}
           alt="Fire"
           width={160}
           height={173}
-          className="absolute sm:top-[80%] sm:left-[15%] w-[12%] top-[35%] left-[13%]"
+          className="absolute z-10 sm:top-[80%] sm:left-[15%] w-[12%] top-[35%] left-[13%]"
         />
         <Image
           src={AppleCharacter}
