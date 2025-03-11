@@ -23,6 +23,8 @@ const colorTags = [
   'success',
   'warning',
   'error',
+  'shades',
+  'randoms',
   'shade',
   'frameBorderBrown',
   'frameBrown',

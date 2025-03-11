@@ -1,11 +1,12 @@
 import { ElementType, PolyComponentPropsWithRef } from 'react';
-import { Press_Start_2P, Inconsolata } from 'next/font/google';
+import { Press_Start_2P, Inconsolata, Jersey_10 } from 'next/font/google';
 import cn from 'classnames';
 import styles from './Text.module.scss';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 const pressStart2P = Press_Start_2P({ subsets: ['latin'], weight: '400' });
-const fonts = { pressStart2P, inconsolata } as const;
+const Jersey10 = Jersey_10({ weight: '400' });
+const fonts = { pressStart2P, inconsolata, Jersey10 } as const;
 
 export type TextColor = 'primary' | 'secondary' | 'accent' | 'white' | 'black';
 
@@ -17,7 +18,8 @@ export type TextType =
   | 'subtitle-sm'
   | 'paragraph-lg'
   | 'paragraph-sm'
-  | 'label';
+  | 'label'
+  | 'title';
 
 export type TextWeight =
   | 'regular'
