@@ -35,7 +35,6 @@ export default function Card<T extends ElementType = 'div'>({
     pixelSize,
     borderWidth,
   );
-
   return (
     <Flex
       {...props}

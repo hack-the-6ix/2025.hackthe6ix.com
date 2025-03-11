@@ -25,9 +25,14 @@ const colorTags = [
   'error',
   'shades',
   'randoms',
+  'shade',
+  'frameBorderBrown',
+  'frameBrown',
+  'framePurple',
+  'frameBlack',
 ] as const;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const colorLevels = [100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
+const colorLevels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
 type ColorTags = (typeof colorTags)[number];
 type ColorLevels = (typeof colorLevels)[number];
 export type Color =
@@ -35,7 +40,8 @@ export type Color =
   | `${Extract<ColorTags, 'shade'>}-${0 | 100}`
   | Exclude<ColorTags, 'shade' | 'blue'>
   | 'black'
-  | 'white';
+  | 'white'
+  | `#${string}`;
 
 export function getSpacing(spacing?: Spacing) {
   if (!spacing) return undefined;
