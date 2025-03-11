@@ -109,9 +109,24 @@ export default function Hero() {
             latest updates in your inbox.
           </Text>
         </Card>
-        <Input currentBackground="#cfedaf" borderColor="#494440" placeholder="Enter Email"></Input>
-      </div>
+        <div className="flex flex-row gap-4 items-center">
+        <Input currentBackground="#cfedaf" borderColor="#494440" placeholder="Enter Email" className="w-[300px]"></Input>
+        <Card
+          pixelSize={4}
+          radius={4}
+          borderWidth={1}
+          padding={12}
+          borderColor="shades-100"
+          backgroundColor="#74A600"
+        >
+          <Text textType={'label'} textColor="white" textWeight='bold' className="mx-2"> 
+          Sign Up!
+          </Text>
+        </Card>
 
+        </div>
+      </div>
+{/* 
       <div className="w-full">
         <Image
           src={HeroTree}
@@ -168,7 +183,7 @@ export default function Hero() {
             style={{ top: firefly.top, left: firefly.left }}
           />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }
