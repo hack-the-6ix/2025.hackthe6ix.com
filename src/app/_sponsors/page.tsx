@@ -1,3 +1,4 @@
+import Card2 from '@/components/Card2';
 import Text from '@/components/Text';
 
 export default function Sponsors() {
@@ -9,6 +10,11 @@ export default function Sponsors() {
       <Text textType="paragraph-lg" as="p">
         Paragraph Large
       </Text>
+      <Card2 borderColor="frameBrown" contentColor="primary" type="phone">
+        <Text textType="paragraph-lg" as="p" style={{ padding: '16px' }}>
+          Paragraph Large
+        </Text>
+      </Card2>
     </section>
   );
 }

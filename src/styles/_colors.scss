@@ -90,6 +90,19 @@ $_primitives: (
     0: #ffffff,
     100: #000000,
   ),
+  frameBorderBrown: (
+    200: #6E3615,
+    900: #20140C
+  ),
+  frameBrown: (
+    500: #9D4512,
+  ),
+  framePurple: (
+    500: #8A799F,
+  ),
+  frameBlack: (
+    500: #211B28,
+  )
 );
 
 @function getColor($color, $level) {
@@ -109,6 +122,10 @@ $core: (
   white: getColorVar(shade, 0),
   black: getColorVar(shade, 100),
   neutral: getColorVar(neutral, 500),
+  frameBorderBrown: getColorVar(frameBorderBrown, 200),
+  frameBrown: getColorVar(frameBrown, 500),
+  framePurple: getColorVar(framePurple, 500),
+  frameBlack: getColorVar(frameBlack, 500),
 );
 
 @mixin init {
