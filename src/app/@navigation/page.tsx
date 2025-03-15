@@ -40,7 +40,6 @@ export default function Navigation() {
             />
           </Container>
           <Container
-            // style={{ display: isOpen ? 'block' : 'none' }}
             className={`${isOpen ? 'opacity-100 pointer-events-auto' : 'pointer-events-none opacity-0'} fixed top-0 left-0 w-screen h-screen bg-[#E5EFD8] z-10 lg:hidden transition-opacity duration-200`}
             onClick={() => {
               setIsOpen(false);
