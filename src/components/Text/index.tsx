@@ -59,6 +59,7 @@ export default function Text<T extends ElementType = 'span'>({
         styles.text,
         fonts[textFont].className,
         props.className,
+        'tracking-wider',
       )}
     />
   );
