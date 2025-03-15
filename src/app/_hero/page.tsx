@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
+import Input from '@/components/Input';
 import Text from '@/components/Text';
 import AppleCharacter from '../../assets/apple-character.svg';
 import Fire from '../../assets/fire.svg';
@@ -12,7 +13,6 @@ import HeroPatch from '../../assets/hero-patch-1.svg';
 import HeroPatchTwo from '../../assets/hero-patch-2.svg';
 import HeroTree from '../../assets/hero-trees-left.svg';
 import HeroTreeRight from '../../assets/hero-trees-right.svg';
-import Input from '@/components/Input';
 
 const WORD_ARRAY = ['create', 'learn', 'collaborate', 'network'];
 const NUM_FIREFLIES = 20;
@@ -109,10 +109,14 @@ export default function Hero() {
             latest updates in your inbox.
           </Text>
         </Card>
-        <Input currentBackground="#cfedaf" borderColor="#494440" placeholder="Enter Email"></Input>
+        <Input
+          currentBackground="#cfedaf"
+          borderColor="#494440"
+          placeholder="Enter Email"
+        ></Input>
       </div>
 
-      <div className="w-full">
+      <div className="w-screen overflow-x-clip">
         <Image
           src={HeroTree}
           alt="Left Tree"
@@ -125,7 +129,7 @@ export default function Hero() {
           alt="Right Tree"
           width={506}
           height={988}
-          className="absolute sm:top-[60px] sm:right-[-40px] w-[25%] top-[-250px] right-[-15px]"
+          className="absolute sm:top-[60px] w-[25%] top-[-250px] right-0"
         />
         <Image
           src={HeroPatch}

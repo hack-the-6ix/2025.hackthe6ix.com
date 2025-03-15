@@ -13,8 +13,8 @@ export default function About() {
 
   return (
     <>
-      <div className="bg-white w-screen h-screen "></div>
-      <section className="bg-[#062938] w-[100vw] h-[100vh] flex flex-row items-center">
+      <div className="bg-white h-screen "></div>
+      <section className="bg-[#062938] h-[100vh] flex flex-row items-center">
         <div className="flex flex-col gap-8 mx-24 w-[50%]">
           <Text textType="heading-lg" textColor="white" textWeight="bold">
             Still Have Questions?
@@ -84,7 +84,9 @@ export default function About() {
                   Assistive/Descriptive Text
                 </Text>
               </div>
-              <button className="bg-[#406FAA] text-white border-4 border-[#24211E] px-4 h-[50px]">Primary Button</button>
+              <button className="bg-[#406FAA] text-white border-4 border-[#24211E] px-4 h-[50px]">
+                Primary Button
+              </button>
             </div>
           </div>
           <div className="flex flex-row gap-8 items-center">
