@@ -9,19 +9,19 @@
     .flame {
       position: absolute;
       opacity: 0;
-      animation: morph 3s infinite ease-in-out;
+      animation: morph 2s infinite ease-in-out;
       transform: translateX(-10px);
     }
     #candle-wick {
       transform: translateY(125px);
     }
     #frame1 { animation-delay: 0s; }
-    #frame2 { animation-delay: 0.43s; }
-    #frame3 { animation-delay: 0.86s; }
-    #frame4 { animation-delay: 1.29s; }
-    #frame5 { animation-delay: 1.72s; }
-    #frame6 { animation-delay: 2.15s; }
-    #frame7 { animation-delay: 2.58s; }
+    #frame2 { animation-delay: 0.286s; }
+    #frame3 { animation-delay: 0.571s; }
+    #frame4 { animation-delay: 0.857s; }
+    #frame5 { animation-delay: 1.143s; }
+    #frame6 { animation-delay: 1.429s; }
+    #frame7 { animation-delay: 1.714s; }
   </style>
 
   

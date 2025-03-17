@@ -9,19 +9,23 @@
     .flame {
       position: absolute;
       opacity: 0;
-      animation: morph 3s infinite;
+      animation: morph 2s infinite;
       transform: translateX(-10px);
     }
     #candle-wick {
       transform: translateY(125px);
     }
+    svg{
+      transform: translateX(-96px);
+      transform: scaleX(-1);
+    }
     #frame1 { animation-delay: 0s; }
-    #frame2 { animation-delay: 0.43s; }
-    #frame3 { animation-delay: 0.86s; }
-    #frame4 { animation-delay: 1.29s; }
-    #frame5 { animation-delay: 1.72s; }
-    #frame6 { animation-delay: 2.15s; }
-    #frame7 { animation-delay: 2.58s; }
+    #frame2 { animation-delay: 0.286s; }
+    #frame3 { animation-delay: 0.571s; }
+    #frame4 { animation-delay: 0.857s; }
+    #frame5 { animation-delay: 1.143s; }
+    #frame6 { animation-delay: 1.429s; }
+    #frame7 { animation-delay: 1.714s; }
   </style>
 
   
@@ -184,7 +188,7 @@
 </svg>
  </g>
   
-  <g id="frame3" class="flame"> <svg width="80" height="111" viewBox="0 0 80 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="frame4" class="flame"> <svg width="80" height="111" viewBox="0 0 80 111" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.5225 48.2234C5.57947 50.308 6.70183 67.8533 8.63089 76.3654C11.998 95.9605 28.1254 99.5298 35.5052 98.865C56.4035 101.88 79.4992 72.0742 62.2939 58.6464C64.8192 47.3896 58.0851 45.9651 54.4023 46.66C57.0329 50.6554 59.0321 56.4575 45.9846 47.7023C32.9371 38.947 47.5629 17.9969 56.5067 8.61621C44.757 11.9168 22.9411 21.1237 29.6753 31.5467C36.4094 41.9696 21.959 55.3458 13.892 60.7309C11.2615 52.3926 16.5225 48.2234 16.5225 48.2234Z" fill="#F28C0E"/>
 <rect x="6.15381" y="49.2314" width="6.15385" height="6.15385" fill="#F28C0E"/>
 <rect x="6.15381" y="55.3848" width="6.15385" height="6.15385" fill="#F28C0E"/>
@@ -306,7 +310,7 @@
 <rect x="36.9231" y="98.4619" width="6.15385" height="6.15385" fill="#302626"/>
 </svg>
  </g>
-  <g id="frame4" class="flame"> <svg width="83" height="111" viewBox="0 0 83 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="frame5" class="flame"> <svg width="83" height="111" viewBox="0 0 83 111" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.5 59.6357C-0.44301 61.7203 5.07092 75.6237 6.99998 84.1357C17 97.5 32.1202 107.665 39.5 107C60.3984 110.015 91.7053 73.0636 74.5 59.6357C77.0253 48.379 72.1828 38.3051 68.5 39C71.1305 42.9955 76.0475 39.2553 63 30.5C49.9525 21.7447 56.0562 17.3807 65 8C53.2502 11.3006 32.636 14.9446 27 26C21.3922 37 26.567 39.6148 18.5 45C15.8695 36.6616 10.5 59.6357 10.5 59.6357Z" fill="#F28C0E"/>
 <rect x="13.1536" y="49.2314" width="6.15385" height="6.15385" fill="#F28C0E"/>
 <rect x="19.3074" y="43.0771" width="6.15385" height="6.15385" fill="#F28C0E"/>
@@ -416,7 +420,7 @@
 <rect x="43.9229" y="104.62" width="6.15385" height="6.15385" fill="#302626"/>
 </svg>
  </g>
-  <g id="frame5" class="flame"> <svg width="81" height="112" viewBox="0 0 81 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="frame6" class="flame"> <svg width="81" height="112" viewBox="0 0 81 112" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.5001 59.6348C3.99999 67.5 5.07098 75.6227 7.00004 84.1348C13.5 103.999 32.1202 111.165 39.5 110.5C60.3984 113.515 78.0001 90 78.0001 59.6348C78.0001 51.4768 73.0001 43 73.0001 43C69 38.5 66.2503 33 64.5001 29.5C61.5001 23.501 64.5001 14.5 60.0001 4.5C48.2503 7.8006 32.6361 14.9436 27.0001 25.999C21.3923 36.999 26.5671 39.6138 18.5001 44.999C15.8696 36.6607 10.5001 59.6348 10.5001 59.6348Z" fill="#F28C0E"/>
 <rect x="13.1538" y="49.2305" width="6.15385" height="6.15385" fill="#F28C0E"/>
 <rect x="19.3076" y="43.0771" width="6.15385" height="6.15385" fill="#F28C0E"/>
@@ -518,7 +522,7 @@
 <rect x="43.9229" y="104.62" width="6.15385" height="6.15385" fill="#302626"/>
 </svg>
  </g>
-  <g id="frame6" class="flame"> <svg width="81" height="124" viewBox="0 0 81 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="frame7" class="flame"> <svg width="81" height="124" viewBox="0 0 81 124" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7 62C4.50008 69.6348 5.07117 87.6227 7.00023 96.1348C13.5002 115.999 32.1204 123.165 39.5002 122.5C60.3985 125.515 78.0003 102 78.0003 71.6348C78.0003 63.4768 71 58 71 58C70 50.5 66.2505 45 64.5002 41.5C61.5002 35.501 52.0002 16 48.5002 4C42.5002 14.5 32.6363 26.9436 27.0003 37.999C21.3925 48.999 25.567 47.6148 17.5 53C12 56.6716 7 62 7 62Z" fill="#F28C0E"/>
 <rect x="13.1538" y="61.2305" width="6.15385" height="6.15385" fill="#F28C0E"/>
 <rect x="19.3076" y="55.0771" width="6.15385" height="6.15385" fill="#F28C0E"/>
@@ -624,7 +628,7 @@
 <rect x="43.9231" y="116.62" width="6.15385" height="6.15385" fill="#302626"/>
 </svg>
 </g>
-  <g id="frame7" class="flame"> <svg width="94" height="132" viewBox="0 0 94 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="frame1" class="flame"> <svg width="94" height="132" viewBox="0 0 94 132" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.1503 62C10.6504 69.6348 6.57119 90.9879 8.50026 99.5C15.0002 119.364 17.5002 127.5 46.6503 127.5C75.6171 127.5 88.5002 95.5 88.5002 73.5C88.5002 65.3421 78.0002 65.5 78.0002 65.5C77.0002 58 71.6504 56.5 71.6504 46.5C71.6504 39.7927 61.5002 14.5 49.0002 7C49.0002 17.5 56.6363 33.9446 51.0003 45C45.3925 56 28.5673 44.1148 20.5003 49.5C15.0003 53.1716 13.1503 62 13.1503 62Z" fill="#F28C0E"/>
 <rect x="19.0002" y="117.001" width="6.15385" height="6.15385" fill="#F28C0E"/>
 <rect x="13.0002" y="111.001" width="6.15385" height="6.15385" fill="#F28C0E"/>
@@ -713,7 +717,7 @@
 <rect x="50.1499" y="123" width="6.15385" height="6.15385" fill="#302626"/>
 </svg>
  </g>
-  <g id="frame1" class="flame"> <svg width="93" height="125" viewBox="0 0 93 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="frame2" class="flame"> <svg width="93" height="125" viewBox="0 0 93 125" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M21.9999 57.5C15 57.5 5.62117 84.9879 7.55024 93.5C14.0502 113.364 16.5502 121.5 45.7003 121.5C74.667 121.5 87 101.5 87 79.5C87 71.3421 79.5 51 79.5 51C78.5 43.5 72.5 46.5 72.5 36.5C72.5 29.7927 67 10.5 54.5 3C54.5 13.5 51.0931 27.4639 48.5 31C43 38.5 33.067 37.6148 25 43C19.5 46.6716 21.9999 57.5 21.9999 57.5Z" fill="#F28C0E"/>
 <rect x="18.0503" y="111" width="6.15385" height="6.15385" fill="#F28C0E"/>
 <rect x="12.0999" y="104.699" width="6.15385" height="6.15385" fill="#F28C0E"/>
@@ -804,7 +808,7 @@
 <rect x="49.2" y="117" width="6.15385" height="6.15385" fill="#302626"/>
 </svg>
  </g>
- <g id="frame2" class="flame"> <svg width="87" height="117" viewBox="0 0 87 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g id="frame3" class="flame"> <svg width="87" height="117" viewBox="0 0 87 117" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19.0001 50.5C12.0002 50.5 7.07116 75.9879 9.00023 84.5C15.5002 104.364 25.5001 115.35 39.7004 115.35C57.6109 115.35 75.0002 95 83.0002 81C77.5 74 78 46 60.5002 43.5C60.5002 29 56.0001 16.5008 56.0001 16.5008C55.0001 9.00083 63.5001 14.5 63.5001 11.5008C63.5001 4.7935 69.0001 -1.4994 48.0001 4.00002C48.0001 14.5 49.5001 23 45.0001 23C35.6995 23 33.5671 32.1148 25.5001 37.5C20.0001 41.1716 19.0001 50.5 19.0001 50.5Z" fill="#F28C0E"/>
 <rect x="61.6501" y="98.5498" width="6.15385" height="6.15385" fill="#F28C0E"/>
 <rect x="67.8003" y="92.3994" width="6.15385" height="6.15385" fill="#F28C0E"/>
