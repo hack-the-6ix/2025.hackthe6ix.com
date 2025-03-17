@@ -38,6 +38,7 @@ export default function Button<T extends ElementType = 'button'>({
       radius={radius as number}
       borderColor={borderColor as Color}
       padding={buttonPadding as number}
+      backgroundColor={`var(--${contentColor}-${level})`}
       style={{
         ...props.style,
         '--content-color': `var(--${contentColor}-${level})`,

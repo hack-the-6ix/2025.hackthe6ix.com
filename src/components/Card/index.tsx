@@ -24,7 +24,7 @@ export default function Card<T extends ElementType = 'div'>({
   radius = 1,
   borderColor,
   padding = 4,
-  backgroundColor = "#fff",
+  backgroundColor = '#fff',
   children,
   as,
   ...props
@@ -51,7 +51,10 @@ export default function Card<T extends ElementType = 'div'>({
         backgroundColor: borderColor ? `var(--${borderColor})` : undefined,
       }}
     >
-      <div className={styles.content} style={{backgroundColor}}>
+      <div
+        className={cn(props.className, styles.content)}
+        style={{ '--card-inner-color': backgroundColor } as React.CSSProperties}
+      >
         {children}
       </div>
     </Flex>
