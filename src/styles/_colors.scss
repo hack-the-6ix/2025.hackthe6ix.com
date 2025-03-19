@@ -93,6 +93,12 @@ $_primitives: (
   randoms: (
     100: #324e2e,
   ),
+
+  showcase: (
+    100: #EBA867,
+    200: #A2774D,
+  ),
+
   frameBorderBrown: (
     200: #6E3615,
     900: #20140C
@@ -105,6 +111,10 @@ $_primitives: (
   ),
   frameBlack: (
     500: #211B28,
+  ),
+  frameSpecialBrown:(
+    100: #F5BA7A,
+    200: #C4773D,
   )
 );
 
@@ -130,6 +140,7 @@ $core: (
   frameBrown: getColorVar(frameBrown, 500),
   framePurple: getColorVar(framePurple, 500),
   frameBlack: getColorVar(frameBlack, 500),
+  frameSpecialBrown: getColorVar(frameSpecialBrown, 100),
 );
 
 @mixin init {

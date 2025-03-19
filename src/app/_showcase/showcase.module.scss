@@ -1,0 +1,114 @@
+@use '@/styles/mixins';
+
+.proj_desc{
+    max-width: 20rem; /* Adjust as needed */
+    margin-top: 4%;
+    margin-bottom: 4%;
+
+
+}
+
+.card{
+    @include mixins.media(mobile) {
+        max-width: 80%;
+      }
+}
+
+.desc_text{
+    letter-spacing: 0.00em;
+    line-height: 1.2;
+    word-spacing: 0.1em;
+    @include mixins.media(mobile) {
+        line-height: 1;
+     }
+}
+
+.desc_card{
+    min-height: 25rem;
+    @include mixins.media(mobile) {
+        display: none;
+      }
+}
+
+.header_text{
+    position: relative;
+    padding-top: 40%;
+    padding-bottom: 20%;
+    @include mixins.media(mobile) {
+        
+      }
+}
+
+.stalagmites{
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    @include mixins.media(mobile) {
+        height: auto;
+        width: 100%;
+        bottom: 110%;
+    }
+}
+
+.wrapper_project{
+    min-width: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mixins.media(mobile) {
+        min-width: 13rem;
+    }
+}
+
+.diceman{
+    @include mixins.media(mobile) {
+        display: none;
+      }    
+}
+
+.hack_desc{
+    max-width: 40rem;
+    @include mixins.media(mobile) {
+        max-width: 40rem;
+      }    
+}
+
+.wrappermedal{
+
+}
+
+.medal{
+    margin-top: -10px;
+    @include mixins.media(mobile) {
+        height: auto;
+        width: auto;
+        margin-bottom: 15px;
+    }
+}
+
+.medals{
+position: absolute;
+    bottom: 96.0%;
+    left:7%;
+}
+
+.wrapper {
+    position: relative;
+    justify-content: center;
+}
+
+.seperator {
+position: absolute;
+
+width: 100%; /* Extend beyond the parent */
+z-index: 2; /* Ensure the separator is in front */
+top:59.5%;
+}
+.gold_proj {
+    display: block;
+    @include mixins.media(mobile) {
+        height: auto;
+        width: auto;
+
+    }
+  }

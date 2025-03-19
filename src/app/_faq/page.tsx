@@ -31,10 +31,10 @@ export default function FAQ() {
 
       <Card
       
-        pixelSize={6}
+        pixelSize={4}
         borderColor='secondary'
-        radius={3}
-        borderWidth={2}
+        radius={4}
+        borderWidth={1}
       >
         <Text textType={'label'} textColor='white'>
           Example Card

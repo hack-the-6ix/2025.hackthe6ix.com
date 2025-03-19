@@ -15,6 +15,10 @@ export type CardProps<T extends ElementType> = PolyComponentPropsWithRef<
     borderColor?: Color;
     padding?: number;
     backgroundColor?: string;
+    borderLeftColor?: Color;
+    borderRightColor?: Color;
+    borderTopColor?: Color;
+    borderBottomColor?: Color;
   }
 >;
 
@@ -25,6 +29,10 @@ export default function Card<T extends ElementType = 'div'>({
   borderColor,
   padding = 4,
   backgroundColor = "#fff",
+  borderLeftColor,
+  borderRightColor,
+  borderTopColor,
+  borderBottomColor,
   children,
   as,
   ...props
@@ -51,6 +59,11 @@ export default function Card<T extends ElementType = 'div'>({
         backgroundColor: borderColor ? `var(--${borderColor})` : undefined,
       }}
     >
+
+      <div className={styles.borderTop} style={{ backgroundColor: borderTopColor ? `var(--${borderTopColor})` : undefined }} />
+      <div className={styles.borderRight} style={{ backgroundColor: borderRightColor ? `var(--${borderRightColor})` : undefined }} />
+      <div className={styles.borderBottom} style={{ backgroundColor: borderBottomColor ? `var(--${borderBottomColor})` : undefined }} />
+      <div className={styles.borderLeft} style={{ backgroundColor: borderLeftColor ? `var(--${borderLeftColor})` : undefined }} />
       <div className={styles.content} style={{backgroundColor}}>
         {children}
       </div>
