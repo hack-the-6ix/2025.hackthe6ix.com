@@ -82,3 +82,27 @@ body {
 @include firefly-animation('firefly1', -15px, 6s);
 @include firefly-animation('firefly2', 20px, 7.5s);
 @include firefly-animation('firefly3', -18px, 7s);
+
+@media (max-width: 640px) {
+  .logo {
+    height: calc(var(--default-height) * 0.42);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .logo {
+    height: calc(var(--default-height) * 0.75);
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1999px) {
+  .logo {
+    height: calc(var(--default-height) * 1);
+  }
+}
+
+@media (min-width: 2000px) {
+  .logo {
+    height: calc(var(--default-height) * 1.5);
+  }
+}

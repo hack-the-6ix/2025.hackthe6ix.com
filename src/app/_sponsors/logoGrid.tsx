@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import styles from './Sponsors.module.scss';
 
 export default function LogoGrid() {
   // Array containing logo tiers with their respective logos and heights
@@ -35,28 +35,6 @@ export default function LogoGrid() {
     },
   ];
 
-  const [heightScaler, setHeightScaler] = useState(1);
-
-  // Hook to adjust the logo height based on the window width
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setHeightScaler(0.42);
-      } else if (window.innerWidth < 1024) {
-        setHeightScaler(0.75);
-      } else if (window.innerWidth < 2000) {
-        setHeightScaler(1);
-      } else {
-        setHeightScaler(1.5);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
     <div className="absolute flex flex-col z-5 left-1/2 -translate-x-1/2 gap-7 md:gap-16 pt-30 md:pt-8">
       {/* Iterating through logo tiers */}
@@ -73,10 +51,12 @@ export default function LogoGrid() {
               alt={logo.alt}
               width={500}
               height={500}
-              className="w-auto rounded-lg md:rounded-xl 2xl:rounded-2xl max-w-full"
-              style={{
-                height: `${tierLogos.height * heightScaler}rem`,
-              }}
+              className={`w-auto rounded-lg md:rounded-xl 2xl:rounded-2xl max-w-full ${styles.logo}`}
+              style={
+                {
+                  '--default-height': `${tierLogos.height}rem`,
+                } as React.CSSProperties
+              }
             />
           ))}
         </div>
