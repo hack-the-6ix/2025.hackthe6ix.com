@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = ({
   borderColor = '#ccc',
   inputBackground = '#fff',
   currentBackground = '#000',
-  borderWidth = "3px",
+  borderWidth = "4px",
   className
 }) => {
   return (
@@ -39,15 +39,15 @@ const Input: React.FC<InputProps> = ({
         style={{ backgroundColor: currentBackground, width: borderWidth, height: borderWidth }}
       ></div>
       <div
-        className="absolute top-[0px] left-[calc(100%-3px)] z-50"
+        className="absolute top-[0px] left-[calc(100%-4px)] z-50"
         style={{ backgroundColor: currentBackground, width: borderWidth, height: borderWidth }}
       ></div>
       <div
-        className="absolute top-[calc(100%-3px)] left-[0px] z-50"
+        className="absolute top-[calc(100%-4px)] left-[0px] z-50"
         style={{ backgroundColor: currentBackground, width: borderWidth, height: borderWidth }}
       ></div>
       <div
-        className="absolute top-[calc(100%-3px)] left-[calc(100%-3px)] z-50"
+        className="absolute top-[calc(100%-4px)] left-[calc(100%-4px)] z-50"
         style={{ backgroundColor: currentBackground, width: borderWidth, height: borderWidth }}
       ></div>
     </div>

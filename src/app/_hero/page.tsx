@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
+import Input from '@/components/Input';
 import Text from '@/components/Text';
 import AppleCharacter from '../../assets/apple-character.svg';
 import Fire from '../../assets/fire.svg';
@@ -12,7 +13,6 @@ import HeroPatch from '../../assets/hero-patch-1.svg';
 import HeroPatchTwo from '../../assets/hero-patch-2.svg';
 import HeroTree from '../../assets/hero-trees-left.svg';
 import HeroTreeRight from '../../assets/hero-trees-right.svg';
-import Input from '@/components/Input';
 
 const WORD_ARRAY = ['create', 'learn', 'collaborate', 'network'];
 const NUM_FIREFLIES = 20;
@@ -81,18 +81,48 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#e5eeda] to-[#cfedaf] overflow-hidden">
-      <div className="relative z-10 flex flex-col items-center text-center gap-6">
-        <Text textType="subtitle-sm" textColor="primary">
-          July 18-20, 2025 • In-person event • location
+    <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#e5eeda] to-[#cfedaf] overflow-hidden overflow-x-hidden">
+      <div className="relative z-10 flex flex-col items-center text-center sm:gap-6 gap-0">
+        <Text
+          textType="subtitle-sm"
+          textColor="primary"
+          className="sm:flex hidden"
+          textWeight="600"
+        >
+          July 18-20, 2025 • In-Person event • location
         </Text>
+        <div className="flex flex-col items-center sm:hidden flex">
+          <Text textType="subtitle-sm" textWeight="600" textColor="primary">
+            July 18-20, 2025
+          </Text>
+          <Text textType="subtitle-sm" textWeight="600" textColor="primary">
+            In-Person event
+          </Text>
+          <Text textType="subtitle-sm" textWeight="600" textColor="primary">
+            location
+          </Text>
+        </div>
         <Text textType="title" textFont="Jersey10" textColor="primary">
           Hack the 6ix
         </Text>
-        <Text textType="subtitle-lg" textColor="primary">
-          Embark on a quest to{' '}
-          <span className="text-accent">[{typedWord}]</span>
+        <Text
+          textType="subtitle-lg"
+          textColor="primary"
+          className="sm:flex hidden"
+        >
+          Embark on a quest to
+          <span className="text-accent ml-4">[{typedWord}]</span>
         </Text>
+
+        <div className="relative bg-[#74A600] border-[4px] border-[#3E2523] py-2 flex items-center justify-center w-[180px] sm:hidden flex mb-12">
+          <Text textType="subtitle-sm" textColor="white" textWeight="semi-bold">
+            Applications open soon!
+          </Text>
+          <div className="absolute top-[-4px] left-[-4px] z-50 bg-[#d9eec2] h-[4px] w-[4px]"></div>
+          <div className="absolute top-[-4px] left-[calc(100%)] z-50  bg-[#d9eec2] h-[4px] w-[4px]"></div>
+          <div className="absolute top-[calc(100%)] left-[-4px] z-50 bg-[#d9eec2]  h-[4px] w-[4px]"></div>
+          <div className="absolute top-[calc(100%)] left-[calc(100%)] z-50 bg-[#d9eec2]  h-[4px] w-[4px]"></div>
+        </div>
 
         <Card
           pixelSize={4}
@@ -101,6 +131,7 @@ export default function Hero() {
           padding={25}
           borderColor="randoms-100"
           backgroundColor="#43603f"
+          className="sm:flex hidden"
         >
           <Text textType={'label'} textColor="white">
             Applications open soon! Sign up to receive the
@@ -109,81 +140,91 @@ export default function Hero() {
             latest updates in your inbox.
           </Text>
         </Card>
-        <div className="flex flex-row gap-4 items-center">
-        <Input currentBackground="#cfedaf" borderColor="#494440" placeholder="Enter Email" className="w-[300px]"></Input>
-        <Card
-          pixelSize={4}
-          radius={4}
-          borderWidth={1}
-          padding={12}
-          borderColor="shades-100"
-          backgroundColor="#74A600"
-        >
-          <Text textType={'label'} textColor="white" textWeight='bold' className="mx-2"> 
-          Sign Up!
-          </Text>
-        </Card>
-
+        <div className="flex sm:flex-row flex-col gap-4 items-center">
+          <Input
+            currentBackground="#cfedaf"
+            borderColor="#494440"
+            placeholder="Enter Email"
+            className="sm:w-[300px] w-[180px]"
+          ></Input>
+          <Card
+            pixelSize={4}
+            radius={4}
+            borderWidth={1}
+            padding={12}
+            borderColor="shades-100"
+            backgroundColor="#74A600"
+            className="sm:w-auto w-full"
+          >
+            <Text
+              textType={'label'}
+              textColor="white"
+              textWeight="bold"
+              className="mx-2"
+            >
+              Sign Up!
+            </Text>
+          </Card>
         </div>
       </div>
-{/* 
-      <div className="w-full">
+
+      <Image
+        src={HeroPatchTwo}
+        alt="Patch"
+        width={300}
+        className="absolute md:w-[300px] md:top-[90%] md:left-[38%] sm:w-[250px] sm:top-[90%] sm:left-[38%] w-[100px] left-[0] top-[58%]"
+      />
+
+      <Image
+        src={HeroTree}
+        alt="Left Tree"
+        width={300}
+        className="absolute top-[35%] left-[0px] w-[80px] md:top-[60px] sm:w-[200px] sm:top-[100px] md:w-[250px]"
+      />
+
+      <Image
+        src={HeroTreeRight}
+        alt="Right Tree"
+        width={300}
+        className="absolute top-[32%] w-[100px] md:top-[40px] sm:w-[220px] sm:top-[100px] md:w-[300px] right-[0px]"
+      />
+
+      <Image
+        src={HeroPatch}
+        alt="Patch"
+        width={134}
+        className="absolute md:top-[88%]  sm:top-[50%] sm:top-[88%] md:w-[134px] sm:w-[100px] sm:left-[38%] sm:flex hidden"
+      />
+
+      <Image
+        src={AppleCharacter}
+        alt="Apple Character"
+        width={120}
+        height={115}
+        className="absolute md:top-[60%] sm:top-[59%] md:left-[8%] animate-bounce top-[55%] left-[9%] md:w-[120px] sm:w-[70px] w-[30px]"
+      />
+
+      <Image
+        src={Fire}
+        alt="Fire"
+        width={160}
+        height={173}
+        className="absolute md:top-[65%] sm:top-[63%] md:left-[12%] top-[57%] left-[13%] md:w-[160px] sm:w-[110px] w-[40px]"
+      />
+
+      {fireflies.map((firefly, index) => (
         <Image
-          src={HeroTree}
-          alt="Left Tree"
-          width={500}
-          height={827}
-          className="absolute sm:top-[60px] sm:left-[-30px] w-[20%] top-[-160px] left-0"
+          key={index}
+          src={Firefly}
+          alt="Firefly"
+          width={180}
+          height={180}
+          className={`sm:w-[180px] sm:h-[180px] h-[100px] w-[100px] absolute transition-opacity duration-1500 ease-in-out ${
+            firefly.visible ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ top: firefly.top, left: firefly.left }}
         />
-        <Image
-          src={HeroTreeRight}
-          alt="Right Tree"
-          width={506}
-          height={988}
-          className="absolute sm:top-[60px] sm:right-[-40px] w-[25%] top-[-250px] right-[-15px]"
-        />
-        <Image
-          src={HeroPatch}
-          alt="Patch"
-          width={134}
-          height={36}
-          className="absolute sm:top-[88%] sm:left-[38%] w-[10%]"
-        />
-        <Image
-          src={HeroPatchTwo}
-          alt="Patch"
-          width={300}
-          height={94}
-          className="absolute sm:top-[90%] sm:left-[38%] w-[25%]"
-        />
-        <Image
-          src={Fire}
-          alt="Fire"
-          width={160}
-          height={173}
-          className="absolute sm:top-[80%] sm:left-[15%] w-[12%] top-[35%] left-[13%]"
-        />
-        <Image
-          src={AppleCharacter}
-          alt="Apple Character"
-          width={120}
-          height={115}
-          className="absolute sm:top-[75%] sm:left-[10%] animate-bounce w-[8%] top-[35%] left-[9%]"
-        />
-        {fireflies.map((firefly, index) => (
-          <Image
-            key={index}
-            src={Firefly}
-            alt="Firefly"
-            width={180}
-            height={180}
-            className={`absolute transition-opacity duration-1500 ease-in-out ${
-              firefly.visible ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ top: firefly.top, left: firefly.left }}
-          />
-        ))}
-      </div> */}
+      ))}
     </section>
   );
 }
