@@ -69,21 +69,17 @@ export default function Showcase() {
 
 
   return (
-    <section> 
-      <Text textType="heading-lg" as="h2">
-        Showcase
-      </Text>
-      <Text textType="label" as="p">
-        Label
-      </Text>
+    <section  className="bg-[#1E3A5E]"> 
       <Flex className={styles.header_text} align='center' justify='center' direction='column'>
+            <Flex className={styles.header} align='center' justify='center' direction='row'>
+              <Text textType='heading-lg' textWeight='black' textColor='white'>               
+                Explore previous projects
+              </Text>
+            </Flex>
 
-            <Text textType={isMobile ? 'subtitle-lg' : 'display'} textWeight='black'>
-              Explore previous projects
-            </Text>
 
-          <Image src={stalagmites} alt="stalagmites"  className={styles.stalagmites}>
-          </Image>
+            <Image src={stalagmites} alt="stalagmites"  className={styles.stalagmites}>
+            </Image>
       
       </Flex>
       <Flex direction='column' align='center'>
@@ -100,19 +96,19 @@ export default function Showcase() {
 
           <Flex className={styles.wrappermedal}>
             <Flex direction='row' className={styles.medals}>
-                <Card3 borderColor="frameBrown" type="desktop" padding={0}  className="py-2">
+                <Card3 borderColor="frameBrown" padding={0}  className="py-2">
                   <Button borderWidth={0} onClick={() => handleButtonClick('gold')} backgroundColor={selectedProject === 'gold' ? '#EBA867' : '#A2774D'}>
-                    <Image src={gold} alt="gold" className='pb-9' />
+                    <Image src={gold} alt="gold" className={styles.medal}/>
                   </Button>
                 </Card3>
-                <Card3 borderColor="frameBrown" type="desktop" padding={0}  className="py-2">
+                <Card3 borderColor="frameBrown"  padding={0}  className="py-2">
                   <Button borderWidth={0} onClick={() => handleButtonClick('silver')} backgroundColor={selectedProject === 'silver' ? '#EBA867' : '#A2774D'}>
-                    <Image src={silver} alt="silver" className='pb-9' />
+                    <Image src={silver} alt="silver" className={styles.medal} />
                   </Button>
                 </Card3>
-                <Card3 borderColor="frameBrown" type="desktop" padding={0}  className="py-2">
+                <Card3 borderColor="frameBrown" padding={0}  className="py-2">
                   <Button borderWidth={0} onClick={() => handleButtonClick('bronze')} backgroundColor={selectedProject === 'bronze' ? '#EBA867' : '#A2774D'}>
-                    <Image src={bronze} alt="bronze" className='pb-9' />
+                    <Image src={bronze} alt="bronze" className={styles.medal} />
                   </Button>
                 </Card3>
 
@@ -129,17 +125,17 @@ export default function Showcase() {
         
               <Flex direction='column' className={styles.card}>
                 {/* <Card pixelSize={mainPixelSize} radius={4} borderWidth={2} padding={isMobile ? 42 : 70} borderColor='secondary' > */}
-                <Card2 borderColor="frameBrown" contentColor="showcase-100" padding={50}>
+                <Card2 borderColor="frameBrown" contentColor="showcase-100" padding={isMobile ? 25 : 50}>
                 <Flex direction='row' gap='x-huge'>
 
                     {/* Project Pic*/}
-                    <Card pixelSize={8} radius={2} borderWidth={1} borderColor='secondary-400'  
+                    <Card pixelSize={isMobile ? 4 : 8} radius={2} borderWidth={1} borderColor='secondary-400'  
                       className={styles.wrapper_project} backgroundColor='#EBA867' padding={0}
                       borderLeftColor='frameSpecialBrown-100' borderBottomColor='frameSpecialBrown-100' 
                       borderRightColor='frameSpecialBrown-200' borderTopColor='frameSpecialBrown-200'
                       >
-                      <Card padding={isMobile ? 25 : 35} backgroundColor='#EBA867'>
-                        <Card pixelSize={6} radius={4} borderWidth={1}  borderColor='secondary' padding={-1}>
+                      <Card padding={isMobile ? 18 : 35} backgroundColor='#EBA867'>
+                        <Card pixelSize={isMobile ? 3 : 6} radius={4} borderWidth={1}  borderColor='secondary' padding={-1}>
                           <Link href={projectLink}>
                             <Image src={projectImage} alt="project"  className={styles.gold_proj} />
                           </Link>
@@ -171,13 +167,13 @@ export default function Showcase() {
                 </Flex>
 
                 </Card2>
-                <Card2 borderColor="frameBrown" contentColor="showcase-100" padding={50}>
+                <Card2 borderColor="frameBrown" contentColor="showcase-100" padding={isMobile ? 33: 50}>
 
                 {/* <Card2 pixelSize={mainPixelSize} radius={4} borderWidth={2} padding={isMobile ? 42 : 70} borderColor='secondary'> */}
 
 
                 <Flex direction='row' gap='2x-big' justify="space-between">
-                  <Flex direction='column' className='pr-15'> 
+                  <Flex direction='column' className='md:pr-15 pr-4'> 
                     <Flex className={styles.hack_desc}>
                       <Text textType={'paragraph-lg'} textColor='black' className={styles.desc_text}> 
                       At our last hackathon, teams showcased their creativity and ingenuity to bring outstanding projects to life. Venture into the quest to leave your mark—be the next team to create a groundbreaking innovation and build your legacy.                
@@ -188,7 +184,7 @@ export default function Showcase() {
                         {/* Btn */}
                       <Link href={see_all_proj_link}>
 
-                        <Button pixelSize={5} radius={4} borderWidth={1} buttonPadding={13} borderColor='frameBlack' backgroundColor='#6D4A41'>
+                        <Button pixelSize={5} radius={4} borderWidth={1} buttonPadding={isMobile ? 8 : 13} borderColor='frameBlack' backgroundColor='#6D4A41'>
                           <Text textType={'paragraph-lg'} textColor='white' textWeight='bold' className='px-2'>
                             See all projects
                           </Text>
@@ -200,7 +196,7 @@ export default function Showcase() {
 
                       {/* Img */}
 
-                  <Card pixelSize={8} radius={2} borderWidth={1} padding={0}  className={styles.diceman} 
+                  <Card pixelSize={8} radius={2} borderWidth={1} padding={0}  className={styles.diceman}
                     backgroundColor='#EBA867' borderLeftColor='frameSpecialBrown-100' borderBottomColor='frameSpecialBrown-100' 
                     borderRightColor='frameSpecialBrown-200' borderTopColor='frameSpecialBrown-200'>
                       <Card padding={30} backgroundColor='#EBA867'>

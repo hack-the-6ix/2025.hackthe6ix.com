@@ -5,7 +5,7 @@ const useIsMobile = () => {
 
   useEffect(() => {
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth <= 500); // Adjust breakpoint as needed
+      setIsMobile(window.innerWidth < 640); // Adjust breakpoint as needed
     };
 
     // Check on mount and on window resize

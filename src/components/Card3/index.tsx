@@ -1,9 +1,10 @@
-import { ElementType, PolyComponentPropsWithRef } from 'react';
+import { ElementType, PolyComponentPropsWithRef, useEffect, useState } from 'react';
 import cn from 'classnames';
 import { Color } from '@/styles';
 import CardFrame from '../CardFrame';
 import Flex from '../Flex';
 import styles from './Card.module.scss';
+import useIsMobile from '../../hooks/useIsMobile';
 
 // horizontal centered card with fancy frame
 export type CardProps<T extends ElementType> = PolyComponentPropsWithRef<
@@ -12,7 +13,6 @@ export type CardProps<T extends ElementType> = PolyComponentPropsWithRef<
     borderColor?: Color; // there's framePurple, frameBrown, frameBlack
     contentColor?: Color;
     contentBackground?: string;
-    type?: 'desktop' | 'phone'; // the frame thickness is different for each type :')
     padding?: number;
   }
 >;
@@ -21,18 +21,17 @@ export default function Card2<T extends ElementType = 'div'>({
   borderColor = 'framePurple',
   contentColor = 'white',
   contentBackground,
-  type = 'desktop',
   padding = 0,
   children,
   as,
   ...props
 }: CardProps<T>) {
-  const typeThickness = new Map([
-    ['phone', 18],
-    ['desktop', 28],
-  ]);
-  const thickness = typeThickness.get(type) ?? 28;
 
+  const isMobile = useIsMobile();
+  const thickness = isMobile ? 18 : 28;
+  const marginTopRight = isMobile ? 5 : 0;
+  const marginRight = isMobile ? -29 : -23;
+  const topSize = isMobile ? "75%" : "120%";
   return (
     <Flex direction="row" justify="center">
       <Flex direction="column" align="center" justify="center">
@@ -49,7 +48,7 @@ export default function Card2<T extends ElementType = 'div'>({
         justify="center"
         style={{
           width: thickness,
-          marginRight: '-20px',
+          marginRight: '-25px',
           marginLeft: '-8px',
         }}
       >
@@ -58,7 +57,7 @@ export default function Card2<T extends ElementType = 'div'>({
           style={{
             backgroundColor:
               contentColor ? `var(--${contentColor})` : undefined,
-            minHeight: `calc(98% - ${3 * thickness}px)`,
+            minHeight: `calc(90% - ${3 * thickness}px)`,
             width: '100%',
             zIndex: 1,
             backgroundImage:
@@ -80,9 +79,11 @@ export default function Card2<T extends ElementType = 'div'>({
         <CardFrame
           borderContentColor={borderColor as Color}
           direction="horizontal"
-          length="120%"
+          length={topSize}
           thickness={thickness}
-          style={{ zIndex: 2 }}
+          style={{ zIndex: 3, 
+            marginRight: `${marginTopRight}px`
+          }}
         />
         <div
           className={styles.content}
@@ -103,7 +104,7 @@ export default function Card2<T extends ElementType = 'div'>({
         style={{
           width: thickness,
           marginRight: '-8px',
-          marginLeft: '-20px',
+          marginLeft:  `${marginRight}px`,
         }}
       >
 
@@ -113,7 +114,7 @@ export default function Card2<T extends ElementType = 'div'>({
           borderContentColor={borderColor as Color}
           direction="vertical"
           length={`calc(98% - ${2.0 * thickness}px)`}
-          thickness={typeThickness.get(type)}
+          thickness={thickness}
           style={{ zIndex: 2 }}
         />
       </Flex>

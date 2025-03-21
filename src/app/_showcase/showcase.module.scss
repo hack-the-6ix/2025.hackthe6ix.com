@@ -19,7 +19,7 @@
     line-height: 1.2;
     word-spacing: 0.1em;
     @include mixins.media(mobile) {
-        line-height: 1;
+        line-height: 1.1;
      }
 }
 
@@ -30,22 +30,34 @@
       }
 }
 
-.header_text{
+.header_text {
     position: relative;
-    padding-top: 40%;
+    padding-top: 30%;
     padding-bottom: 20%;
+    overflow: visible;  // Allow content to overflow if needed
+    width: 100%;
     @include mixins.media(mobile) {
-        
-      }
+        flex-direction: column;
+        width: 100%; // Explicitly set width to 100% on mobile
+        padding-top: 40%;
+    }
+}
+
+.header{
+    align-items: center;
+    @include mixins.media(mobile) {
+        max-width: 20%;
+    }
 }
 
 .stalagmites{
     position: absolute;
-    top: 15%;
+    top: 0%;
     width: 100%;
+    max-width: none;  // Remove the max-width constraint
+
     @include mixins.media(mobile) {
-        height: auto;
-        width: 100%;
+        width: 114%;
         bottom: 110%;
     }
 }
@@ -70,6 +82,7 @@
     max-width: 40rem;
     @include mixins.media(mobile) {
         max-width: 40rem;
+        padding-bottom: 10px;
       }    
 }
 
@@ -78,11 +91,12 @@
 }
 
 .medal{
-    margin-top: -10px;
+    margin-bottom: 40%;
     @include mixins.media(mobile) {
         height: auto;
-        width: auto;
+        width: 43%;
         margin-bottom: 15px;
+        margin-left: 12px;
     }
 }
 
@@ -90,6 +104,11 @@
 position: absolute;
     bottom: 96.0%;
     left:7%;
+    @include mixins.media(mobile) {
+        left:20%;
+        bottom: 95.9%;
+
+    }
 }
 
 .wrapper {
