@@ -10,7 +10,7 @@ export default function Sponsors() {
       <Text textType="paragraph-lg" as="p">
         Paragraph Large
       </Text>
-      <Card2 borderColor="frameBrown" contentColor="primary" type="phone">
+      <Card2 borderColor="frameBrown" contentColor="primary">
         <Text textType="paragraph-lg" as="p" style={{ padding: '16px' }}>
           Paragraph Large
         </Text>
