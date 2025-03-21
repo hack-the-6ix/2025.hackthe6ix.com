@@ -27,7 +27,8 @@ export type TextWeight =
   | 'semi-bold'
   | 'bold'
   | 'extra-bold'
-  | 'black';
+  | 'black'
+  | '600';
 
 export type TextProps<T extends ElementType> = PolyComponentPropsWithRef<
   T,
