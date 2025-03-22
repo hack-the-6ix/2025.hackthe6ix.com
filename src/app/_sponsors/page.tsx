@@ -1,5 +1,9 @@
-import Card2 from '@/components/Card2';
+import Card3 from '@/components/Card3';
 import Text from '@/components/Text';
+import gold from '../_showcase/assets/gold.png'
+import Image from 'next/image';
+import Button from '@/components/Button';
+import Card from '@/components/Card';
 
 export default function Sponsors() {
   return (
@@ -10,11 +14,9 @@ export default function Sponsors() {
       <Text textType="paragraph-lg" as="p">
         Paragraph Large
       </Text>
-      <Card2 borderColor="frameBrown" contentColor="primary">
-        <Text textType="paragraph-lg" as="p" style={{ padding: '16px' }}>
-          Paragraph Large
-        </Text>
-      </Card2>
+      <Card pixelSize={2} borderWidth={1} radius={1} borderColor='primary'>
+      Hi
+    </Card>
     </section>
   );
 }
