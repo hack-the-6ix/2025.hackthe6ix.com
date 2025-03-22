@@ -52,14 +52,14 @@ export default function Showcase() {
       setSelectedProject({
         type: 'silver',
         image: silver_proj,
-        desc: 'WattWise was built using a Raspberry Pi connected directly to a household power supply, enabling real-time energy consumption tracking. The team implemented sensors for accurate data collection, utilized Python for backend analytics, and integrated machine learning algorithms to predict electricity usage. A React-based dashboard visualizes this data, alerting users to unusual patterns and promoting energy-saving behaviors.',
+        desc: 'WattWise was built using a Raspberry Pi connected directly to a household power supply, enabling real-time energy consumption tracking. The team implemented sensors for accurate data collection, utilized Python for backend analytics, and integrated machine learning algorithms to predict electricity usage.',
         link: 'https://devpost.com/software/hackthe6ix-bqlrik',
       });
     } else if (project === 'bronze') {
       setSelectedProject({
         type: 'bronze',
         image: bronze_proj,
-        desc: "Expresso is an Adobe Express plugin that streamlines the creation and optimization of social media posts. The development team utilized Adobe's plugin development framework to integrate seamlessly with Adobe Express, enabling users to design content efficiently. They implemented algorithms to analyze and enhance posts for optimal engagement across various platforms. The project involved backend development for processing user inputs and frontend design to ensure an intuitive user experience.",
+        desc: "Expresso is an Adobe Express plugin that streamlines the creation and optimization of social media posts. The development team utilized Adobe's plugin development framework to integrate seamlessly with Adobe Express. They implemented algorithms to analyze and enhance posts for optimal engagement across various platforms..",
         link: 'https://devpost.com/software/expresso-9inhuw',
       });
     }
