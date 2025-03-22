@@ -28,7 +28,7 @@ export default function Card<T extends ElementType = 'div'>({
   radius = 1,
   borderColor,
   padding = 4,
-  backgroundColor = "#fff",
+  backgroundColor = '#fff',
   borderLeftColor,
   borderRightColor,
   borderTopColor,
@@ -59,13 +59,41 @@ export default function Card<T extends ElementType = 'div'>({
         backgroundColor: borderColor ? `var(--${borderColor})` : undefined,
       }}
     >
-
-      <div className={styles.borderTop} style={{ backgroundColor: borderTopColor ? `var(--${borderTopColor})` : undefined }} />
-      <div className={styles.borderRight} style={{ backgroundColor: borderRightColor ? `var(--${borderRightColor})` : undefined }} />
-      <div className={styles.borderBottom} style={{ backgroundColor: borderBottomColor ? `var(--${borderBottomColor})` : undefined }} />
-      <div className={styles.borderLeft} style={{ backgroundColor: borderLeftColor ? `var(--${borderLeftColor})` : undefined }} />
-      <div className={styles.content} style={{backgroundColor}}>
-        {children}
+      <div
+        className={cn(props.className, styles.content)}
+        style={{ '--card-inner-color': backgroundColor } as React.CSSProperties}
+      >
+        <div
+          className={styles.borderTop}
+          style={{
+            backgroundColor:
+              borderTopColor ? `var(--${borderTopColor})` : undefined,
+          }}
+        />
+        <div
+          className={styles.borderRight}
+          style={{
+            backgroundColor:
+              borderRightColor ? `var(--${borderRightColor})` : undefined,
+          }}
+        />
+        <div
+          className={styles.borderBottom}
+          style={{
+            backgroundColor:
+              borderBottomColor ? `var(--${borderBottomColor})` : undefined,
+          }}
+        />
+        <div
+          className={styles.borderLeft}
+          style={{
+            backgroundColor:
+              borderLeftColor ? `var(--${borderLeftColor})` : undefined,
+          }}
+        />
+        <div className={styles.content} style={{ backgroundColor }}>
+          {children}
+        </div>
       </div>
     </Flex>
   );

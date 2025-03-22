@@ -9,6 +9,7 @@
 
   .content {
     clip-path: polygon(var(--card-inner));
+    background-color: var(--card-inner-color);
     overflow: hidden;
     box-sizing: border-box;
     width: 100%;
