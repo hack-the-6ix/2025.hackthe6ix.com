@@ -21,4 +21,38 @@
     justify-content: center;
     align-items: center;
   }
+
+  /* Individual Borders */
+  .borderTop, .borderRight, .borderBottom, .borderLeft {
+    position: absolute;
+    content: "";
+  }
+
+  .borderTop {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--card-offset) * 1px);
+  }
+
+  .borderRight {
+    top: 0;
+    right: 0;
+    width: calc(var(--card-offset) * 1px);
+    height: 100%;
+  }
+
+  .borderBottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--card-offset) * 1px);
+  }
+
+  .borderLeft {
+    top: 0;
+    left: 0;
+    width: calc(var(--card-offset) * 1px);
+    height: 100%;
+  }  
 }
