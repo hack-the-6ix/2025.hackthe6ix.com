@@ -8,6 +8,7 @@ import LilyPad2 from '@/assets/lily-pad-2.svg';
 import LilyPad3 from '@/assets/lily-pad-3.svg';
 import LilyPad4 from '@/assets/lily-pad-4.svg';
 import AboutPond from '@/assets/about-pond.svg';
+import AboutFountain from '@/assets/about-fountain.svg';
 
 
 export default function About() {
@@ -42,12 +43,15 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row">
-      <div className="flex flex-col w-1/8">
+      <div className="flex md:flex-row flex-col">
+      <div className="flex flex-col w-1/8 h-fit">
           <div className="flex flex-col gap-4 max-w-xl mt-40 pl-12 sm:pl-32 md:pl-40">
-            <Text textType="heading-sm" textWeight="bold" className="whitespace-nowrap overflow-visible">
+            <Text textType="heading-lg" textWeight="bold" className="whitespace-nowrap overflow-visible">
               Last year, we had...
             </Text>
+          </div>
+          <div className="relative flex flex-col w-[100vw] overflow-visible">
+            <Image src={AboutFountain} alt="Fountain" className="absolute top-[100px] left-0 z-0" />
           </div>
         </div>
         <div className="relative flex flex-col w-full">
