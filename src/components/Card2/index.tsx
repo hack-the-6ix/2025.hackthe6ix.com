@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import { ElementType, PolyComponentPropsWithRef } from 'react';
 import cn from 'classnames';
 import { Color } from '@/styles';
@@ -12,7 +15,7 @@ export type CardProps<T extends ElementType> = PolyComponentPropsWithRef<
     borderColor?: Color; // there's framePurple, frameBrown, frameBlack
     contentColor?: Color;
     contentBackground?: string;
-    type?: 'desktop' | 'phone'; // the frame thickness is different for each type :')
+    padding?: number;
   }
 >;
 
@@ -20,16 +23,28 @@ export default function Card2<T extends ElementType = 'div'>({
   borderColor = 'framePurple',
   contentColor = 'white',
   contentBackground,
-  type = 'desktop',
+  padding = 0,
   children,
   as,
   ...props
 }: CardProps<T>) {
-  const typeThickness = new Map([
-    ['phone', 18],
-    ['desktop', 28],
-  ]);
-  const thickness = typeThickness.get(type) ?? 28;
+  const [thickness, setThickness] = useState(28);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setThickness(18);
+      } else {
+        setThickness(28);
+      }
+    };
+    // mount
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    //unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <Flex direction="row" justify="center">
@@ -100,6 +115,8 @@ export default function Card2<T extends ElementType = 'div'>({
             backgroundColor:
               contentColor ? `var(--${contentColor})` : undefined,
             zIndex: 1,
+                      ...props.style,
+            '--card-offset': padding,
           }}
         >
           {children}
@@ -153,7 +170,7 @@ export default function Card2<T extends ElementType = 'div'>({
           borderContentColor={borderColor as Color}
           direction="vertical"
           length={`calc(98% - ${2.5 * thickness}px)`}
-          thickness={typeThickness.get(type)}
+          thickness={thickness}
           style={{ zIndex: 2 }}
         />
       </Flex>

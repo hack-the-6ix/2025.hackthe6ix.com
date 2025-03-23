@@ -2,30 +2,47 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Button from '@/components/Button';
 import Input from '@/components/Input';
 import Text from '@/components/Text';
 import ContactStatue from '../../assets/contact-statue.svg';
+import HeartEmpty from '../../assets/heart-empty.svg';
+import HeartFull from '../../assets/heart-full.svg';
 import './styles.css';
+import Card from '@/components/Card';
 
 export default function About() {
   const [rating, setRating] = useState(0);
+  const [clickedIndex, setClickedIndex] = useState<number | null>(null);
+
+  const handleClick = (index: number) => {
+    setRating(index + 1);
+    setClickedIndex(index + 1);
+    setTimeout(() => setClickedIndex(null), 300);
+  };
 
   return (
     <>
-      <div className="bg-white w-screen h-screen "></div>
       <section className="bg-[#062938] w-[100vw] h-[100vh] flex flex-row items-center">
-        <div className="flex flex-col gap-8 mx-24 w-[50%]">
-          <Text textType="heading-lg" textColor="white" textWeight="bold">
+        <div className="flex flex-col gap-8 sm:mx-24 mx-16 sm:w-[50%] w-full">
+          <Text
+            textType="heading-lg"
+            textColor="white"
+            textWeight="bold"
+            className="sm:text-start text-center"
+          >
             Still Have Questions?
           </Text>
-          <Text textType="paragraph-lg" textColor="white">
+          <Text
+            textType="paragraph-lg"
+            textColor="white"
+            className="sm:text-start text-center"
+          >
             Send your question our way and we'll get back to you as soon as
             possible!
           </Text>
           <div className="flex flex-col gap-4">
-            <div className="flex flex-row gap-8 w-full">
-              <div className="w-1/2">
+            <div className="flex sm:flex-row flex-col sm:gap-8 gap-4 w-full">
+              <div className="sm:w-1/2 w-full">
                 <Text
                   textType="paragraph-sm"
                   textColor="white"
@@ -44,7 +61,7 @@ export default function About() {
                   Assistive/Descriptive Text
                 </Text>
               </div>
-              <div className="w-1/2 gap-0">
+              <div className="sm:w-1/2 gap-0 w-full">
                 <Text
                   textType="paragraph-sm"
                   textColor="white"
@@ -64,8 +81,8 @@ export default function About() {
                 </Text>
               </div>
             </div>
-            <div className="flex flex-row gap-8 w-full justify-center items-center">
-              <div className="flex-grow">
+            <div className="flex sm:flex-row flex-col sm:gap-8 gap-4 w-full justify-center sm:items-center">
+              <div className="flex-grow sm:w-auto w-full">
                 <Text
                   textType="paragraph-sm"
                   textColor="white"
@@ -84,29 +101,56 @@ export default function About() {
                   Assistive/Descriptive Text
                 </Text>
               </div>
-              <button className="bg-[#406FAA] text-white border-4 border-[#24211E] px-4 h-[50px]">Primary Button</button>
+              <Card
+                pixelSize={4}
+                radius={4}
+                borderWidth={1}
+                padding={14}
+                borderColor="shades-100"
+                backgroundColor="#406FAA"
+              >
+                <Text
+                  textType={'label'}
+                  textColor="white"
+                  textWeight="bold"
+                  className="mx-2"
+                >
+                  Send Message
+                </Text>
+              </Card>
             </div>
           </div>
-          <div className="flex flex-row gap-8 items-center">
-            <Text textType="paragraph-lg" textColor="white">
+          <div className="flex sm:flex-row flex-col gap-8 items-center">
+            <Text
+              textType="paragraph-lg"
+              textColor="white"
+              className="sm:text-start text-center"
+            >
               How was your experience with our website?
             </Text>
             <div className="flex gap-2 items-center">
               {Array.from({ length: 5 }).map((_, index) => (
                 <span
                   key={index}
-                  className={`cursor-pointer text-2xl transition-transform duration-200 ${
-                    index < rating ? 'text-red-500 scale-150' : 'text-gray-400'
-                  }`}
-                  onClick={() => setRating(index + 1)}
+                  className={`cursor-pointer text-2xl transition-transform duration-200 
+                  ${clickedIndex && clickedIndex > index ? 'animate-scale' : ''}`}
+                  onClick={() => handleClick(index)}
                 >
-                  ❤️
+                  {index < rating ?
+                    <Image src={HeartFull} alt="Heart" width={30} height={30} />
+                  : <Image
+                      src={HeartEmpty}
+                      alt="Heart"
+                      width={30}
+                      height={30}
+                    />
+                  }
                 </span>
               ))}
             </div>
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="sm:flex items-center hidden">
           <div className="flex justify-center items-center absolute right-16 w-[25%]">
             <Image
               src={ContactStatue}
