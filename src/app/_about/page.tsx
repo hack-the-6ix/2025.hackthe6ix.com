@@ -7,17 +7,15 @@ import LilyPad1 from '@/assets/lily-pad-1.svg';
 import LilyPad2 from '@/assets/lily-pad-2.svg';
 import LilyPad3 from '@/assets/lily-pad-3.svg';
 import LilyPad4 from '@/assets/lily-pad-4.svg';
+import LilyPad5 from '@/assets/lily-pad-5.svg';
 import AboutPond from '@/assets/about-pond.svg';
 import AboutFountain from '@/assets/about-fountain.svg';
 
 
 export default function About() {
   return (
-    <section className="bg-[#cfedaf] relative overflow-x-hidden w-full h-[2000px]">
-            {/* <Text textType="heading-lg" as="h2">
-        About
-      </Text> */}
-      
+    <section className="bg-[#cfedaf] relative overflow-x-hidden w-full h-fit">
+
       {/* "main" content */}
       <div className="flex flex-col relative">
         <div className="p-12 sm:p-32 md:p-40 z-20">
@@ -79,6 +77,12 @@ export default function About() {
               <div className="relative flex flex-col items-center justify-center">
                 <Image src={LilyPad4} alt="Lily Pad" className="md:w-[100%] md:h-[100%] sm:w-[80%] sm:h-[80%] w-[70%] h-[70%]" />
                 <Text textType="heading-sm" textWeight="regular" className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"><span className="font-extrabold">$15k</span>In Prizes</Text>
+              </div>
+            </div>
+            <div className="absolute flex top-[84%] right-[8%]">
+              <div className="relative flex flex-col items-center justify-center">
+                <Image src={LilyPad5} alt="Lily Pad" className="md:w-[100%] md:h-[100%] sm:w-[80%] sm:h-[80%] w-[70%] h-[70%]" />
+                <Text textType="heading-sm" textWeight="regular" className="absolute inset-0 flex flex-col ml-8 p-8 text-center text-[#3E2523] text-[16px] md:text-[40px]"><span className="font-extrabold">15</span>Mentors</Text>
               </div>
             </div>
           </div>
