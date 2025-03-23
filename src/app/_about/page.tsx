@@ -3,13 +3,16 @@ import Image from 'next/image';
 import AboutTrees from '@/assets/about-trees-1.svg';
 import AboutGroup from '@/assets/about-group-1.svg';
 import AboutGroup2 from '@/assets/about-group-2.svg';
-import AboutImage1 from '@/assets/about_image_1.svg';
-import AboutImage2 from '@/assets/about_image_2.svg';
+import LilyPad1 from '@/assets/lily-pad-1.svg';
+import LilyPad2 from '@/assets/lily-pad-2.svg';
+import LilyPad3 from '@/assets/lily-pad-3.svg';
+import LilyPad4 from '@/assets/lily-pad-4.svg';
+import AboutPond from '@/assets/about-pond.svg';
 
 
 export default function About() {
   return (
-    <section className="bg-[#cfedaf] relative overflow-x-hidden w-full">
+    <section className="bg-[#cfedaf] relative overflow-x-hidden w-full h-[2000px]">
         <Image src={AboutTrees} alt="Trees" className="absolute top-[280px] left-0 z-0" />
         <Image src={AboutGroup} alt="Group" className="absolute top-[550px] right-0 z-0" />
         <Image src={AboutGroup2} alt="Group" className="absolute top-[350px] right-0 z-0" />
@@ -41,6 +44,35 @@ export default function About() {
           </Text>
         </div>
       </div>
+        <div className="relative flex flex-col w-full">
+          <div className="absolute right-0 flex flex-col items-center justify-center h-fit w-fit pl-8 sm:p-0 md:p-0">
+            <Image src={AboutPond} alt="Pond" className="" />
+            <div className="absolute flex top-[36%] left-[36%]">
+              <div className="relative flex flex-col items-center justify-center">
+                <Image src={LilyPad1} alt="Lily Pad" className="md:w-[100%] md:h-[100%] sm:w-[80%] sm:h-[80%] w-[70%] h-[70%]" />
+                <Text textType="heading-sm" textWeight="regular" className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"><span className="font-extrabold">197</span>Schools</Text>
+              </div>
+            </div>
+            <div className="absolute flex top-[56%] left-[12%]">
+              <div className="relative flex flex-col items-center justify-center">
+                <Image src={LilyPad2} alt="Lily Pad" className="md:w-[100%] md:h-[100%] sm:w-[80%] sm:h-[80%] w-[70%] h-[70%]" />
+                <Text textType="heading-sm" textWeight="regular" className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"><span className="font-extrabold">440+</span>Hackers</Text>
+              </div>
+            </div>
+            <div className="absolute flex top-[72%] left-[32%]">
+              <div className="relative flex flex-col items-center justify-center">
+                <Image src={LilyPad3} alt="Lily Pad" className="md:w-[100%] md:h-[100%] sm:w-[80%] sm:h-[80%] w-[70%] h-[70%]" />
+                <Text textType="heading-sm" textWeight="regular" className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"><span className="font-extrabold">68</span>Projects</Text>
+              </div>
+            </div>
+            <div className="absolute flex top-[52%] left-[63%]">
+              <div className="relative flex flex-col items-center justify-center">
+                <Image src={LilyPad4} alt="Lily Pad" className="md:w-[100%] md:h-[100%] sm:w-[80%] sm:h-[80%] w-[70%] h-[70%]" />
+                <Text textType="heading-sm" textWeight="regular" className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"><span className="font-extrabold">$15k</span>In Prizes</Text>
+              </div>
+            </div>
+          </div>
+        </div>
     </section>
   );
 }
