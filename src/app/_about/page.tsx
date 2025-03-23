@@ -41,14 +41,15 @@ export default function About() {
             <Image src={AboutGroup2} alt="Group" className="absolute top-[-250px] right-0 z-0" />
           </div>
         </div>
-        <div className="px-12 sm:px-32 md:px-40">
-          <div className="flex flex-col gap-4 max-w-xl mt-40">
-            <Text textType="heading-sm" textWeight="bold">
+      </div>
+      <div className="flex flex-row">
+      <div className="flex flex-col w-1/8">
+          <div className="flex flex-col gap-4 max-w-xl mt-40 pl-12 sm:pl-32 md:pl-40">
+            <Text textType="heading-sm" textWeight="bold" className="whitespace-nowrap overflow-visible">
               Last year, we had...
             </Text>
           </div>
         </div>
-      </div>
         <div className="relative flex flex-col w-full">
           <div className="absolute right-0 flex flex-col items-center justify-center h-fit w-fit pl-8 sm:p-0 md:p-0">
             <Image src={AboutPond} alt="Pond" className="" />
@@ -78,6 +79,7 @@ export default function About() {
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 }
