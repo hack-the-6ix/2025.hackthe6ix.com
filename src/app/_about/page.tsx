@@ -13,35 +13,40 @@ import AboutPond from '@/assets/about-pond.svg';
 export default function About() {
   return (
     <section className="bg-[#cfedaf] relative overflow-x-hidden w-full h-[2000px]">
-        <Image src={AboutTrees} alt="Trees" className="absolute top-[280px] left-0 z-0" />
-        <Image src={AboutGroup} alt="Group" className="absolute top-[550px] right-0 z-0" />
-        <Image src={AboutGroup2} alt="Group" className="absolute top-[350px] right-0 z-0" />
-      {/* <Text textType="heading-lg" as="h2">
+            {/* <Text textType="heading-lg" as="h2">
         About
       </Text> */}
       
       {/* "main" content */}
-      <div className="z-20 flex flex-col p-40 relative">
-        <div className="flex flex-col gap-4 max-w-[760px]">
-          <Text textType="heading-lg" textWeight="bold" className="max-w-[600px]">
-            Join us for an unforgettable weekend
-          </Text>
-          <Text textType="paragraph-lg">
-          Hack the 6ix is the largest summer student-run, not-for-profit hackathon based in Toronto, now in its 11th iteration.
-          </Text>
-          <Text textType="paragraph-lg">
-            We take pride in the diversity and talent of our hackers, who help us become a key player in the Toronto tech environment. As such, we provide an outlet for students to present their ideas of the future.
-          </Text>
+      <div className="flex flex-col relative">
+        <div className="p-12 sm:p-32 md:p-40 z-20">
+          <div className="flex flex-col gap-4 max-w-[760px]">
+            <Text textType="heading-lg" textWeight="bold" className="max-w-[600px]">
+              Join us for an unforgettable weekend
+            </Text>
+            <Text textType="paragraph-lg">
+            Hack the 6ix is the largest summer student-run, not-for-profit hackathon based in Toronto, now in its 11th iteration.
+            </Text>
+            <Text textType="paragraph-lg">
+              We take pride in the diversity and talent of our hackers, who help us become a key player in the Toronto tech environment. As such, we provide an outlet for students to present their ideas of the future.
+            </Text>
+          </div>
         </div>
-
-        <div className="h-[500px]">
-
+        <div className="flex flex-col gap-80 sm:gap-0 sm:flex-row md:flex-row flex-wrap w-[100vw] h-[400px]">
+          <div className="relative flex md:w-1/3 w-full h-full">
+            <Image src={AboutTrees} alt="Trees" className="absolute top-[-260px] w-[240px] sm:w-[320px] md:w-[418px] left-0 z-0" />
+          </div>
+          <div className="relative flex md:w-2/3 w-full h-full">
+            <Image src={AboutGroup} alt="Group" className="absolute right-0 z-0" />
+            <Image src={AboutGroup2} alt="Group" className="absolute top-[-250px] right-0 z-0" />
+          </div>
         </div>
-
-        <div className="flex flex-col gap-4 max-w-xl">
-          <Text textType="heading-sm" textWeight="bold">
-            Last year, we had...
-          </Text>
+        <div className="px-12 sm:px-32 md:px-40">
+          <div className="flex flex-col gap-4 max-w-xl mt-40">
+            <Text textType="heading-sm" textWeight="bold">
+              Last year, we had...
+            </Text>
+          </div>
         </div>
       </div>
         <div className="relative flex flex-col w-full">
