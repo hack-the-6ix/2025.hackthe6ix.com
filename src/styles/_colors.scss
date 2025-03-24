@@ -115,6 +115,14 @@ $_primitives: (
   frameSpecialBrown:(
     100: #F5BA7A,
     200: #C4773D,
+  ),
+  faqButton:(
+    500: #406FAA,
+    600: #2F5D96,
+    700: #214B80,
+  ),
+  faqQuestion:(
+    100: #736387,
   )
 );
 
@@ -141,6 +149,8 @@ $core: (
   framePurple: getColorVar(framePurple, 500),
   frameBlack: getColorVar(frameBlack, 500),
   frameSpecialBrown: getColorVar(frameSpecialBrown, 100),
+  faqButton: getColorVar(faqButton, 500),
+  faqQuestion: getColorVar(faqQuestion, 100),
 );
 
 @mixin init {
