@@ -19,6 +19,7 @@ export type CardProps<T extends ElementType> = PolyComponentPropsWithRef<
     borderRightColor?: Color;
     borderTopColor?: Color;
     borderBottomColor?: Color;
+    onHover?: string;
   }
 >;
 
