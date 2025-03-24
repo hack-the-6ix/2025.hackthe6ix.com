@@ -105,7 +105,7 @@ export default function About() {
                 pixelSize={4}
                 radius={4}
                 borderWidth={1}
-                padding={14}
+                padding={6}
                 borderColor="shades-100"
                 backgroundColor="#406FAA"
               >

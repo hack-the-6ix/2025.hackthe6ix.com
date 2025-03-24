@@ -81,6 +81,7 @@ export default function Hero() {
   }, []);
 
   return (
+    <>
     <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#e5eeda] to-[#cfedaf] overflow-hidden overflow-x-hidden">
       <div className="relative z-10 flex flex-col items-center text-center sm:gap-6 gap-0">
         <Text
@@ -151,7 +152,7 @@ export default function Hero() {
             pixelSize={4}
             radius={4}
             borderWidth={1}
-            padding={12}
+            padding={4}
             borderColor="shades-100"
             backgroundColor="#74A600"
             className="sm:w-auto w-full"
@@ -167,7 +168,6 @@ export default function Hero() {
           </Card>
         </div>
       </div>
-
       <Image
         src={HeroPatchTwo}
         alt="Patch"
@@ -226,5 +226,8 @@ export default function Hero() {
         />
       ))}
     </section>
+    <div className="sm:h-[300px] h-0 w-full bg-[#cfedaf]"></div>
+
+    </>
   );
 }
