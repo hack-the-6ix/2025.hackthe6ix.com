@@ -3453,9 +3453,9 @@
     <use href="#brick-group" transform="translate(1824, 0)"/>
   </g>
 
-  <use href="#brick-row" transform="translate(20, 0)"/>
-  <use href="#brick-row" transform="translate(-20, 398)"/>
-  <use href="#brick-row" transform="translate(20, 796)"/>
-  <use href="#brick-row" transform="translate(-20, 1194)"/>
-  <use href="#brick-row" transform="translate(20, 1592)"/>
+  <use href="#brick-row" transform="translate(30, 0)"/>
+  <use href="#brick-row" transform="translate(-30, 398)"/>
+  <use href="#brick-row" transform="translate(30, 796)"/>
+  <use href="#brick-row" transform="translate(-30, 1194)"/>
+  <use href="#brick-row" transform="translate(30, 1592)"/>
 </svg>
