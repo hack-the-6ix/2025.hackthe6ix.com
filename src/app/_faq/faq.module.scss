@@ -1,0 +1,140 @@
+.faq{
+  background:  #12314A;
+  padding-top: 330px;
+  padding-bottom: 700px;
+}
+
+.card{
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.wrapper{
+  position: relative;
+}
+
+.faqContainer {
+    max-width: 80rem; /* Adjust as needed */
+    width: 90%;
+    margin: 0 auto; /* Centers it */
+    text-align: center;
+  }
+
+  .qaContainer {
+    max-width: 70rem; /* Adjust as needed */
+  }
+
+  
+.faqItem {
+    max-width: 22rem;
+
+}
+  
+  /* Responsive: 1 item per row on smaller screens */
+  @media (max-width: 768px) {
+    .faqItem {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+
+.alignleft{
+    text-align: left;
+}
+
+.questionBox{
+    min-width: 25rem;
+}
+
+.answers{
+    max-width: 20rem;
+}
+.cardcontent{
+  padding: 10px;
+}
+
+
+%assets {
+  position: absolute;
+ 
+}
+
+.thing{
+  position: absolute;
+  top: -330px;
+  z-index: 10;
+
+}
+
+
+.ledge{
+  @extend %assets;
+  left: 0; 
+  bottom: 55%;
+
+}
+
+.bat {
+  @extend %assets;
+ 
+
+  z-index: 1;
+  // animation: flyBat 30s ease-in-out infinite 
+}
+
+.batBob{
+  position: absolute;
+  left:80%;
+  bottom: 10px;
+  z-index: 1;
+  animation: bobbing 2s ease-in-out infinite;
+}
+
+@keyframes bobbing {
+  0%, 100% {
+    transform: translateY(0); /* No vertical movement at the start and end */
+  }
+  50% {
+    transform: translateY(-15px); /* Bobbing upward */
+  }
+}
+
+@keyframes flyBat {
+  0% {
+    right: 0; /* Start from the right */
+    top: 30%; 
+    transform: translateX(0%) rotate(0deg); 
+  }
+
+  50% {
+    right: 0%;
+    top: 30%;
+    transform: translateX(-50%) rotate(0); 
+  }
+
+  55% {
+    right: 82%; 
+    top: 120%;
+    transform: translateX(-50%) rotate(360deg); 
+  }
+
+  95% {
+    right: 82; 
+    top: 120%;
+    transform: translateX(0%) rotate(360deg); 
+  }
+  100% {
+    right: 0; 
+    top: 30%;
+    transform: translateX(0%) rotate(0deg); 
+  }
+}
+
+
+
+.bug_on_rock {
+  position: absolute;
+  bottom: 150px;
+  left: 85%;
+}
