@@ -24,7 +24,6 @@ export default function Button<T extends ElementType = 'button'>({
   borderColor,
   contentColor,
   buttonPadding = 0,
-  backgroundColor = "#fff",
   children,
   as,
   ...props
@@ -40,7 +39,7 @@ export default function Button<T extends ElementType = 'button'>({
       radius={radius as number}
       borderColor={borderColor as Color}
       padding={buttonPadding as number}
-      backgroundColor={`var(--${contentColor}-${level})`}
+      backgroundColor={'#ffffff00'}
       style={{
         ...props.style,
         '--content-color': `var(--${contentColor}-${level})`,

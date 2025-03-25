@@ -52,7 +52,7 @@ export default function Sponsors() {
               className="z-5 -translate-y-3/20 hidden md:block w-6 md:w-13 2xl:w-18"
             />
           </div>
-          <div className="flex flex-col items-center w-full h-full gap-16 pt-8 pb-16 md:pt-60 md:pb-60 2xl:pb-51">
+          <div className="flex flex-col items-center w-full h-full gap-16 pt-8 pb-31 md:pt-60 md:pb-56 2xl:pb-46">
             <BecomeSponsor />
             <PartnershipInfo />
           </div>

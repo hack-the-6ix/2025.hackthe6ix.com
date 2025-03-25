@@ -3,15 +3,15 @@
 @layer button {
 
   .content {
-    background-color: var(--content-color,rgb(248, 0, 0));
+    background-color: var(--content-color);
   }
 
   .content:hover{
-    background-color: var(--content-color-hover,rgb(255, 0, 0));
+    background-color: var(--content-color-hover);
     cursor: pointer;
   }
 
   .content:active {
-    background-color: var(--content-color-active,rgb(255, 0, 0));
+    background-color: var(--content-color-active);
   }
 }
