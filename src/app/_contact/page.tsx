@@ -22,7 +22,7 @@ export default function About() {
 
   return (
     <>
-      <section className="bg-[#062938] w-[100vw] h-[100vh] flex flex-row items-center">
+      <section className=" w-[100vw] h-[100vh] flex flex-row items-center">
         <div className="flex flex-col gap-8 sm:mx-24 mx-16 sm:w-[50%] w-full">
           <Text
             textType="heading-lg"

@@ -60,10 +60,6 @@ export default function Card<T extends ElementType = 'div'>({
         backgroundColor: borderColor ? `var(--${borderColor})` : undefined,
       }}
     >
-      <div
-        className={cn(props.className, styles.content)}
-        style={{ '--card-inner-color': backgroundColor } as React.CSSProperties}
-      >
         <div
           className={styles.borderTop}
           style={{
@@ -92,6 +88,11 @@ export default function Card<T extends ElementType = 'div'>({
               borderLeftColor ? `var(--${borderLeftColor})` : undefined,
           }}
         />
+
+      <div
+        className={cn(props.className, styles.content)}
+        style={{ '--card-inner-color': backgroundColor } as React.CSSProperties}
+      >
         <div
           className={styles.content}
           style={

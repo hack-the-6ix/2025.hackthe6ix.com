@@ -17,3 +17,13 @@ body {
     font-size: 12.8px;
   }
 }
+
+/* styles.css */
+.custom-gradient {
+  background: linear-gradient(
+    to bottom,
+    #2C4374 0%,
+    #193656 28%,
+    #062938 100%
+  );
+}

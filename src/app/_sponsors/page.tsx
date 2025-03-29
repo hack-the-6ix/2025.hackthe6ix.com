@@ -12,6 +12,7 @@ import LeftBrickCorner from '../../assets/left-brick-corner.svg';
 import RightBrickCorner from '../../assets/right-brick-corner.svg';
 import RockGround from '../../assets/rock-ground.svg';
 import RockTop from '../../assets/rock-top.svg';
+import Stalagmite from '../../assets/stalagmites.svg';
 import BecomeSponsor from './becomeSponsor';
 import LogoGrid from './logoGrid';
 import PartnershipInfo from './partnershipInfo';
@@ -68,7 +69,7 @@ export default function Sponsors() {
         </div>
       </div>
       {/* Second section with a dark background and grainy pattern */}
-      <div className="relative flex flex-col items-center w-full bg-[#191919] bg-[url('/grainy-background.png')] pb-60 md:pb-100 2xl:pb-110">
+      <div className="relative flex flex-col items-center w-full bg-[#191919] bg-[url('/grainy-background.png')] pb-60 md:pb-125 2xl:pb-1130">
         <div className="flex flex-row w-full">
           <Image
             src={LeftBrickCorner}
@@ -136,14 +137,14 @@ export default function Sponsors() {
           />
         </div>
         {/* Background elements like the rock ground and fireflies */}
-        <div className="absolute justify-center w-[110%] z-15 top-7/10 lg:top-11/20 2xl:top-9/20">
+        <div className="absolute justify-center w-[110%] z-[10] top-7/10 lg:top-11/20 2xl:top-9/20">
           <Image
             src={RockGround}
             alt="Rock Ground"
             width={500}
             height={500}
             layout="intrinsic"
-            className="relative w-full"
+            className="relative w-full z-[10]"
           />
           <Image
             src={Firefly}
@@ -169,6 +170,11 @@ export default function Sponsors() {
             layout="intrinsic"
             className={`absolute w-[8%] z-10 top-[15%] left-[80%] ${styles.firefly3}`}
           />
+          <Image
+            src={Stalagmite}
+            alt="stalagmites"
+            className=" w-[90%] absolute top-[75%] left-[4.5%]"
+          ></Image>
         </div>
       </div>
     </section>

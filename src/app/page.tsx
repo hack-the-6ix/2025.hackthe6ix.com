@@ -11,9 +11,12 @@ export default function LandingPage() {
       <Hero />
       <About />
       <Sponsors />
+      <div className="custom-gradient">
       <Showcase />
       <FAQ />
       <Contact />
+      </div>
+
     </main>
   );
 }

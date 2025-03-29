@@ -1,7 +1,12 @@
+@use '@/styles/mixins';
+
 .faq{
-  background:  #12314A;
   padding-top: 330px;
   padding-bottom: 700px;
+  @include mixins.media(mobile) {
+    padding-bottom: 20px;
+    padding-top: 160px;
+  }
 }
 
 .card{
@@ -19,6 +24,9 @@
     width: 90%;
     margin: 0 auto; /* Centers it */
     text-align: center;
+    @include mixins.media(mobile) {
+      max-width: 300rem;
+    }
   }
 
   .qaContainer {
@@ -64,7 +72,9 @@
   position: absolute;
   top: -330px;
   z-index: 10;
-
+  @include mixins.media(mobile) {
+    display: none
+  }
 }
 
 
@@ -77,10 +87,10 @@
 
 .bat {
   @extend %assets;
- 
-
   z-index: 1;
+
   // animation: flyBat 30s ease-in-out infinite 
+
 }
 
 .batBob{
@@ -89,6 +99,11 @@
   bottom: 10px;
   z-index: 1;
   animation: bobbing 2s ease-in-out infinite;
+  @include mixins.media(mobile) {
+    width: 20%;
+    height: auto;
+    left:70%;
+  }
 }
 
 @keyframes bobbing {
@@ -131,10 +146,39 @@
   }
 }
 
+.buttons {
+
+
+  // For mobile screens (small devices like phones)
+  @include mixins.media(mobile) {
+    flex-direction: row;  // Stack buttons vertically on small screens
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; // Or use a variable for 'huge' gap size
+    flex-wrap: wrap; // Allow buttons to wrap to the next row if necessary
+
+    gap: 1rem; // Adjust the gap for mobile screens
+  }
+
+  .button {
+    min-width: 150px;// Default width for larger screens
+    @include mixins.media(mobile) {
+      margin-bottom: 0.5rem; // Add spacing between stacked buttons on mobile, if needed      margin-bottom: 1rem; // Add spacing between stacked buttons
+    }
+  }
+}
 
 
 .bug_on_rock {
   position: absolute;
   bottom: 150px;
   left: 85%;
+  @include mixins.media(mobile) {
+    width: 20%;
+    height: auto;
+    bottom: -200px;
+    left:80%;
+  }
 }

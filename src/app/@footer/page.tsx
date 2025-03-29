@@ -3,7 +3,7 @@ import Text from '@/components/Text';
 
 export default function Footer() {
   return (
-    <Container as="footer" className="bg-[#062938]">
+    <Container as="footer">
       <div className="bg-[#062938] w-full flex flex-col sm:p-12 p-6">
         <Text textType="heading-sm" textColor="white" className="sm:mb-6 mb-3">
           HACK THE 6IX

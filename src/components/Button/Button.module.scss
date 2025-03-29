@@ -11,9 +11,14 @@
     cursor: pointer;
   }
 
-  .content:active {
+  .content:active{
     background-color: var(--content-color-active);
   }
+
+  .content.selected {
+    background-color: var(--content-color-active); /* Ensure the active color stays */
+  }
+
   /* Full-size wrapper to ensure background covers everything */
   .inner {
     width: 100%;

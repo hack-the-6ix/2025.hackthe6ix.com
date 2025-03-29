@@ -120,9 +120,22 @@ $_primitives: (
     500: #406FAA,
     600: #2F5D96,
     700: #214B80,
+    800: #214B80,
   ),
   faqQuestion:(
     100: #736387,
+  ),
+  showCaseButton:(
+    500: #A2774D,
+    600: #CC9764,
+    700: #EBA867,
+    800: #EBA867,
+  ),
+  seeProjectsButton:(
+    500: #6D4A41,
+    600: #4F352F,
+    700: #3D2924,
+
   )
 );
 
@@ -151,6 +164,8 @@ $core: (
   frameSpecialBrown: getColorVar(frameSpecialBrown, 100),
   faqButton: getColorVar(faqButton, 500),
   faqQuestion: getColorVar(faqQuestion, 100),
+  showCaseButton: getColorVar(showCaseButton, 500),
+  seeProjectsButton: getColorVar(seeProjectsButton,500),
 );
 
 @mixin init {

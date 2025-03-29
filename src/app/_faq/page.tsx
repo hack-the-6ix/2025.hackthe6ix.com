@@ -166,6 +166,8 @@ export default function FAQ() {
               onClick={() => setActive(idx)}
               contentColor='faqButton'
               borderColor='frameBlack'
+              buttonDarker={active === idx}
+              className={styles.button}
             >
             <div className={styles.card}>
 

@@ -14,6 +14,8 @@ export type ButtonProps<T extends ElementType> = PolyComponentPropsWithRef<
     contentColor?: Color;
     buttonPadding?: number;
     backgroundColor?: string;
+    buttonDarker?: boolean;
+
   }
 >;
 
@@ -25,10 +27,11 @@ export default function Button<T extends ElementType = 'button'>({
   contentColor,
   buttonPadding = 0,
   children,
+  buttonDarker,
   as,
   ...props
 }: ButtonProps<T>) {
-  const level = 500;
+  const level = buttonDarker ? 700 : 500;
   return (
     <Card
       {...props}
