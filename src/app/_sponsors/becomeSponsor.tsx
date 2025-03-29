@@ -65,7 +65,7 @@ export default function BecomeSponsor() {
                 borderColor="neutral-900"
                 radius={4}
                 borderWidth={2}
-                buttonPadding={18}
+                buttonPadding={8}
                 onClick={(e) => {
                   window.location.href =
                     'mailto:sponsor@hackthe6ix.com?subject=Interest in Sponsoring Hack the 6ix';
