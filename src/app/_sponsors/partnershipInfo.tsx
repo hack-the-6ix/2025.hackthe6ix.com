@@ -14,7 +14,6 @@ export default function PartnershipInfo() {
         alt="Anvil"
         width={0}
         height={0}
-        layout="intrinsic"
         className="-translate-x-1/5 z-5 w-31 md:w-62 2xl:w-66"
       />
       {/* Card displaying sponsor information with custom background */}

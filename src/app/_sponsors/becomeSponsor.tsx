@@ -31,7 +31,6 @@ export default function BecomeSponsor() {
           alt="Candle"
           width={94}
           height={277}
-          layout="intrinsic"
           className="translate-y-1/5 hidden md:block"
         />
         {/* Card displaying sponsor details and call-to-action */}
@@ -88,7 +87,6 @@ export default function BecomeSponsor() {
           alt="Candle"
           width={94}
           height={277}
-          layout="intrinsic"
           className="translate-y-1/5 hidden md:block"
         />
       </div>

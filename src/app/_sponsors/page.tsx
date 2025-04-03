@@ -30,7 +30,6 @@ export default function Sponsors() {
           alt="Top rocks"
           width={500}
           height={500}
-          layout="intrinsic"
           className="absolute w-full z-10 -translate-y-6/10"
         />
         {/* Sponsor-related information area */}
@@ -41,7 +40,6 @@ export default function Sponsors() {
               alt="Chain"
               width={500}
               height={500}
-              layout="intrinsic"
               className="z-5 w-6 md:w-13 2xl:w-18"
             />
             <Image
@@ -49,7 +47,6 @@ export default function Sponsors() {
               alt="Chain"
               width={500}
               height={500}
-              layout="intrinsic"
               className="z-5 -translate-y-3/20 hidden md:block w-6 md:w-13 2xl:w-18"
             />
           </div>
@@ -63,7 +60,6 @@ export default function Sponsors() {
             alt="Chain"
             width={500}
             height={500}
-            layout="intrinsic"
             className="absolute right-4/100 top-1/75 md:top-1/25 z-5 w-6 md:w-13 2xl:w-18"
           />
         </div>
@@ -76,7 +72,6 @@ export default function Sponsors() {
             alt="Left Brick Corner"
             width={500}
             height={500}
-            layout="intrinsic"
             className="items-start z-11 w-30 md:w-60 2xl:w-65"
           />
           <Image
@@ -84,7 +79,6 @@ export default function Sponsors() {
             alt="Right Brick Corner"
             width={500}
             height={500}
-            layout="intrinsic"
             className="ml-auto z-11 w-30 md:w-60 2xl:w-65"
           />
         </div>
@@ -95,7 +89,6 @@ export default function Sponsors() {
             alt="Axe Chain"
             width={500}
             height={500}
-            layout="intrinsic"
             className="items-start z-10 pl-10 w-37 2xl:w-40 hidden md:block"
           />
           <Image
@@ -103,7 +96,6 @@ export default function Sponsors() {
             alt="Axe"
             width={500}
             height={500}
-            layout="intrinsic"
             className="items-start z-10 pl-15 w-32 -translate-y-1/3 md:hidden"
           />
           {haveSponsors ?
@@ -124,7 +116,6 @@ export default function Sponsors() {
             alt="Chain 2"
             width={500}
             height={500}
-            layout="intrinsic"
             className="ml-auto z-10 pr-15 w-25 2xl:w-27 hidden md:block"
           />
           <Image
@@ -132,7 +123,6 @@ export default function Sponsors() {
             alt="Chain 3"
             width={500}
             height={500}
-            layout="intrinsic"
             className="ml-auto z-10 pr-3 w-10 md:hidden"
           />
         </div>
@@ -143,7 +133,6 @@ export default function Sponsors() {
             alt="Rock Ground"
             width={500}
             height={500}
-            layout="intrinsic"
             className="relative w-full z-[10]"
           />
           <Image
@@ -151,7 +140,6 @@ export default function Sponsors() {
             alt="Firefly"
             width={500}
             height={500}
-            layout="intrinsic"
             className={`absolute w-[8%] z-10 top-[18%] left-[7%] ${styles.firefly1}`}
           />
           <Image
@@ -159,7 +147,6 @@ export default function Sponsors() {
             alt="Firefly"
             width={500}
             height={500}
-            layout="intrinsic"
             className={`absolute w-[8%] z-10 top-[30%] left-[67%] ${styles.firefly2}`}
           />
           <Image
@@ -167,7 +154,6 @@ export default function Sponsors() {
             alt="Firefly"
             width={500}
             height={500}
-            layout="intrinsic"
             className={`absolute w-[8%] z-10 top-[15%] left-[80%] ${styles.firefly3}`}
           />
           <Image
