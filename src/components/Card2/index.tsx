@@ -115,7 +115,7 @@ export default function Card2<T extends ElementType = 'div'>({
             backgroundColor:
               contentColor ? `var(--${contentColor})` : undefined,
             zIndex: 1,
-                      ...props.style,
+            ...props.style,
             '--card-offset': padding,
           }}
         >

@@ -18,6 +18,7 @@ import gold_proj from './assets/gold_proj.png';
 import silver from './assets/silver.png';
 import silver_proj from './assets/silver_proj.png';
 import styles from './showcase.module.scss';
+
 interface Project {
   type: string;
   image: StaticImageData;
@@ -35,7 +36,7 @@ export default function Showcase() {
     link: 'https://devpost.com/software/pokeplants?_gl=1*164glal*_gcl_au*MjA3MDI1OTM1NC4xNzM3ODQzMTQ1*_ga*MTI5NTE3OTMzLjE3MDk2NzMwNTc.*_ga_0YHJK3Y10M*MTc0MTU0MTc1MS42Ni4xLjE3NDE1NDI0OTMuMC4wLjA.',
   });
 
-  const see_all_proj_link = 
+  const see_all_proj_link =
     'https://hackthe6ix2024.devpost.com/project-gallery';
 
   const handleButtonClick = (project: string) => {
@@ -81,18 +82,16 @@ export default function Showcase() {
             Explore previous projects
           </Text>
         </Flex>
-
       </Flex>
       <Flex direction="column" align="center">
         <Flex className={styles.wrapper}>
           <Flex className={styles.wrappermedal}>
             <Flex direction="row" className={styles.medals}>
               <Card3 borderColor="frameBrown" padding={0} className="py-2">
-
                 <Button
                   borderWidth={0}
                   onClick={() => handleButtonClick('gold')}
-                  contentColor='showCaseButton'
+                  contentColor="showCaseButton"
                   buttonDarker={selectedProject.type === 'gold'}
                 >
                   <Image src={gold} alt="gold" className={styles.medal} />
@@ -102,7 +101,7 @@ export default function Showcase() {
                 <Button
                   borderWidth={0}
                   onClick={() => handleButtonClick('silver')}
-                  contentColor='showCaseButton'
+                  contentColor="showCaseButton"
                   buttonDarker={selectedProject.type === 'silver'}
                 >
                   <Image src={silver} alt="silver" className={styles.medal} />
@@ -112,9 +111,8 @@ export default function Showcase() {
                 <Button
                   borderWidth={0}
                   onClick={() => handleButtonClick('bronze')}
-                  contentColor='showCaseButton'
+                  contentColor="showCaseButton"
                   buttonDarker={selectedProject.type === 'bronze'}
-
                 >
                   <Image src={bronze} alt="bronze" className={styles.medal} />
                 </Button>
@@ -216,8 +214,7 @@ export default function Showcase() {
                         borderWidth={1}
                         buttonPadding={isMobile ? 2 : 6}
                         borderColor="shades-100"
-                        contentColor='seeProjectsButton'
-                  
+                        contentColor="seeProjectsButton"
                       >
                         <Text
                           textType={'paragraph-lg'}

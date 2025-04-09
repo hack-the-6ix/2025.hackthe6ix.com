@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Card from '@/components/Card';
 import Input from '@/components/Input';
 import Text from '@/components/Text';
 import ContactStatue from '../../assets/contact-statue.svg';
 import HeartEmpty from '../../assets/heart-empty.svg';
 import HeartFull from '../../assets/heart-full.svg';
 import './styles.css';
-import Card from '@/components/Card';
 
 export default function About() {
   const [rating, setRating] = useState(0);
@@ -37,7 +37,7 @@ export default function About() {
             textColor="white"
             className="sm:text-start text-center"
           >
-            Send your question our way and we'll get back to you as soon as
+            Send your question our way and we&apos;ll get back to you as soon as
             possible!
           </Text>
           <div className="flex flex-col gap-4">

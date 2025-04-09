@@ -59,9 +59,9 @@ export default function Navigation() {
               ))}
             </div>
           </Container>
-          <Container className="hidden lg:flex items-center gap-[50px] mr-36">
+          <Container className="hidden lg:flex items-center mr-36">
             {Links.map((link, index) => (
-              <Link href={link.href} key={`navlink-${index}`}>
+              <Link href={link.href} key={`navlink-${index}`} className="mr-4">
                 <Text
                   textType="paragraph-lg"
                   className="font-bold"
@@ -78,11 +78,11 @@ export default function Navigation() {
             href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=blue"
             target="_blank"
           >
-            <img
+            <Image
               src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-blue.svg"
               alt="Major League Hacking 2025 Hackathon Season"
               className="w-full"
-            ></img>
+            />
           </a>{' '}
         </Container>
       </Container>

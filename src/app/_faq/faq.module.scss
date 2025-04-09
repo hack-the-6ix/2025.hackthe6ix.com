@@ -1,6 +1,6 @@
 @use '@/styles/mixins';
 
-.faq{
+.faq {
   padding-top: 330px;
   padding-bottom: 700px;
   @include mixins.media(mobile) {
@@ -9,105 +9,99 @@
   }
 }
 
-.card{
+.card {
   padding: 10px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.wrapper{
+.wrapper {
   position: relative;
 }
 
 .faqContainer {
-    max-width: 80rem; /* Adjust as needed */
-    width: 90%;
-    margin: 0 auto; /* Centers it */
-    text-align: center;
-    @include mixins.media(mobile) {
-      max-width: 300rem;
-    }
+  max-width: 80rem; /* Adjust as needed */
+  width: 90%;
+  margin: 0 auto; /* Centers it */
+  text-align: center;
+  @include mixins.media(mobile) {
+    max-width: 300rem;
   }
+}
 
-  .qaContainer {
-    max-width: 70rem; /* Adjust as needed */
-  }
+.qaContainer {
+  max-width: 70rem; /* Adjust as needed */
+}
 
-  
 .faqItem {
-    max-width: 22rem;
-
+  max-width: 22rem;
 }
-  
-  /* Responsive: 1 item per row on smaller screens */
-  @media (max-width: 768px) {
-    .faqItem {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
+
+/* Responsive: 1 item per row on smaller screens */
+@media (max-width: 768px) {
+  .faqItem {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
-
-.alignleft{
-    text-align: left;
 }
 
-.questionBox{
-    min-width: 25rem;
+.alignleft {
+  text-align: left;
 }
 
-.answers{
-    max-width: 20rem;
+.questionBox {
+  min-width: 25rem;
 }
-.cardcontent{
+
+.answers {
+  max-width: 20rem;
+}
+.cardcontent {
   padding: 10px;
 }
 
-
 %assets {
   position: absolute;
- 
 }
 
-.thing{
+.thing {
   position: absolute;
   top: -330px;
   z-index: 10;
   @include mixins.media(mobile) {
-    display: none
+    display: none;
   }
 }
 
-
-.ledge{
+.ledge {
   @extend %assets;
-  left: 0; 
+  left: 0;
   bottom: 55%;
-
 }
 
 .bat {
   @extend %assets;
   z-index: 1;
 
-  // animation: flyBat 30s ease-in-out infinite 
-
+  // animation: flyBat 30s ease-in-out infinite
 }
 
-.batBob{
+.batBob {
   position: absolute;
-  left:80%;
+  left: 80%;
   bottom: 10px;
   z-index: 1;
   animation: bobbing 2s ease-in-out infinite;
   @include mixins.media(mobile) {
     width: 20%;
     height: auto;
-    left:70%;
+    left: 70%;
   }
 }
 
 @keyframes bobbing {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0); /* No vertical movement at the start and end */
   }
   50% {
@@ -118,40 +112,38 @@
 @keyframes flyBat {
   0% {
     right: 0; /* Start from the right */
-    top: 30%; 
-    transform: translateX(0%) rotate(0deg); 
+    top: 30%;
+    transform: translateX(0%) rotate(0deg);
   }
 
   50% {
     right: 0%;
     top: 30%;
-    transform: translateX(-50%) rotate(0); 
+    transform: translateX(-50%) rotate(0);
   }
 
   55% {
-    right: 82%; 
+    right: 82%;
     top: 120%;
-    transform: translateX(-50%) rotate(360deg); 
+    transform: translateX(-50%) rotate(360deg);
   }
 
   95% {
-    right: 82; 
+    right: 82;
     top: 120%;
-    transform: translateX(0%) rotate(360deg); 
+    transform: translateX(0%) rotate(360deg);
   }
   100% {
-    right: 0; 
+    right: 0;
     top: 30%;
-    transform: translateX(0%) rotate(0deg); 
+    transform: translateX(0%) rotate(0deg);
   }
 }
 
 .buttons {
-
-
   // For mobile screens (small devices like phones)
   @include mixins.media(mobile) {
-    flex-direction: row;  // Stack buttons vertically on small screens
+    flex-direction: row; // Stack buttons vertically on small screens
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -163,13 +155,12 @@
   }
 
   .button {
-    min-width: 150px;// Default width for larger screens
+    min-width: 150px; // Default width for larger screens
     @include mixins.media(mobile) {
       margin-bottom: 0.5rem; // Add spacing between stacked buttons on mobile, if needed      margin-bottom: 1rem; // Add spacing between stacked buttons
     }
   }
 }
-
 
 .bug_on_rock {
   position: absolute;
@@ -179,6 +170,6 @@
     width: 20%;
     height: auto;
     bottom: -200px;
-    left:80%;
+    left: 80%;
   }
 }

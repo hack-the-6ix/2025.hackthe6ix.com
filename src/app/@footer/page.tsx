@@ -12,22 +12,13 @@ export default function Footer() {
           © Copyright 2025 Hack the 6ix | Made with ♡ in Toronto
         </Text>
         <div className="flex flex-row sm:justify-start justify-between sm:gap-12 gap-0 mb-4">
-          <Text
-            textType="paragraph-sm"
-            textColor="white"
-          >
+          <Text textType="paragraph-sm" textColor="white">
             Privacy Policy
           </Text>
-          <Text
-            textType="paragraph-sm"
-            textColor="white"
-          >
+          <Text textType="paragraph-sm" textColor="white">
             MLH Code of Conduct
           </Text>
-          <Text
-            textType="paragraph-sm"
-            textColor="white"
-          >
+          <Text textType="paragraph-sm" textColor="white">
             2024 Website
           </Text>
           <Text

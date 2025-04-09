@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Button from '@/components/Button';
+// import Button from '@/components/Button';
 import Card from '@/components/Card';
 import Input from '@/components/Input';
 import Text from '@/components/Text';
@@ -78,7 +78,7 @@ export default function Hero() {
     return () => {
       fireflyIntervals.forEach(clearInterval);
     };
-  }, []);
+  }, [fireflies]);
 
   return (
     <>
@@ -176,7 +176,7 @@ export default function Hero() {
           src={HeroPatchTwo}
           alt="Patch"
           width={300}
-          className="absolute md:w-[300px] md:top-[90%] md:left-[38%] sm:w-[250px] sm:top-[90%] sm:left-[38%] w-[100px] left-[0] top-[58%]"
+          className="absolute md:w-[300px] md:top-[90%] md:left-[38%] sm:w-[250px] sm:top-[90%] sm:left-[38%] w-[100px] left-[0] top-[58%] h-auto"
         />
 
         <Image
@@ -198,7 +198,7 @@ export default function Hero() {
           src={HeroPatch}
           alt="Patch"
           width={134}
-          className="absolute md:top-[88%]  sm:top-[50%] sm:top-[88%] md:w-[134px] sm:w-[100px] sm:left-[38%] sm:flex hidden"
+          className="absolute md:top-[88%]  sm:top-[50%] sm:top-[88%] md:w-[134px] sm:w-[100px] sm:left-[38%] sm:flex hidden h-auto"
         />
 
         <Image
@@ -206,7 +206,7 @@ export default function Hero() {
           alt="Apple Character"
           width={120}
           height={115}
-          className="absolute md:top-[60%] sm:top-[59%] md:left-[8%] animate-bounce top-[55%] left-[9%] md:w-[120px] sm:w-[70px] w-[30px]"
+          className="absolute md:top-[60%] sm:top-[59%] md:left-[8%] animate-bounce top-[55%] left-[9%] md:w-[120px] sm:w-[70px] w-[30px] h-auto"
         />
 
         <Image

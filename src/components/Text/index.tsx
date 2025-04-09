@@ -5,7 +5,7 @@ import styles from './Text.module.scss';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 const pressStart2P = Press_Start_2P({ subsets: ['latin'], weight: '400' });
-const Jersey10 = Jersey_10({ weight: '400' });
+const Jersey10 = Jersey_10({ weight: '400', subsets: ['latin'] });
 const fonts = { pressStart2P, inconsolata, Jersey10 } as const;
 
 export type TextColor = 'primary' | 'secondary' | 'accent' | 'white' | 'black';

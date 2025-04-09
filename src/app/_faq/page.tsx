@@ -1,15 +1,15 @@
 'use client';
+
+import { ReactNode, useState } from 'react';
 import Image from 'next/image';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
 import Flex from '@/components/Flex';
 import Text from '@/components/Text';
-import { ReactNode, useState } from 'react';
+import bat from './_assets/bat.png';
+import bug_on_rock from './_assets/bug_on_rock.png';
+import thing from './_assets/thing_on_rock.png';
 import styles from './faq.module.scss';
-import bug_on_rock from './_assets/bug_on_rock.png'
-import thing from './_assets/thing_on_rock.png'
-
-import bat from './_assets/bat.png'
 
 interface FaqQuestionSection {
   label: string;
@@ -52,8 +52,8 @@ const faqQuestions: FaqQuestionSection[] = [
         question: 'Filler Question?',
         answer: (
           <>
-            Filler. Hacker applications for Hack the 6ix 2024 are now closed. Check your
-            inboxes for updates!
+            Filler. Hacker applications for Hack the 6ix 2024 are now closed.
+            Check your inboxes for updates!
           </>
         ),
       },
@@ -121,121 +121,122 @@ const faqQuestions: FaqQuestionSection[] = [
   },
 ];
 
-
 export default function FAQ() {
-
   const [active, setActive] = useState(0);
 
   return (
     <section>
-
-   
       <div className={styles.faq}>
         <Flex className={styles.wrapper}>
-            <Image src={thing} alt="thing" className={styles.thing} />
-            <Image src={bat} alt="bat" className={styles.batBob} />
+          <Image src={thing} alt="thing" className={styles.thing} />
+          <Image src={bat} alt="bat" className={styles.batBob} />
         </Flex>
 
         <Flex
-        direction='column'
-        justify='center'
-        align='center'
-        className={styles.faqContainer}
-        gap="2x-lg"
-      >
-
-
-        <Text textType="heading-lg" textWeight='bold' textColor='white'>
-        FAQ
-        </Text>
-
-        <Flex
-          className={styles.buttons}
-          direction="row"
+          direction="column"
           justify="center"
           align="center"
-          inline
-          gap="huge"
+          className={styles.faqContainer}
+          gap="2x-lg"
         >
-          {faqQuestions.map(({ label }, idx) => (
-            <Button
-              pixelSize={5}
-              radius={4}
-              borderWidth={1}
-              key={idx}
-              onClick={() => setActive(idx)}
-              contentColor='faqButton'
-              borderColor='frameBlack'
-              buttonDarker={active === idx}
-              className={styles.button}
-            >
-            <div className={styles.card}>
+          <Text textType="heading-lg" textWeight="bold" textColor="white">
+            FAQ
+          </Text>
 
-              <Text textType="paragraph-lg" textWeight='extra-bold' textColor='white'>
-                {label}
-              </Text>
-            </div>
-
-            </Button>
-          ))}
-        </Flex>
-
-        <Flex direction="row" gap="huge" wrap justify='center' className={styles.qaContainer}>
-          {faqQuestions[active].items.map((faq, index) => (
-            <Flex
-              direction="column"
-              gap="2x-big"
-                align='center'
-              key={index}
-              className={styles.faqItem}
-            >
-              <Card
-                className={styles.questionBox}
+          <Flex
+            className={styles.buttons}
+            direction="row"
+            justify="center"
+            align="center"
+            inline
+            gap="huge"
+          >
+            {faqQuestions.map(({ label }, idx) => (
+              <Button
                 pixelSize={5}
-                borderColor='frameBlack'
-                backgroundColor='#736387'
-                radius={5}
-                borderWidth={1}                 
+                radius={4}
+                borderWidth={1}
+                key={idx}
+                onClick={() => setActive(idx)}
+                contentColor="faqButton"
+                borderColor="frameBlack"
+                buttonDarker={active === idx}
+                className={styles.button}
               >
                 <div className={styles.card}>
-
                   <Text
-                    className={styles.question}
-
-                    textType='paragraph-lg' textWeight='semi-bold' textColor='white'
+                    textType="paragraph-lg"
+                    textWeight="extra-bold"
+                    textColor="white"
                   >
-                    {faq.question} 
+                    {label}
                   </Text>
                 </div>
-                
-              </Card>
+              </Button>
+            ))}
+          </Flex>
 
-              <Flex className={styles.answers} align='center' justify='center'>
-                <Text
-                  textType="paragraph-sm"
-                  
-                  textWeight='regular'
-                  textColor='white'
-                  className={styles.alignleft}
+          <Flex
+            direction="row"
+            gap="huge"
+            wrap
+            justify="center"
+            className={styles.qaContainer}
+          >
+            {faqQuestions[active].items.map((faq, index) => (
+              <Flex
+                direction="column"
+                gap="2x-big"
+                align="center"
+                key={index}
+                className={styles.faqItem}
+              >
+                <Card
+                  className={styles.questionBox}
+                  pixelSize={5}
+                  borderColor="frameBlack"
+                  backgroundColor="#736387"
+                  radius={5}
+                  borderWidth={1}
                 >
-                  {faq.answer}
-                </Text>
+                  <div className={styles.card}>
+                    <Text
+                      className={styles.question}
+                      textType="paragraph-lg"
+                      textWeight="semi-bold"
+                      textColor="white"
+                    >
+                      {faq.question}
+                    </Text>
+                  </div>
+                </Card>
 
-              
+                <Flex
+                  className={styles.answers}
+                  align="center"
+                  justify="center"
+                >
+                  <Text
+                    textType="paragraph-sm"
+                    textWeight="regular"
+                    textColor="white"
+                    className={styles.alignleft}
+                  >
+                    {faq.answer}
+                  </Text>
+                </Flex>
               </Flex>
-            </Flex>
-          ))}
+            ))}
+          </Flex>
         </Flex>
-
-      </Flex> 
-
-        
-
-    </div>
+      </div>
       <Flex className={styles.wrapper}>
-        <Image src={bug_on_rock} alt="bug_on_rock" className={styles.bug_on_rock} />
+        <Image
+          src={bug_on_rock}
+          alt="bug_on_rock"
+          className={styles.bug_on_rock}
+        />
       </Flex>
-
     </section>
   );
 }

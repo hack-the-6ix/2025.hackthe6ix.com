@@ -15,7 +15,6 @@ export type ButtonProps<T extends ElementType> = PolyComponentPropsWithRef<
     buttonPadding?: number;
     backgroundColor?: string;
     buttonDarker?: boolean;
-
   }
 >;
 

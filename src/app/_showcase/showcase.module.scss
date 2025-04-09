@@ -1,136 +1,130 @@
 @use '@/styles/mixins';
 
-.proj_desc{
-    max-width: 20rem; /* Adjust as needed */
-    margin-top: 4%;
-    margin-bottom: 4%;
-
-
+.proj_desc {
+  max-width: 20rem; /* Adjust as needed */
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 
-.card{
-    @include mixins.media(mobile) {
-        max-width: 80%;
-      }
+.card {
+  @include mixins.media(mobile) {
+    max-width: 80%;
+  }
 }
 
-.desc_text{
-    letter-spacing: 0.00em;
-    line-height: 1.2;
-    word-spacing: 0.1em;
-    @include mixins.media(mobile) {
-        line-height: 1.1;
-     }
+.desc_text {
+  letter-spacing: 0em;
+  line-height: 1.2;
+  word-spacing: 0.1em;
+  @include mixins.media(mobile) {
+    line-height: 1.1;
+  }
 }
 
-.desc_card{
-    min-height: 25rem;
-    @include mixins.media(mobile) {
-        display: none;
-      }
+.desc_card {
+  min-height: 25rem;
+  @include mixins.media(mobile) {
+    display: none;
+  }
 }
 
 .header_text {
-    position: relative;
-    z-index: auto; /* Prevents interference */
-    padding-top: 30%;
-    padding-bottom: 20%;
-    overflow: visible;  // Allow content to overflow if needed
-    width: 100%;
-    @include mixins.media(mobile) {
-        flex-direction: column;
-        width: 100%; // Explicitly set width to 100% on mobile
-        padding-top: 40%;
-    }
+  position: relative;
+  z-index: auto; /* Prevents interference */
+  padding-top: 30%;
+  padding-bottom: 20%;
+  overflow: visible; // Allow content to overflow if needed
+  width: 100%;
+  @include mixins.media(mobile) {
+    flex-direction: column;
+    width: 100%; // Explicitly set width to 100% on mobile
+    padding-top: 40%;
+  }
 }
 
-.header{
- 
-    align-items: center;
-    @include mixins.media(mobile) {
-        max-width: 20%;
-    }
+.header {
+  align-items: center;
+  @include mixins.media(mobile) {
+    max-width: 20%;
+  }
 }
 
-.stalagmites{
-    z-index: 1 !important;
-    position: absolute;
-    top: 0%;
-    width: 100%;
-    max-width: none;  // Remove the max-width constraint
+.stalagmites {
+  z-index: 1 !important;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  max-width: none; // Remove the max-width constraint
 
-    @include mixins.media(mobile) {
-        width: 114%;
-        bottom: 110%;
-    }
+  @include mixins.media(mobile) {
+    width: 114%;
+    bottom: 110%;
+  }
 }
 
-.wrapper_project{
-    min-width: 25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @include mixins.media(mobile) {
-        min-width: 13rem;
-    }
+.wrapper_project {
+  min-width: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mixins.media(mobile) {
+    min-width: 13rem;
+  }
 }
 
-.diceman{
-    @include mixins.media(mobile) {
-        display: none;
-      }    
+.diceman {
+  @include mixins.media(mobile) {
+    display: none;
+  }
 }
 
-.hack_desc{
+.hack_desc {
+  max-width: 40rem;
+  @include mixins.media(mobile) {
     max-width: 40rem;
-    @include mixins.media(mobile) {
-        max-width: 40rem;
-        padding-bottom: 10px;
-      }    
+    padding-bottom: 10px;
+  }
 }
 
-.wrappermedal{
-
+.wrappermedal {
 }
 
-.medal{
-    margin-bottom: 40%;
-    @include mixins.media(mobile) {
-        height: auto;
-        width: 43%;
-        margin-bottom: 15px;
-        margin-left: 12px;
-    }
+.medal {
+  margin-bottom: 40%;
+  @include mixins.media(mobile) {
+    height: auto;
+    width: 43%;
+    margin-bottom: 15px;
+    margin-left: 12px;
+  }
 }
 
-.medals{
-position: absolute;
-    bottom: 96.0%;
-    left:7%;
-    @include mixins.media(mobile) {
-        left:20%;
-        bottom: 95.9%;
-
-    }
+.medals {
+  position: absolute;
+  bottom: 96%;
+  left: 7%;
+  @include mixins.media(mobile) {
+    left: 20%;
+    bottom: 95.9%;
+  }
 }
 
 .wrapper {
-    position: relative;
-    justify-content: center;
+  position: relative;
+  justify-content: center;
 }
 
 .seperator {
-position: absolute;
+  position: absolute;
 
-width: 100%; /* Extend beyond the parent */
-z-index: 2; /* Ensure the separator is in front */
-top:59.5%;
+  width: 100%; /* Extend beyond the parent */
+  z-index: 2; /* Ensure the separator is in front */
+  top: 59.5%;
 }
 .gold_proj {
-    display: block;
-    @include mixins.media(mobile) {
-        height: auto;
-        width: auto;
-
-    }
+  display: block;
+  @include mixins.media(mobile) {
+    height: auto;
+    width: auto;
   }
+}

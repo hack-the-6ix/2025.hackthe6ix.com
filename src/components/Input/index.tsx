@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Inconsolata } from 'next/font/google';
+import { Inconsolata } from 'next/font/google';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
@@ -17,11 +17,13 @@ const Input: React.FC<InputProps> = ({
   borderColor = '#ccc',
   inputBackground = '#fff',
   currentBackground = '#000',
-  borderWidth = "4px",
-  className
+  borderWidth = '4px',
+  className,
 }) => {
   return (
-    <div className={`relative ${className}  ${inconsolata.className} font-bold`}>
+    <div
+      className={`relative ${className}  ${inconsolata.className} font-bold`}
+    >
       <input
         type="text"
         placeholder={placeholder}
@@ -36,19 +38,35 @@ const Input: React.FC<InputProps> = ({
       />
       <div
         className="absolute top-[0px] left-[0px] z-50"
-        style={{ backgroundColor: currentBackground, width: borderWidth, height: borderWidth }}
+        style={{
+          backgroundColor: currentBackground,
+          width: borderWidth,
+          height: borderWidth,
+        }}
       ></div>
       <div
         className="absolute top-[0px] left-[calc(100%-4px)] z-50"
-        style={{ backgroundColor: currentBackground, width: borderWidth, height: borderWidth }}
+        style={{
+          backgroundColor: currentBackground,
+          width: borderWidth,
+          height: borderWidth,
+        }}
       ></div>
       <div
         className="absolute top-[calc(100%-4px)] left-[0px] z-50"
-        style={{ backgroundColor: currentBackground, width: borderWidth, height: borderWidth }}
+        style={{
+          backgroundColor: currentBackground,
+          width: borderWidth,
+          height: borderWidth,
+        }}
       ></div>
       <div
         className="absolute top-[calc(100%-4px)] left-[calc(100%-4px)] z-50"
-        style={{ backgroundColor: currentBackground, width: borderWidth, height: borderWidth }}
+        style={{
+          backgroundColor: currentBackground,
+          width: borderWidth,
+          height: borderWidth,
+        }}
       ></div>
     </div>
   );

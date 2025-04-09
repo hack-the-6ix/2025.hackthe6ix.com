@@ -31,7 +31,7 @@ export default function CardFrame<T extends ElementType = 'div'>({
     radius - borderWidth,
     pixelSize,
     borderWidth,
-  )
+  );
 
   return (
     <Flex

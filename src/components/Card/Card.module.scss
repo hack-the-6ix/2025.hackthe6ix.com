@@ -23,9 +23,12 @@
   }
 
   /* Individual Borders */
-  .borderTop, .borderRight, .borderBottom, .borderLeft {
+  .borderTop,
+  .borderRight,
+  .borderBottom,
+  .borderLeft {
     position: absolute;
-    content: "";
+    content: '';
   }
 
   .borderTop {
@@ -54,5 +57,5 @@
     left: 0;
     width: calc(var(--card-offset) * 1px);
     height: 100%;
-  }  
+  }
 }
