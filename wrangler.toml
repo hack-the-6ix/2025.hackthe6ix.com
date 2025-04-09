@@ -1,0 +1,9 @@
+name = "hackthe6ix-2025"
+compatibility_date = "2025-04-09"
+main = "./.cloudflare/worker.js"
+
+[site]
+bucket = "./.next"
+
+[build]
+command = "npm run build" 

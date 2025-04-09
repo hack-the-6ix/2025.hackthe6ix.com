@@ -12,7 +12,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "npx wrangler pages deploy .next --project-name hackthe6ix-2025"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.9",
