@@ -6,4 +6,10 @@ main = "./.cloudflare/worker.js"
 bucket = "./.next"
 
 [build]
-command = "npm run build" 
+command = "npm run build"
+
+[env.production]
+name = "hackthe6ix-2025-prod"
+
+[env.staging]
+name = "hackthe6ix-2025-staging" 
