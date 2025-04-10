@@ -14,9 +14,8 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "pages:build": "npx @cloudflare/next-on-pages",
-    "preview": "npx wrangler pages dev .vercel/output/static",
-    "deploy": "npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name 2025-hackthe6ix-com --commit-dirty=true",
-    "setup": "chmod +x scripts/install.sh && ./scripts/install.sh"
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.9",
