@@ -18,31 +18,30 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "1.0.0-beta.2",
-    "@tailwindcss/postcss": "^4.0.9",
     "classnames": "^2.5.1",
-    "next": "15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "sass": "^1.86.3"
+    "next": "15.3.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@opennextjs/cloudflare": "1.0.0-beta.2",
     "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/postcss": "4.1.3",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9",
-    "eslint-config-next": "15.1.7",
-    "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-prettier": "^5.2.3",
-    "postcss": "^8.5.3",
-    "prettier": "^3.5.1",
-    "sass-embedded": "^1.83.4",
-    "tailwindcss": "^4.0.9",
+    "eslint-config-next": "15.3.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "postcss": "8.5.3",
+    "prettier": "^3.5.3",
+    "sass-embedded": "^1.86.3",
+    "tailwindcss": "4.1.3",
     "typescript": "^5",
-    "wrangler": "^3.22.3"
+    "wrangler": "^4.9.1"
   }
 }
