@@ -1,15 +1,4 @@
-name = "hackthe6ix-2025"
+name = "2025-hackthe6ix-com"
 compatibility_date = "2025-04-09"
-main = "./.cloudflare/worker.js"
-
-[site]
-bucket = "./.next"
-
-[build]
-command = "npm run build"
-
-[env.production]
-name = "hackthe6ix-2025-prod"
-
-[env.staging]
-name = "hackthe6ix-2025-staging" 
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static" 
