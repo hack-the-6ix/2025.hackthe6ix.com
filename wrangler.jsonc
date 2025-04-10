@@ -34,5 +34,14 @@
       "new_sqlite_classes": ["DOQueueHandler"]
     }
   ],
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true
+    }
+  },
+  "placement": {
+    "mode": "smart"
+  },
   "keep_vars": true
 }
