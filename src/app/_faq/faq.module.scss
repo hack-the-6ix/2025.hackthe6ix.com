@@ -3,6 +3,9 @@
 .faq {
   padding-top: 330px;
   padding-bottom: 700px;
+  overflow-x: hidden;
+  width: 100%;
+
   @include mixins.media(mobile) {
     padding-bottom: 20px;
     padding-top: 160px;
@@ -165,11 +168,12 @@
 .bug_on_rock {
   position: absolute;
   bottom: 150px;
-  left: 85%;
+  right: 0;
+
   @include mixins.media(mobile) {
     width: 20%;
     height: auto;
     bottom: -200px;
-    left: 80%;
+    right: 0;
   }
 }

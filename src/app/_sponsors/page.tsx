@@ -21,7 +21,7 @@ import styles from './Sponsors.module.scss';
 export default function Sponsors() {
   const haveSponsors = false;
   return (
-    <section className="flex flex-col w-full h-full -translate-y-1/50">
+    <section className="flex flex-col w-full h-full overflow-x-clip -translate-y-1/50">
       {/* First section with a background image and top rocks image */}
       <div className="relative bg-[#1d1616] bg-[url('/brick-background.svg')] bg-top bg-[auto_800px] md:bg-auto">
         {/* Image of the top rocks, positioned absolutely */}
