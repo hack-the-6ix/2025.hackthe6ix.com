@@ -2,11 +2,11 @@
   "name": "2025.hackthe6ix.com",
   "version": "0.1.0",
   "private": true,
+  "engineStrict": true,
   "engines": {
-    "npm": ">=8",
-    "node": ">=16"
+    "npm": ">=10",
+    "node": ">=22"
   },
-  "engineStrict": false,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

@@ -11,28 +11,28 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "2025-hackthe6ix-com",
+      "service": "2025-hackthe6ix-com"
     },
   ],
   "r2_buckets": [
     {
       "binding": "NEXT_INC_CACHE_R2_BUCKET",
-      "bucket_name": "2025-landing-cache",
+      "bucket_name": "2025-landing-cache"
     },
   ],
   "durable_objects": {
     "bindings": [
       {
         "name": "NEXT_CACHE_DO_QUEUE",
-        "class_name": "DOQueueHandler",
-      },
-    ],
+        "class_name": "DOQueueHandler"
+      }
+    ]
   },
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": ["DOQueueHandler"],
-    },
+      "new_sqlite_classes": ["DOQueueHandler"]
+    }
   ],
   "keep_vars": true
 }
