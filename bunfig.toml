@@ -1,5 +1,0 @@
-[install]
-frozen = false
-
-[install.cache]
-dir = ".bun-cache" 
