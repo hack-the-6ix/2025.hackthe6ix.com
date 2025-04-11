@@ -92,7 +92,7 @@ export default function Hero() {
           >
             July 18-20, 2025 • In-Person event • location
           </Text>
-          <div className="flex flex-col items-center sm:hidden flex">
+          <div className="flex flex-col items-center sm:hidden">
             <Text textType="subtitle-sm" textWeight="600" textColor="primary">
               July 18-20, 2025
             </Text>
@@ -115,7 +115,7 @@ export default function Hero() {
             <span className="text-accent ml-4">[{typedWord}]</span>
           </Text>
 
-          <div className="relative bg-[#74A600] border-[4px] border-[#3E2523] py-2 flex items-center justify-center w-[180px] sm:hidden flex mb-12">
+          <div className="relative bg-[#74A600] border-[4px] border-[#3E2523] py-2 flex items-center justify-center w-[180px] sm:hidden mb-12">
             <Text
               textType="subtitle-sm"
               textColor="white"
@@ -198,7 +198,7 @@ export default function Hero() {
           src={HeroPatch}
           alt="Patch"
           width={134}
-          className="absolute md:top-[88%]  sm:top-[50%] sm:top-[88%] md:w-[134px] sm:w-[100px] sm:left-[38%] sm:flex hidden h-auto"
+          className="absolute md:top-[88%] sm:top-[88%] md:w-[134px] sm:w-[100px] sm:left-[38%] sm:flex hidden h-auto"
         />
 
         <Image

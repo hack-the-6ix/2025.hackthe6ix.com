@@ -13,7 +13,7 @@ import Text from '@/components/Text';
 
 export default function About() {
   return (
-    <section className="bg-[#cfedaf] relative overflow-x-hidden w-full h-fit">
+    <section className="bg-[#cfedaf] relative w-full">
       {/* "main" content */}
       <div className="flex flex-col relative">
         <div className="p-12 sm:p-32 md:p-40 z-20">
@@ -37,7 +37,7 @@ export default function About() {
             </Text>
           </div>
         </div>
-        <div className="flex flex-col gap-80 sm:gap-0 sm:flex-row md:flex-row flex-wrap w-[100vw] h-[400px]">
+        <div className="flex flex-col gap-80 sm:gap-0 sm:flex-row md:flex-row flex-wrap w-full h-[400px]">
           <div className="relative flex md:w-1/3 w-full h-full">
             <Image
               src={AboutTrees}
@@ -70,7 +70,7 @@ export default function About() {
               Last year, we had...
             </Text>
           </div>
-          <div className="relative flex flex-col w-[100vw] overflow-visible">
+          <div className="relative flex flex-col w-full overflow-visible">
             <Image
               src={AboutFountain}
               alt="Fountain"
