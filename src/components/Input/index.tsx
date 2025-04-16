@@ -3,7 +3,7 @@ import { Inconsolata } from 'next/font/google';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
-interface InputProps {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   borderColor?: string;
   inputBackground?: string;
@@ -19,6 +19,7 @@ const Input: React.FC<InputProps> = ({
   currentBackground = '#000',
   borderWidth = '4px',
   className,
+  ...props
 }) => {
   return (
     <div
@@ -35,6 +36,7 @@ const Input: React.FC<InputProps> = ({
           backgroundColor: inputBackground,
           color: borderColor,
         }}
+        {...props}
       />
       <div
         className="absolute top-[0px] left-[0px] z-50"

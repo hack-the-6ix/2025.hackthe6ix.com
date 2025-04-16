@@ -25,6 +25,12 @@ export default function RootLayout({
         {children}
         {footer}
       </body>
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer
+      ></Script>
+
       <Script strategy="lazyOnload" id="animate">
         {`document.documentElement.classList.add('animate');`}
       </Script>
