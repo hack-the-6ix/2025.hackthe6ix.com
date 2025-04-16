@@ -101,7 +101,6 @@ export default function About() {
             className="flex flex-col gap-4"
             method="POST"
             action="/api/contact"
-            noValidate={loaded}
           >
             <div className="flex sm:flex-row flex-col sm:gap-8 gap-4 w-full">
               <div className="sm:w-1/2 w-full">
@@ -173,6 +172,7 @@ export default function About() {
                   What would you like to know?
                 </Text>
               </div>
+              
               <button type="submit">
                 <Card
                   pixelSize={4}
@@ -196,13 +196,12 @@ export default function About() {
                   </Text>
                 </Card>
               </button>
+              <div
+                className="cf-turnstile"
+                data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE}
+                data-response-field-name="captchaToken"
+              ></div>
             </div>
-            <input
-              className="cf-turnstile"
-              data-response-field-name="captchaToken"
-              data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE}
-              name="captchaToken"
-            ></input>
           </form>
           <div className="flex sm:flex-row flex-col gap-8 items-center">
             <Text

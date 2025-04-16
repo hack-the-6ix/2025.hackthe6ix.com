@@ -31,14 +31,15 @@ export type POSTResponse =
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
+    
     const payload = await schema.parseAsync({
-      captchaToken: formData.get('captchaToken'),
-      message: formData.get('message'),
-      email: formData.get('email'),
-      name: formData.get('name'),
+      captchaToken: formData.get('captchaToken')?.toString(),
+      message: formData.get('message')?.toString(),
+      email: formData.get('email')?.toString(),
+      name: formData.get('name')?.toString(),
     });
 
-    const res = await fetch(`${process.env.API_URL}/api/contact`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
       headers: {
         'content-type': 'application/json',
       },
