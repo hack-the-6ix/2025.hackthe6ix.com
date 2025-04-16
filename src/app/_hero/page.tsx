@@ -231,7 +231,6 @@ export default function Hero() {
           />
         ))}
       </section>
-      <div className="sm:h-[300px] h-0 w-full bg-[#cfedaf]"></div>
     </>
   );
 }
