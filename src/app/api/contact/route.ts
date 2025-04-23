@@ -1,6 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server';
 import z, { ZodError, ZodIssueCode } from 'zod';
 
+export const runtime = 'nodejs';
+
 const schema = z.object({
   email: z
     .string()
@@ -26,35 +28,6 @@ export type POSTResponse =
       error: z.inferFormattedError<typeof schema>;
     };
 
-// Define the edge function separately
-export async function edgeContactApi(payload: POSTRequest) {
-  // This function uses edge runtime
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
-    headers: {
-      'content-type': 'application/json',
-    },
-    method: 'POST',
-    body: JSON.stringify(payload),
-  });
-
-  if (!res.ok) {
-    const error = await res.text();
-    throw ZodError.create([
-      {
-        code: ZodIssueCode.custom,
-        path: ['message'],
-        message: error,
-      },
-    ]);
-  }
-
-  return {
-    status: 'success',
-    message: 'Message has been sent!',
-  };
-}
-
-// Main route handler
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
@@ -65,21 +38,36 @@ export async function POST(request: NextRequest) {
       name: formData.get('name')?.toString(),
     });
 
-    try {
-      const result = await edgeContactApi(payload);
-      return NextResponse.json(result);
-    } catch (error) {
-      if (error instanceof ZodError) {
-        return NextResponse.json(
-          {
-            status: 'error',
-            error: error.format(),
-          },
-          { status: 400, statusText: 'Subscription error' },
-        );
-      }
-      throw error;
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      const error = await res.text();
+
+      return NextResponse.json(
+        {
+          status: 'error',
+          error: ZodError.create([
+            {
+              code: ZodIssueCode.custom,
+              path: ['message'],
+              message: error,
+            },
+          ]).format(),
+        },
+        { status: 400, statusText: 'Subscription error' },
+      );
     }
+
+    return NextResponse.json({
+      status: 'success',
+      message: 'Message has been sent!',
+    });
   } catch (err) {
     if (err instanceof ZodError) {
       return NextResponse.json(
