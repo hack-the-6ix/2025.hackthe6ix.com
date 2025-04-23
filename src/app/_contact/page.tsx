@@ -15,7 +15,7 @@ export default function About() {
   const controller = useRef<AbortController>(new AbortController());
   const [result, setResult] = useState<POSTResponse>();
   const [loading, setLoading] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  // const [_, setLoaded] = useState(false);
   const [rating, setRating] = useState(0);
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
@@ -52,7 +52,6 @@ export default function About() {
   }, [result?.status]);
 
   useEffect(() => {
-    setLoaded(true);
     return () => {
       controller.current.abort();
     };
@@ -67,8 +66,9 @@ export default function About() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    for (let [key, value] of formData.entries()) {
+    for (const [key, value] of formData.entries()) {
       console.log(key, value);
+      console.log(process.env.NEXT_PUBLIC_TURNSTILE);
     }
     query(formData, e.target as HTMLFormElement);
   };
@@ -172,7 +172,6 @@ export default function About() {
                   What would you like to know?
                 </Text>
               </div>
-              
               <button type="submit">
                 <Card
                   pixelSize={4}

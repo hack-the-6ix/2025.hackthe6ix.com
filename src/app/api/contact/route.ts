@@ -31,7 +31,6 @@ export type POSTResponse =
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
-    
     const payload = await schema.parseAsync({
       captchaToken: formData.get('captchaToken')?.toString(),
       message: formData.get('message')?.toString(),
@@ -49,6 +48,7 @@ export async function POST(request: NextRequest) {
 
     if (!res.ok) {
       const error = await res.text();
+
       return NextResponse.json(
         {
           status: 'error',

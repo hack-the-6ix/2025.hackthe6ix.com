@@ -21,13 +21,6 @@ export default function Footer() {
           <Text textType="paragraph-sm" textColor="white">
             2024 Website
           </Text>
-          <Text
-            textType="paragraph-sm"
-            textColor="white"
-            className="hidden sm:flex"
-          >
-            Covid - 19 Safety
-          </Text>
         </div>
       </div>
     </Container>
