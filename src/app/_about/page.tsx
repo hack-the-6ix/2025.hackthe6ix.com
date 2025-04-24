@@ -38,25 +38,21 @@ export default function About() {
           </div>
         </div>
         <div className="flex flex-col gap-80 sm:gap-0 sm:flex-row md:flex-row flex-wrap w-full h-[400px]">
-          <div className="relative flex md:w-1/3 w-full h-full">
-            <Image
-              src={AboutTrees}
-              alt="Trees"
-              className="absolute top-[-260px] w-[240px] sm:w-[320px] md:w-[418px] left-0 z-0"
-            />
-          </div>
-          <div className="relative flex md:w-2/3 w-full h-full">
-            <Image
-              src={AboutGroup}
-              alt="Group"
-              className="absolute right-0 z-0"
-            />
-            <Image
-              src={AboutGroup2}
-              alt="Group"
-              className="absolute top-[-250px] right-0 z-0"
-            />
-          </div>
+          <Image
+            src={AboutTrees}
+            alt="Trees"
+            className="absolute top-50 w-[200px] sm:w-[320px] md:w-[418px] left-0 z-0"
+          />
+          <Image
+            src={AboutGroup}
+            alt="Group"
+            className="absolute right-0 z-0"
+          />
+          <Image
+            src={AboutGroup2}
+            alt="Group"
+            className="hidden md:block absolute bottom-50 right-0 z-0"
+          />
         </div>
       </div>
       <div className="flex md:flex-row flex-col">
