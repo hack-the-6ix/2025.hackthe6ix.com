@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Container from '@/components/Container';
 import Text from '@/components/Text';
 
@@ -13,13 +14,17 @@ export default function Footer() {
         </Text>
         <div className="flex flex-row sm:justify-start justify-between sm:gap-12 gap-0 mb-4">
           <Text textType="paragraph-sm" textColor="white">
-            Privacy Policy
+            <Link href="https://cdn.hackthe6ix.com/privacy-policy.pdf">
+              Privacy Policy
+            </Link>
           </Text>
           <Text textType="paragraph-sm" textColor="white">
-            MLH Code of Conduct
+            <Link href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">
+              MLH Code of Conduct
+            </Link>
           </Text>
           <Text textType="paragraph-sm" textColor="white">
-            2024 Website
+            <Link href="https://2024.hackthe6ix.com">2024 Website</Link>
           </Text>
         </div>
       </div>

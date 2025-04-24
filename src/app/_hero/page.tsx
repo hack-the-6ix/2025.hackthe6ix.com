@@ -90,7 +90,7 @@ export default function Hero() {
             className="sm:flex hidden"
             textWeight="600"
           >
-            July 18-20, 2025 • In-Person event • location
+            July 18-20, 2025 • In-Person event • York University
           </Text>
           <div className="flex flex-col items-center sm:hidden">
             <Text textType="subtitle-sm" textWeight="600" textColor="primary">
@@ -100,7 +100,7 @@ export default function Hero() {
               In-Person event
             </Text>
             <Text textType="subtitle-sm" textWeight="600" textColor="primary">
-              location
+              York University
             </Text>
           </div>
           <Text textType="title" textFont="Jersey10" textColor="primary">

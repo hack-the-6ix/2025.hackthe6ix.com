@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Card from '@/components/Card';
 import Input from '@/components/Input';
 import Text from '@/components/Text';
@@ -75,10 +76,7 @@ export default function About() {
 
   return (
     <>
-      <section
-        className=" w-[100vw] h-[100vh] flex flex-row items-center"
-        id="contact"
-      >
+      <section className="h-[100vh] flex flex-row items-center" id="contact">
         <div className="flex flex-col gap-8 sm:mx-24 mx-16 sm:w-[50%] w-full">
           <Text
             textType="heading-lg"
@@ -94,7 +92,9 @@ export default function About() {
             className="sm:text-start text-center"
           >
             Send your question our way and we&apos;ll get back to you as soon as
-            possible!
+            possible! You can also reach out to us at{' '}
+            <Link href="mailto:hello@hackthe6ix.com">hello@hackthe6ix.com</Link>
+            .
           </Text>
           <form
             onSubmit={(e) => handleFormSubmit(e)}

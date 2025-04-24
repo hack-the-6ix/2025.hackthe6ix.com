@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import Card2 from '@/components/Card2';
 import Text from '@/components/Text';
 import Anvil from '../../assets/anvil.svg';
@@ -58,7 +59,10 @@ export default function PartnershipInfo() {
                   className="w-[75%] text-center"
                 >
                   And your logo could be to the left! Contact us
-                  email@domain.com for details on sponsoring the event.
+                  <Link href="mailto:sponsor@hackthe6ix.com">
+                    sponsor@hackthe6ix.com
+                  </Link>{' '}
+                  for details on sponsoring the event.
                 </Text>
               </div>
             </Card2>

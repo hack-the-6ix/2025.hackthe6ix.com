@@ -80,6 +80,8 @@
 
 .hack_desc {
   max-width: 40rem;
+  padding: 1rem;
+
   @include mixins.media(mobile) {
     max-width: 40rem;
     padding-bottom: 10px;
