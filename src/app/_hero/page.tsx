@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 // import Button from '@/components/Button';
 import Card from '@/components/Card';
-import Input from '@/components/Input';
 import Text from '@/components/Text';
 import AppleCharacter from '../../assets/apple-character.svg';
 import Fire from '../../assets/fire.svg';
