@@ -97,7 +97,7 @@ export default function FAQ() {
   const [active, setActive] = useState(0);
 
   return (
-    <section>
+    <section id="faq">
       <div className={styles.faq}>
         <Flex className={styles.wrapper}>
           <Image src={thing} alt="thing" className={styles.thing} />

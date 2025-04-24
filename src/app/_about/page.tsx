@@ -13,10 +13,10 @@ import Text from '@/components/Text';
 
 export default function About() {
   return (
-    <section className="bg-[#cfedaf] relative w-full">
+    <section className="bg-[#cfedaf] relative w-full" id="about">
       {/* "main" content */}
       <div className="flex flex-col relative">
-        <div className="p-12 sm:p-32 md:p-40 z-20">
+        <div className="p-12 sm:p-32 md:p-40 z-20 mb-20">
           <div className="flex flex-col gap-4 max-w-[760px]">
             <Text
               textType="heading-lg"
