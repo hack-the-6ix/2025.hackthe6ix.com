@@ -68,6 +68,7 @@ export default function About() {
     const formData = new FormData(e.target as HTMLFormElement);
     for (const [key, value] of formData.entries()) {
       console.log(key, value);
+      console.log(process.env.NEXT_PUBLIC_TURNSTILE);
     }
     query(formData, e.target as HTMLFormElement);
   };
