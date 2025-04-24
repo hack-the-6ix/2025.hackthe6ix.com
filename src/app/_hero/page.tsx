@@ -133,44 +133,15 @@ export default function Hero() {
             pixelSize={4}
             radius={10}
             borderWidth={1}
-            padding={25}
+            padding={15}
             borderColor="randoms-100"
             backgroundColor="#43603f"
             className="sm:flex hidden"
           >
             <Text textType={'label'} textColor="white">
-              Applications open soon! Sign up to receive the
-            </Text>
-            <Text textType={'label'} textColor="white">
-              latest updates in your inbox.
+              Applications open soon!
             </Text>
           </Card>
-          <div className="flex sm:flex-row flex-col gap-4 items-center">
-            <Input
-              currentBackground="#cfedaf"
-              borderColor="#494440"
-              placeholder="Enter Email"
-              className="sm:w-[300px] w-[180px]"
-            ></Input>
-            <Card
-              pixelSize={4}
-              radius={4}
-              borderWidth={1}
-              padding={4}
-              borderColor="shades-100"
-              backgroundColor="#74A600"
-              className="sm:w-auto w-full"
-            >
-              <Text
-                textType={'label'}
-                textColor="white"
-                textWeight="bold"
-                className="mx-2"
-              >
-                Sign Up!
-              </Text>
-            </Card>
-          </div>
         </div>
         <Image
           src={HeroPatchTwo}

@@ -24,49 +24,26 @@ const faqQuestions: FaqQuestionSection[] = [
     label: 'General',
     items: [
       {
-        question: 'How do I get to Hack the 6ix?',
+        question: 'What is Hack the 6ix?',
         answer:
-          'Hack the 6ix will be happening at <insert location>. On Friday, July 17th during the registration hours (<insert time>), just show up to the venue and you will be guided to where you need to go.',
+          'Hack the 6ix is an in-person hackathon where “hackers” (participants) design, develop, and pitch an innovative project built from scratch over the course of 36 hours. Over the course of the weekend, hackers will have opportunities to network, learn, and collaborate through workshops, panels, activities, and more.',
       },
       {
-        question: 'What should I bring?',
+        question:
+          'What kind of workshops, talks, and activities will there be at Hack the 6ix?',
         answer:
-          'Make sure to bring your laptop (or desktop) and a piece of valid student ID or government ID! You can also bring a pillow and blanket if you want to get comfy. Everything else will be provided for you!',
+          'We’ll be hosting a variety of workshops ranging from introductory to advanced topics facilitated by our amazing sponsors and mentors. In addition, there will also be interesting tech talks by industry leaders from different companies. For breaks, we’ll have a ton of fun activities planned for you, such as games, contests, and more! Hack the 6ix is much more than just a hackathon – we want it to be an event that you’ll thoroughly enjoy while expanding your skillset and network.',
       },
       {
-        question: 'Will there be hardware provided at the event?',
+        question: 'Do I need to know how to code?',
         answer:
-          'We have a variety of hardware that can be borrowed at our hardware station for free, including Raspberry Pi’s, Arduinos, sensors, and breadboards. Due to limited quantity, hardware will be lent out on a first come, first serve basis. If you are unsure whether or not we have a certain piece of hardware that you will need for your hack, bring your own to the event!',
-      },
-      {
-        question: 'How much does it cost to attend?',
-        answer:
-          'Absolutely nothing! Hack the 6ix is a completely free event run by a non-profit organization. All food, resources, and accommodations for hacking for the entire event will be provided free of charge. Information about travel reimbursement will be provided closer to the date of the event.',
-      },
-    ],
-  },
-  {
-    label: 'Preperation',
-    items: [
-      {
-        question: 'Filler Question?',
-        answer: (
-          <>
-            Filler. Hacker applications for Hack the 6ix 2024 are now closed.
-            Check your inboxes for updates!
-          </>
-        ),
+          'Nope! Our mentors and workshops will help you develop the skills required to create something big. Regardless of where your strengths lie, our team is here to guide and help you throughout your project.',
       },
 
       {
-        question: 'Filler Question?',
+        question: "What if my question isn't answered here?",
         answer:
-          'Filler. Any high-school students, post-secondary students or recent graduates (<1 years of graduating) are eligible to participate in Hack the 6ix.',
-      },
-      {
-        question: 'Filler Question?',
-        answer:
-          "Filler. Don't sweat it - we will be coordinating team formation and idea generation events leading up to, as well as during the event.",
+          'If you have any other questions, feel free to reach out to us at hello@hackthe6ix.com! Our team would be happy to help you out.',
       },
     ],
   },
@@ -77,8 +54,8 @@ const faqQuestions: FaqQuestionSection[] = [
         question: 'When do hacker applications open?',
         answer: (
           <>
-            Hacker applications for Hack the 6ix 2024 are now closed. Check your
-            inboxes for updates!
+            Hacker applications for Hack the 6ix 2025 are opening soon! Stay
+            tuned.
           </>
         ),
       },
@@ -95,22 +72,17 @@ const faqQuestions: FaqQuestionSection[] = [
     ],
   },
   {
-    label: 'Health & Safety',
+    label: 'In-Person',
     items: [
       {
         question: 'How do I get to Hack the 6ix?',
         answer:
-          'For logistical reasons, venue and location details will be released to attendees closer to the date of the event. As per tradition, Hack the 6ix will take place in Downtown Toronto.',
+          'This year, Hack the 6ix will be held at York University. For logistical reasons, specific venue and location details will be released to attendees closer to the date of the event.',
       },
       {
         question: 'What should I bring?',
         answer:
           'Make sure to bring your laptop (or desktop) and a piece of valid student ID or government ID! You can also bring a pillow and blanket if you want to get comfy. Everything else will be provided for you!',
-      },
-      {
-        question: 'Will there be hardware provided at the event?',
-        answer:
-          'We have a variety of hardware that can be borrowed at our hardware station for free, including Raspberry Pi’s, Arduinos, sensors, and breadboards. Due to limited quantity, hardware will be lent out on a first come, first serve basis. If you are unsure whether or not we have a certain piece of hardware that you will need for your hack, bring your own to the event!',
       },
       {
         question: 'How much does it cost to attend?',
