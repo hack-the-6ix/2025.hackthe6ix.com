@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 // import Button from '@/components/Button';
 import Card from '@/components/Card';
@@ -33,6 +33,18 @@ export default function Hero() {
       visible: false,
     })),
   );
+
+  const [gameActive, setGameActive] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(0);
+  const [jumping, setJumping] = useState(false);
+  const [characterY, setCharacterY] = useState(50);
+  const [obstacles, setObstacles] = useState<
+    { left: number; width: number; height: number }[]
+  >([]);
+
+  const gameLoopRef = useRef<number | null>(null);
+  const characterRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let charIndex = 0;
@@ -146,121 +158,360 @@ export default function Hero() {
     }
   };
 
+  const startGame = () => {
+    setGameActive(true);
+    setGameOver(false);
+    setScore(0);
+    setJumping(false);
+    setCharacterY(50);
+    setObstacles([]);
+
+    if (gameLoopRef.current) {
+      cancelAnimationFrame(gameLoopRef.current);
+    }
+
+    let lastTime = 0;
+    let obstacleTimer = 0;
+
+    const gameLoop = (timestamp: number) => {
+      if (!lastTime) lastTime = timestamp;
+      const deltaTime = timestamp - lastTime;
+      lastTime = timestamp;
+
+      if (jumping) {
+        setCharacterY((prev) => {
+          const newY = prev - (0.5 * deltaTime) / 16;
+          if (newY <= 30) {
+            setTimeout(() => setJumping(false), 150);
+            return 30;
+          }
+          return newY;
+        });
+      } else if (characterY < 50) {
+        setCharacterY((prev) => {
+          const newY = prev + (0.3 * deltaTime) / 16;
+          return Math.min(newY, 50);
+        });
+      }
+
+      obstacleTimer += deltaTime;
+      if (obstacleTimer > 2000) {
+        obstacleTimer = 0;
+        setObstacles((prev) => [
+          ...prev,
+          {
+            left: 100,
+            width: 40,
+            height: 40,
+          },
+        ]);
+      }
+
+      setObstacles((prev) => {
+        const newObstacles = prev
+          .map((obs) => ({
+            ...obs,
+            left: obs.left - (0.2 * deltaTime) / 16,
+          }))
+          .filter((obs) => obs.left > -10);
+
+        return newObstacles;
+      });
+
+      const characterRect = characterRef.current?.getBoundingClientRect();
+      if (characterRect) {
+        for (const obstacle of obstacles) {
+          const obstacleEl = document.querySelector(
+            `.obstacle-${obstacle.left}`,
+          );
+          const obstacleRect = obstacleEl?.getBoundingClientRect();
+
+          if (
+            obstacleRect &&
+            characterRect.right > obstacleRect.left + 20 &&
+            characterRect.left < obstacleRect.right - 20 &&
+            characterRect.bottom > obstacleRect.top + 20
+          ) {
+            setGameOver(true);
+            return;
+          }
+        }
+      }
+
+      setScore((prev) => prev + 1);
+
+      if (!gameOver) {
+        gameLoopRef.current = requestAnimationFrame(gameLoop);
+      }
+    };
+
+    gameLoopRef.current = requestAnimationFrame(gameLoop);
+  };
+
+  const handleJump = () => {
+    if (!jumping && characterY >= 50) {
+      setJumping(true);
+    }
+  };
+
+  const handleGameClick = () => {
+    if (gameOver) {
+      startGame();
+    } else if (gameActive) {
+      handleJump();
+    }
+  };
+
+  const exitGame = () => {
+    setGameActive(false);
+    setGameOver(false);
+    if (gameLoopRef.current) {
+      cancelAnimationFrame(gameLoopRef.current);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (gameLoopRef.current) {
+        cancelAnimationFrame(gameLoopRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (gameActive && (e.code === 'Space' || e.code === 'ArrowUp')) {
+        handleJump();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [gameActive, jumping, characterY]);
+
   return (
     <>
       <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#e5eeda] to-[#cfedaf] overflow-hidden overflow-x-hidden">
-        <div className="relative z-10 flex flex-col items-center text-center sm:gap-6 gap-0">
-          <Text
-            textType="subtitle-sm"
-            textColor="primary"
-            className="sm:flex hidden"
-            textWeight="600"
+        {gameActive ?
+          <div
+            className="w-full h-full flex flex-col items-center"
+            onClick={handleGameClick}
           >
-            July 18-20, 2025 • In-Person event • location
-          </Text>
-          <div className="flex flex-col items-center sm:hidden">
-            <Text textType="subtitle-sm" textWeight="600" textColor="primary">
-              July 18-20, 2025
-            </Text>
-            <Text textType="subtitle-sm" textWeight="600" textColor="primary">
-              In-Person event
-            </Text>
-            <Text textType="subtitle-sm" textWeight="600" textColor="primary">
-              location
-            </Text>
-          </div>
-          <Text textType="title" textFont="Jersey10" textColor="primary">
-            Hack the 6ix
-          </Text>
-          <Text
-            textType="subtitle-lg"
-            textColor="primary"
-            className="sm:flex hidden"
-          >
-            Embark on a quest to
-            <span className="text-accent ml-4">[{typedWord}]</span>
-          </Text>
-
-          <div className="relative bg-[#74A600] border-[4px] border-[#3E2523] py-2 flex items-center justify-center w-[180px] sm:hidden mb-12">
-            <Text
-              textType="subtitle-sm"
-              textColor="white"
-              textWeight="semi-bold"
-            >
-              Applications open soon!
-            </Text>
-            <div className="absolute top-[-4px] left-[-4px] z-50 bg-[#d9eec2] h-[4px] w-[4px]"></div>
-            <div className="absolute top-[-4px] left-[calc(100%)] z-50  bg-[#d9eec2] h-[4px] w-[4px]"></div>
-            <div className="absolute top-[calc(100%)] left-[-4px] z-50 bg-[#d9eec2]  h-[4px] w-[4px]"></div>
-            <div className="absolute top-[calc(100%)] left-[calc(100%)] z-50 bg-[#d9eec2]  h-[4px] w-[4px]"></div>
-          </div>
-
-          <Card
-            pixelSize={4}
-            radius={10}
-            borderWidth={1}
-            padding={25}
-            borderColor="randoms-100"
-            backgroundColor="#43603f"
-            className="sm:flex hidden"
-          >
-            <Text textType={'label'} textColor="white">
-              Applications open soon! Sign up to receive the
-            </Text>
-            <Text textType={'label'} textColor="white">
-              latest updates in your inbox.
-            </Text>
-          </Card>
-          <div className="flex sm:flex-row flex-col gap-4 items-center">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <Input
-                currentBackground="#cfedaf"
-                borderColor="#494440"
-                placeholder="Enter Email"
-                className="sm:w-[300px] w-[180px]"
-                type="email"
-                name="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={isLoading}
-              ></Input>
-              {submitStatus && (
+            <div className="absolute top-4 left-4 z-50">
+              <Card
+                pixelSize={4}
+                radius={4}
+                borderWidth={1}
+                padding={4}
+                borderColor="shades-100"
+                backgroundColor="#FF6B6B"
+                className="cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  exitGame();
+                }}
+              >
                 <Text
-                  textType="label"
-                  className={`text-sm ${submitStatus.isError ? 'text-red-600' : 'text-green-600'}`}
+                  textType={'label'}
+                  textColor="white"
+                  textWeight="bold"
+                  className="mx-2"
                 >
-                  {submitStatus.message}
+                  Exit Game
                 </Text>
-              )}
-              <button type="submit" disabled={isLoading}>
+              </Card>
+            </div>
+
+            <div className="absolute top-4 right-4 z-50">
+              <Text textType="subtitle-lg" textColor="primary">
+                Score: {score}
+              </Text>
+            </div>
+
+            {gameOver && (
+              <div className="absolute inset-0 flex items-center justify-center z-50">
                 <Card
                   pixelSize={4}
-                  radius={4}
+                  radius={10}
                   borderWidth={1}
-                  padding={4}
-                  borderColor="shades-100"
-                  backgroundColor={isLoading ? '#999' : '#74A600'}
-                  className="sm:w-auto w-full"
+                  padding={25}
+                  borderColor="randoms-100"
+                  backgroundColor="#43603f"
                 >
-                  <Text
-                    textType={'label'}
-                    textColor="white"
-                    textWeight="bold"
-                    className="mx-2"
-                  >
-                    {isLoading ? 'Signing Up...' : 'Sign Up!'}
-                  </Text>
+                  <div className="flex flex-col items-center gap-4">
+                    <Text textType={'subtitle-lg'} textColor="white">
+                      Game Over!
+                    </Text>
+                    <Text textType={'label'} textColor="white">
+                      Score: {score}
+                    </Text>
+                    <Card
+                      pixelSize={4}
+                      radius={4}
+                      borderWidth={1}
+                      padding={4}
+                      borderColor="shades-100"
+                      backgroundColor="#74A600"
+                      className="cursor-pointer"
+                    >
+                      <Text
+                        textType={'label'}
+                        textColor="white"
+                        textWeight="bold"
+                        className="mx-2"
+                      >
+                        Play Again
+                      </Text>
+                    </Card>
+                  </div>
                 </Card>
-              </button>
-            </form>
+              </div>
+            )}
+
+            <div
+              ref={characterRef}
+              className="absolute z-30"
+              style={{ left: '20%', bottom: `${characterY}%` }}
+            >
+              <Image
+                src={AppleCharacter}
+                alt="Apple Character"
+                width={80}
+                height={80}
+                className="h-auto"
+              />
+            </div>
+
+            {obstacles.map((obstacle, index) => (
+              <div
+                key={index}
+                className={`absolute bottom-[10%] z-20 obstacle-${obstacle.left}`}
+                style={{ left: `${obstacle.left}%` }}
+              >
+                <Image
+                  src={HeroTree}
+                  alt="Obstacle"
+                  width={80}
+                  height={obstacle.height * 2}
+                  className="h-auto"
+                />
+              </div>
+            ))}
           </div>
-        </div>
+        : <div className="relative z-10 flex flex-col items-center text-center sm:gap-6 gap-0">
+            <Text
+              textType="subtitle-sm"
+              textColor="primary"
+              className="sm:flex hidden"
+              textWeight="600"
+            >
+              July 18-20, 2025 • In-Person event • location
+            </Text>
+            <div className="flex flex-col items-center sm:hidden">
+              <Text textType="subtitle-sm" textWeight="600" textColor="primary">
+                July 18-20, 2025
+              </Text>
+              <Text textType="subtitle-sm" textWeight="600" textColor="primary">
+                In-Person event
+              </Text>
+              <Text textType="subtitle-sm" textWeight="600" textColor="primary">
+                location
+              </Text>
+            </div>
+            <Text textType="title" textFont="Jersey10" textColor="primary">
+              Hack the 6ix
+            </Text>
+            <Text
+              textType="subtitle-lg"
+              textColor="primary"
+              className="sm:flex hidden"
+            >
+              Embark on a quest to
+              <span className="text-accent ml-4">[{typedWord}]</span>
+            </Text>
+
+            <div className="relative bg-[#74A600] border-[4px] border-[#3E2523] py-2 flex items-center justify-center w-[180px] sm:hidden mb-12">
+              <Text
+                textType="subtitle-sm"
+                textColor="white"
+                textWeight="semi-bold"
+              >
+                Applications open soon!
+              </Text>
+              <div className="absolute top-[-4px] left-[-4px] z-50 bg-[#d9eec2] h-[4px] w-[4px]"></div>
+              <div className="absolute top-[-4px] left-[calc(100%)] z-50  bg-[#d9eec2] h-[4px] w-[4px]"></div>
+              <div className="absolute top-[calc(100%)] left-[-4px] z-50 bg-[#d9eec2]  h-[4px] w-[4px]"></div>
+              <div className="absolute top-[calc(100%)] left-[calc(100%)] z-50 bg-[#d9eec2]  h-[4px] w-[4px]"></div>
+            </div>
+
+            <Card
+              pixelSize={4}
+              radius={10}
+              borderWidth={1}
+              padding={25}
+              borderColor="randoms-100"
+              backgroundColor="#43603f"
+              className="sm:flex hidden"
+            >
+              <Text textType={'label'} textColor="white">
+                Applications open soon! Sign up to receive the
+              </Text>
+              <Text textType={'label'} textColor="white">
+                latest updates in your inbox.
+              </Text>
+            </Card>
+            <div className="flex sm:flex-row flex-col gap-4 items-center">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <Input
+                  currentBackground="#cfedaf"
+                  borderColor="#494440"
+                  placeholder="Enter Email"
+                  className="sm:w-[300px] w-[180px]"
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isLoading}
+                ></Input>
+                {submitStatus && (
+                  <Text
+                    textType="label"
+                    className={`text-sm ${submitStatus.isError ? 'text-red-600' : 'text-green-600'}`}
+                  >
+                    {submitStatus.message}
+                  </Text>
+                )}
+                <button type="submit" disabled={isLoading}>
+                  <Card
+                    pixelSize={4}
+                    radius={4}
+                    borderWidth={1}
+                    padding={4}
+                    borderColor="shades-100"
+                    backgroundColor={isLoading ? '#999' : '#74A600'}
+                    className="sm:w-auto w-full"
+                  >
+                    <Text
+                      textType={'label'}
+                      textColor="white"
+                      textWeight="bold"
+                      className="mx-2"
+                    >
+                      {isLoading ? 'Signing Up...' : 'Sign Up!'}
+                    </Text>
+                  </Card>
+                </button>
+              </form>
+            </div>
+          </div>
+        }
+
         <Image
           src={HeroPatchTwo}
           alt="Patch"
           width={300}
-          className="absolute md:w-[300px] md:top-[90%] md:left-[38%] sm:w-[250px] sm:top-[90%] sm:left-[38%] w-[100px] left-[0] top-[58%] h-auto"
+          className={`absolute md:w-[300px] md:top-[90%] md:left-[38%] sm:w-[250px] sm:top-[90%] sm:left-[38%] w-[100px] left-[0] top-[58%] h-auto ${gameActive ? 'hidden' : ''}`}
         />
 
         <Image
@@ -268,52 +519,60 @@ export default function Hero() {
           alt="Left Tree"
           priority={true}
           width={300}
-          className="absolute top-[35%] left-[0px] w-[80px] md:top-[60px] sm:w-[200px] sm:top-[100px] md:w-[250px] h-auto"
+          className={`absolute top-[35%] left-[0px] w-[80px] md:top-[60px] sm:w-[200px] sm:top-[100px] md:w-[250px] h-auto ${gameActive ? 'hidden' : ''}`}
         />
 
         <Image
           src={HeroTreeRight}
           alt="Right Tree"
           width={300}
-          className="absolute top-[32%] w-[100px] md:top-[40px] sm:w-[220px] sm:top-[100px] md:w-[300px] right-[0px] h-auto"
+          className={`absolute top-[32%] w-[100px] md:top-[40px] sm:w-[220px] sm:top-[100px] md:w-[300px] right-[0px] h-auto ${gameActive ? 'hidden' : ''}`}
         />
 
         <Image
           src={HeroPatch}
           alt="Patch"
           width={134}
-          className="absolute md:top-[88%] sm:top-[88%] md:w-[134px] sm:w-[100px] sm:left-[38%] sm:flex hidden h-auto"
+          className={`absolute md:top-[88%] sm:top-[88%] md:w-[134px] sm:w-[100px] sm:left-[38%] sm:flex hidden h-auto ${gameActive ? 'hidden' : ''}`}
         />
 
-        <Image
-          src={AppleCharacter}
-          alt="Apple Character"
-          width={120}
-          height={115}
-          className="absolute md:top-[60%] sm:top-[59%] md:left-[8%] animate-bounce top-[55%] left-[9%] md:w-[120px] sm:w-[70px] w-[30px] h-auto"
-        />
+        {!gameActive && (
+          <div
+            className="absolute md:top-[60%] sm:top-[59%] md:left-[8%] top-[55%] left-[9%] cursor-pointer z-20"
+            onClick={startGame}
+          >
+            <Image
+              src={AppleCharacter}
+              alt="Apple Character"
+              width={120}
+              height={115}
+              className="animate-bounce md:w-[120px] sm:w-[70px] w-[30px] h-auto"
+            />
+          </div>
+        )}
 
         <Image
           src={Fire}
           alt="Fire"
           width={160}
           height={173}
-          className="absolute md:top-[65%] sm:top-[63%] md:left-[12%] top-[57%] left-[13%] md:w-[160px] sm:w-[110px] w-[40px] h-auto"
+          className={`absolute md:top-[65%] sm:top-[63%] md:left-[12%] top-[57%] left-[13%] md:w-[160px] sm:w-[110px] w-[40px] h-auto ${gameActive ? 'hidden' : ''}`}
         />
 
-        {fireflies.map((firefly, index) => (
-          <Image
-            key={index}
-            src={Firefly}
-            alt="Firefly"
-            width={180}
-            height={180}
-            className={`sm:w-[180px] sm:h-[180px] h-[100px] w-[100px] absolute transition-opacity duration-1500 ease-in-out ${
-              firefly.visible ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ top: firefly.top, left: firefly.left }}
-          />
-        ))}
+        {!gameActive &&
+          fireflies.map((firefly, index) => (
+            <Image
+              key={index}
+              src={Firefly}
+              alt="Firefly"
+              width={180}
+              height={180}
+              className={`sm:w-[180px] sm:h-[180px] h-[100px] w-[100px] absolute transition-opacity duration-1500 ease-in-out ${
+                firefly.visible ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ top: firefly.top, left: firefly.left }}
+            />
+          ))}
       </section>
     </>
   );
