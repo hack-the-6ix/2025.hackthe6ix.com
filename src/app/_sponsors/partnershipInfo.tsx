@@ -58,7 +58,7 @@ export default function PartnershipInfo() {
                   textColor="primary"
                   className="w-[75%] text-center"
                 >
-                  And your logo could be to the left! Contact us
+                  And your logo could be to the left! Contact us{' '}
                   <Link href="mailto:sponsor@hackthe6ix.com">
                     sponsor@hackthe6ix.com
                   </Link>{' '}

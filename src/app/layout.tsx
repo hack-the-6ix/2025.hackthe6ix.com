@@ -5,7 +5,7 @@ import './layout.scss';
 
 export const metadata: Metadata = {
   title: 'Hack the 6ix 2025',
-  description: `Hack the 6ix is Toronto's largest summer hackathon, where anyone can hack to. network, learn, create, collaborate, innovate, and network.`,
+  description: `Hack the 6ix is Toronto's largest summer hackathon, where anyone can hack to learn, create, collaborate, innovate, and network.`,
 };
 
 export interface RootLayoutProps extends PropsWithChildren {
