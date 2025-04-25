@@ -2,6 +2,7 @@
 
 import { ReactNode, useState } from 'react';
 import Image from 'next/image';
+import cn from 'classnames';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
 import Flex from '@/components/Flex';
@@ -98,7 +99,7 @@ export default function FAQ() {
 
   return (
     <section id="faq">
-      <div className={styles.faq}>
+      <div className={cn(styles.faq, 'relative', 'z-1')}>
         <Flex className={styles.wrapper}>
           <Image src={thing} alt="thing" className={styles.thing} />
           <Image src={bat} alt="bat" className={styles.batBob} />
@@ -206,7 +207,7 @@ export default function FAQ() {
         <Image
           src={bug_on_rock}
           alt="bug_on_rock"
-          className={styles.bug_on_rock}
+          className={cn(styles.bug_on_rock, 'z-0')}
         />
       </Flex>
     </section>
