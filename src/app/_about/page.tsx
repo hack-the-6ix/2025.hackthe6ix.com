@@ -41,7 +41,7 @@ export default function About() {
           <Image
             src={AboutTrees}
             alt="Trees"
-            className="absolute top-50 w-[200px] sm:w-[320px] md:w-[418px] left-0 z-0"
+            className="absolute top-64 lg:top-50 w-[200px] sm:w-[320px] md:w-[418px] left-[-35px] md:left-0 z-0"
           />
           <Image
             src={AboutGroup}
