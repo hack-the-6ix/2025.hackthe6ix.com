@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 // import Button from '@/components/Button';
 import Card from '@/components/Card';
+import Input from '@/components/Input';
 import Text from '@/components/Text';
 import AppleCharacter from '../../assets/apple-character.svg';
 import Fire from '../../assets/fire.svg';
@@ -18,7 +19,13 @@ const NUM_FIREFLIES = 20;
 
 export default function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [email, setEmail] = useState<string>('');
   const [typedWord, setTypedWord] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    message: string;
+    isError: boolean;
+  } | null>(null);
   const [fireflies, setFireflies] = useState(
     Array.from({ length: NUM_FIREFLIES }, () => ({
       top: '50%',
@@ -79,6 +86,66 @@ export default function Hero() {
     };
   }, [fireflies]);
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Client-side validation
+    if (!email.trim()) {
+      setSubmitStatus({
+        message: 'Please provide an email',
+        isError: true,
+      });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setSubmitStatus({
+        message: 'Please provide a valid email',
+        isError: true,
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    setSubmitStatus(null);
+
+    try {
+      const formData = new FormData();
+      formData.append('email', email);
+
+      const response = await fetch('/api/mailingList', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.status === 'success') {
+        setSubmitStatus({
+          message: data.message,
+          isError: false,
+        });
+        setEmail('');
+      } else {
+        const errorMessage =
+          data.error?.email?._errors[0] ||
+          'Failed to subscribe. Please try again.';
+        setSubmitStatus({
+          message: errorMessage,
+          isError: true,
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        message: 'An error occurred. Please try again later.',
+        isError: true,
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#e5eeda] to-[#cfedaf] overflow-hidden overflow-x-hidden">
@@ -89,7 +156,7 @@ export default function Hero() {
             className="sm:flex hidden"
             textWeight="600"
           >
-            July 18-20, 2025 • In-Person event • York University
+            July 18-20, 2025 • In-Person event • location
           </Text>
           <div className="flex flex-col items-center sm:hidden">
             <Text textType="subtitle-sm" textWeight="600" textColor="primary">
@@ -99,7 +166,7 @@ export default function Hero() {
               In-Person event
             </Text>
             <Text textType="subtitle-sm" textWeight="600" textColor="primary">
-              York University
+              location
             </Text>
           </div>
           <Text textType="title" textFont="Jersey10" textColor="primary">
@@ -132,15 +199,62 @@ export default function Hero() {
             pixelSize={4}
             radius={10}
             borderWidth={1}
-            padding={15}
+            padding={25}
             borderColor="randoms-100"
             backgroundColor="#43603f"
             className="sm:flex hidden"
           >
             <Text textType={'label'} textColor="white">
-              Applications open soon!
+              Applications open soon! Sign up to receive the
+            </Text>
+            <Text textType={'label'} textColor="white">
+              latest updates in your inbox.
             </Text>
           </Card>
+          <div className="flex sm:flex-row flex-col gap-4 items-center">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <Input
+                currentBackground="#cfedaf"
+                borderColor="#494440"
+                placeholder="Enter Email"
+                className="sm:w-[300px] w-[180px]"
+                type="email"
+                name="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isLoading}
+              ></Input>
+              {submitStatus && (
+                <Text
+                  textType="label"
+                  className={`text-sm ${submitStatus.isError ? 'text-red-600' : 'text-green-600'}`}
+                >
+                  {submitStatus.message}
+                </Text>
+              )}
+              <button type="submit" disabled={isLoading}>
+                <Card
+                  pixelSize={4}
+                  radius={4}
+                  borderWidth={1}
+                  padding={4}
+                  borderColor="shades-100"
+                  backgroundColor={isLoading ? '#999' : '#74A600'}
+                  className="sm:w-auto w-full"
+                >
+                  <Text
+                    textType={'label'}
+                    textColor="white"
+                    textWeight="bold"
+                    className="mx-2"
+                  >
+                    {isLoading ? 'Signing Up...' : 'Sign Up!'}
+                  </Text>
+                </Card>
+              </button>
+            </form>
+          </div>
         </div>
         <Image
           src={HeroPatchTwo}
