@@ -22,9 +22,9 @@ export default function Navigation() {
   return (
     <Container
       as="nav"
-      className="px-16 border border-red-300 z-20 absolute top-0 w-full transparent h-32"
+      className="px-16 z-20 absolute top-0 w-full transparent h-32"
     >
-      <Container className="max-w-[1700px] border border-red-300 w-full relative mx-auto flex items-center justify-between">
+      <Container className="max-w-[1700px] w-full relative mx-auto flex items-center justify-between">
         <Image src={icon} alt="logo" className="w-24 z-30" />
         <Container className="flex items-center gap-8 w-full">
           <Container
