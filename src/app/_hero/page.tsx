@@ -89,7 +89,6 @@ export default function Hero() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Client-side validation
     if (!email.trim()) {
       setSubmitStatus({
         message: 'Please provide an email',
@@ -137,6 +136,7 @@ export default function Hero() {
         });
       }
     } catch (error) {
+      console.error('Error submitting form:', error);
       setSubmitStatus({
         message: 'An error occurred. Please try again later.',
         isError: true,
