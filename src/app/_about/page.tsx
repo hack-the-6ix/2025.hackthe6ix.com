@@ -13,7 +13,10 @@ import Text from '@/components/Text';
 
 export default function About() {
   return (
-    <section className="bg-[#cfedaf] relative w-full" id="about">
+    <section
+      className="bg-[#cfedaf] flex flex-col h-full w-full relative"
+      id="about"
+    >
       {/* "main" content */}
       <div className="flex flex-col relative">
         <div className="p-12 sm:p-32 md:p-40 z-20 mb-20">
@@ -55,18 +58,19 @@ export default function About() {
           />
         </div>
       </div>
-      <div className="flex md:flex-row flex-col">
-        <div className="flex flex-col w-1/8 h-fit">
-          <div className="flex flex-col gap-4 max-w-xl mt-40 pl-12 sm:pl-32 md:pl-40">
+      {/* pond content */}
+      <div className="flex md:flex-row flex-col relative h-full">
+        <div className="flex flex-col w-1/8">
+          <div className="flex flex-col gap-4 max-w-xl mt-20 pl-12 sm:pl-32 md:pl-40">
             <Text
               textType="heading-lg"
               textWeight="bold"
-              className="whitespace-nowrap overflow-visible"
+              className="whitespace-nowrap"
             >
               Last year, we had...
             </Text>
           </div>
-          <div className="relative flex flex-col w-full overflow-visible">
+          <div className="relative flex flex-col w-full">
             <Image
               src={AboutFountain}
               alt="Fountain"
@@ -74,8 +78,8 @@ export default function About() {
             />
           </div>
         </div>
-        <div className="relative flex flex-col w-full">
-          <div className="absolute right-0 flex flex-col items-center justify-center h-fit w-fit pl-8 sm:p-0 md:p-0">
+        <div className="flex flex-col w-full relative -translate-y-[5rem]">
+          <div className="right-0 flex flex-col items-center justify-center w-fit pl-8 sm:p-0 md:p-0">
             <Image src={AboutPond} alt="Pond" className="" />
             <div className="absolute flex top-[36%] left-[36%]">
               <div className="relative flex flex-col items-center justify-center">
