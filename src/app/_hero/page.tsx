@@ -200,6 +200,7 @@ export default function Hero() {
             radius={10}
             borderWidth={1}
             padding={25}
+            verticalPaddingPercentageMultiplier={50}
             borderColor="randoms-100"
             backgroundColor="#43603f"
             className="sm:flex hidden"

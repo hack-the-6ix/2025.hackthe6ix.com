@@ -20,8 +20,12 @@ export type CardProps<T extends ElementType> = PolyComponentPropsWithRef<
     borderTopColor?: Color;
     borderBottomColor?: Color;
     onHover?: string;
+    verticalPaddingPercentageMultiplier?: PaddingPercentageMultiplier;
+    horizontalPaddingPercentageMultiplier?: PaddingPercentageMultiplier;
   }
 >;
+
+export type PaddingPercentageMultiplier = 0 | 50 | 100;
 
 export default function Card<T extends ElementType = 'div'>({
   pixelSize = 4,
@@ -34,6 +38,8 @@ export default function Card<T extends ElementType = 'div'>({
   borderRightColor,
   borderTopColor,
   borderBottomColor,
+  verticalPaddingPercentageMultiplier = 100,
+  horizontalPaddingPercentageMultiplier = 100,
   children,
   as,
   ...props
@@ -90,11 +96,20 @@ export default function Card<T extends ElementType = 'div'>({
       />
 
       <div
-        className={cn(props.className, styles.content)}
+        className={cn(
+          props.className,
+          styles.content,
+          styles[`vppm--${verticalPaddingPercentageMultiplier}`],
+          styles[`hppm--${horizontalPaddingPercentageMultiplier}`],
+        )}
         style={{ '--card-inner-color': backgroundColor } as React.CSSProperties}
       >
         <div
-          className={styles.content}
+          className={cn(
+            styles.content,
+            styles[`vppm--${verticalPaddingPercentageMultiplier}`],
+            styles[`hppm--${horizontalPaddingPercentageMultiplier}`],
+          )}
           style={
             { '--card-inner-color': backgroundColor } as React.CSSProperties
           }

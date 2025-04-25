@@ -1,5 +1,13 @@
 @layer card, flex;
 
+$_padding_percentages:(
+  0: 0,
+  25: 0.25,
+  50: 0.5,
+  75: 0.75,
+  100: 1
+);
+
 @layer card {
   .card {
     clip-path: polygon(var(--card-outer));
@@ -15,6 +23,16 @@
     width: 100%;
     height: 100%;
     padding: calc(var(--card-offset) * 1px) !important;
+    @each $key, $value in $_padding_percentages {
+      &.vppm--#{$key} {
+        padding-top: calc(var(--card-offset) * #{$value} * 1px) !important;
+        padding-bottom: calc(var(--card-offset) * #{$value} * 1px) !important;
+      }
+      &.hppm--#{$key} {
+        padding-left: calc(var(--card-offset) * #{$value} * 1px) !important;
+        padding-right: calc(var(--card-offset) * #{$value} * 1px) !important;
+      }
+    }
     margin: auto;
     display: flex;
     flex-direction: column;
