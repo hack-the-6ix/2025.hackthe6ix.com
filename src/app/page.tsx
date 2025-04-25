@@ -7,7 +7,7 @@ import Sponsors from './_sponsors/page';
 
 export default function LandingPage() {
   return (
-    <main>
+    <main className="max-w-screen overflow-x-hidden">
       <Hero />
       <About />
       <Sponsors />
