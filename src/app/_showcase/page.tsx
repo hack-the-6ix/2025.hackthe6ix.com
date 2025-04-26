@@ -65,7 +65,7 @@ export default function Showcase() {
   };
 
   return (
-    <section className="-mt-20" id="showcase">
+    <section className="-mt-40" id="showcase">
       <Flex
         className={styles.header_text}
         align="center"
@@ -191,7 +191,7 @@ export default function Showcase() {
               contentColor="showcase-100"
               padding={isMobile ? 33 : 50}
             >
-              <Flex direction="row" gap="2x-big" justify="space-between">
+              <Flex direction="row" gap="sm" justify="space-between">
                 <Flex direction="column" className="md:pr-15 pr-4">
                   <Flex className={styles.hack_desc}>
                     <Text
@@ -206,7 +206,7 @@ export default function Showcase() {
                       legacy.
                     </Text>
                   </Flex>
-                  <Flex justify="center">
+                  <Flex justify="left" className="p-4 pt-0">
                     <Link href={see_all_proj_link}>
                       <Button
                         pixelSize={5}

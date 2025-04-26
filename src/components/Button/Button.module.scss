@@ -2,6 +2,7 @@
 
 @layer button {
   .content {
+    transition: opacity 0.2s ease-in-out;
     background-color: var(--content-color);
   }
 

@@ -159,13 +159,25 @@ export default function Hero() {
             July 18-20, 2025 • In-Person event • YorkU
           </Text>
           <div className="flex flex-col items-center sm:hidden">
-            <Text textType="subtitle-sm" textWeight="medium" textColor="primary">
+            <Text
+              textType="subtitle-sm"
+              textWeight="medium"
+              textColor="primary"
+            >
               July 18-20, 2025
             </Text>
-            <Text textType="subtitle-sm" textWeight="medium" textColor="primary">
+            <Text
+              textType="subtitle-sm"
+              textWeight="medium"
+              textColor="primary"
+            >
               In-Person event
             </Text>
-            <Text textType="subtitle-sm" textWeight="medium" textColor="primary">
+            <Text
+              textType="subtitle-sm"
+              textWeight="medium"
+              textColor="primary"
+            >
               YorkU
             </Text>
           </div>
@@ -242,7 +254,7 @@ export default function Hero() {
                   padding={4}
                   borderColor="shades-100"
                   backgroundColor={isLoading ? '#999' : '#74A600'}
-                  className="sm:w-auto w-full"
+                  className="sm:w-auto w-full hover:opacity-75 transition-opacity active:opacity-50 cursor-pointer"
                 >
                   <Text
                     textType={'label'}

@@ -146,9 +146,8 @@
 .buttons {
   // For mobile screens (small devices like phones)
   @include mixins.media(mobile) {
-    flex-direction: row; // Stack buttons vertically on small screens
+    flex-direction: column; // Stack buttons vertically on small screens
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 2rem; // Or use a variable for 'huge' gap size

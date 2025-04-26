@@ -52,7 +52,7 @@ export default function PartnershipInfo() {
                 >
                   Your name could be here!
                 </Text>
-                <Text
+                {/* <Text
                   textType="paragraph-lg"
                   textWeight="medium"
                   textColor="primary"
@@ -63,7 +63,7 @@ export default function PartnershipInfo() {
                     sponsor@hackthe6ix.com
                   </Link>{' '}
                   for details on sponsoring the event.
-                </Text>
+                </Text> */}
               </div>
             </Card2>
           </div>

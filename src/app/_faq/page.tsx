@@ -27,24 +27,28 @@ const faqQuestions: FaqQuestionSection[] = [
       {
         question: 'What is Hack the 6ix?',
         answer:
-          'Hack the 6ix is an in-person hackathon where “hackers” (participants) design, develop, and pitch an innovative project built from scratch over the course of 36 hours. Over the course of the weekend, hackers will have opportunities to network, learn, and collaborate through workshops, panels, activities, and more.',
+          'Hack the 6ix is an in-person hackathon where "hackers" (participants) design, develop, and pitch an innovative project built from scratch over the course of 36 hours. Over the course of the weekend, hackers will have opportunities to network, learn, and collaborate through workshops, panels, activities, and more.',
       },
       {
         question:
           'What kind of workshops, talks, and activities will there be at Hack the 6ix?',
         answer:
-          'We’ll be hosting a variety of workshops ranging from introductory to advanced topics facilitated by our amazing sponsors and mentors. In addition, there will also be interesting tech talks by industry leaders from different companies. For breaks, we’ll have a ton of fun activities planned for you, such as games, contests, and more! Hack the 6ix is much more than just a hackathon – we want it to be an event that you’ll thoroughly enjoy while expanding your skillset and network.',
+          "We'll be hosting a variety of workshops ranging from introductory to advanced topics facilitated by our amazing sponsors and mentors. In addition, there will also be interesting tech talks by industry leaders from different companies. For breaks, we'll have a ton of fun activities planned for you, such as games, contests, and more! Hack the 6ix is much more than just a hackathon – we want it to be an event that you'll thoroughly enjoy while expanding your skillset and network.",
       },
       {
         question: 'Do I need to know how to code?',
         answer:
           'Nope! Our mentors and workshops will help you develop the skills required to create something big. Regardless of where your strengths lie, our team is here to guide and help you throughout your project.',
       },
-
+      {
+        question: "What if I've never been to a hackathon before?",
+        answer:
+          "That's completely OK! Many participants attend Hack the 6ix as their first hackathon. We welcome hackers of all skill levels. We will provide resources, mentorship, and workshops to help you learn and develop your project.",
+      },
       {
         question: "What if my question isn't answered here?",
         answer:
-          'If you have any other questions, feel free to reach out to us at hello@hackthe6ix.com! Our team would be happy to help you out.',
+          'If you have any other questions, feel free to reach out to us by emailing hello@hackthe6ix.com. Our team would be happy to help you out.',
       },
     ],
   },
@@ -55,8 +59,9 @@ const faqQuestions: FaqQuestionSection[] = [
         question: 'When do hacker applications open?',
         answer: (
           <>
-            Hacker applications for Hack the 6ix 2025 are opening soon! Stay
-            tuned.
+            Hacker applications for Hack the 6ix 2025 will open in early June.
+            Follow us on our social platforms to be the first to know when
+            applications are released!
           </>
         ),
       },
@@ -66,24 +71,24 @@ const faqQuestions: FaqQuestionSection[] = [
           'Any high-school students, post-secondary students or recent graduates (<1 years of graduating) are eligible to participate in Hack the 6ix.',
       },
       {
-        question: 'What if I don’t have a team or idea?',
+        question: "What if I don't have a team or idea?",
         answer:
           "Don't sweat it - we will be coordinating team formation and idea generation events leading up to, as well as during the event.",
       },
     ],
   },
   {
-    label: 'In-Person',
+    label: 'Event',
     items: [
       {
-        question: 'How do I get to Hack the 6ix?',
+        question: 'Where will Hack the 6ix be held?',
         answer:
-          'This year, Hack the 6ix will be held at York University. For logistical reasons, specific venue and location details will be released to attendees closer to the date of the event.',
+          "As a non-university affiliated hackathon, Hack the 6ix takes place at a new location in Toronto every year! We've previously hosted at corporate offices and universities. This year's venue will be announced soon!",
       },
       {
         question: 'What should I bring?',
         answer:
-          'Make sure to bring your laptop (or desktop) and a piece of valid student ID or government ID! You can also bring a pillow and blanket if you want to get comfy. Everything else will be provided for you!',
+          'Make sure to bring your laptop (or desktop) and a piece of valid student ID or government ID! You can also bring a pillow and blanket if you want to get comfy. A detailed packing list will be sent to hackers who successfully RSVP.',
       },
       {
         question: 'How much does it cost to attend?',
@@ -117,12 +122,13 @@ export default function FAQ() {
           </Text>
 
           <Flex
-            className={styles.buttons}
-            direction="row"
+            className={cn(
+              styles.buttons,
+              'flex-col md:flex-row gap-4 md:gap-16 w-full z-10',
+            )}
             justify="center"
             align="center"
             inline
-            gap="huge"
           >
             {faqQuestions.map(({ label }, idx) => (
               <Button
@@ -134,7 +140,7 @@ export default function FAQ() {
                 contentColor="faqButton"
                 borderColor="frameBlack"
                 buttonDarker={active === idx}
-                className={styles.button}
+                className={cn(styles.button, 'w-full md:w-auto')}
               >
                 <div className={styles.card}>
                   <Text
@@ -154,7 +160,7 @@ export default function FAQ() {
             gap="huge"
             wrap
             justify="center"
-            className={styles.qaContainer}
+            className={cn(styles.qaContainer, 'z-10')}
           >
             {faqQuestions[active].items.map((faq, index) => (
               <Flex

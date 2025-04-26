@@ -14,7 +14,7 @@ import Text from '@/components/Text';
 export default function About() {
   return (
     <section
-      className="bg-[#cfedaf] flex flex-col h-full w-full relative"
+      className="bg-[#cfedaf] flex flex-col h-full w-full relative pb-40"
       id="about"
     >
       {/* "main" content */}
@@ -44,7 +44,7 @@ export default function About() {
           <Image
             src={AboutTrees}
             alt="Trees"
-            className="absolute top-64 lg:top-50 w-[200px] sm:w-[320px] md:w-[418px] left-[-35px] md:left-0 z-0"
+            className="absolute top-96 lg:top-64 w-[200px] sm:w-[320px] md:w-[418px] left-[-35px] md:left-0 z-0"
           />
           <Image
             src={AboutGroup}
@@ -61,7 +61,7 @@ export default function About() {
       {/* pond content */}
       <div className="flex md:flex-row flex-col relative h-full">
         <div className="flex flex-col w-1/8">
-          <div className="flex flex-col gap-4 max-w-xl mt-20 pl-12 sm:pl-32 md:pl-40">
+          <div className="flex flex-col gap-4 max-w-xl mt-40 pl-12 sm:pl-32 md:pl-40">
             <Text
               textType="heading-lg"
               textWeight="bold"
@@ -78,8 +78,8 @@ export default function About() {
             />
           </div>
         </div>
-        <div className="flex flex-col w-full relative -translate-y-[5rem]">
-          <div className="right-0 flex flex-col items-center justify-center w-fit pl-8 sm:p-0 md:p-0">
+        <div className="flex flex-col w-full items-end justify-end mt-20">
+          <div className="right-0 flex flex-col items-end justify-center w-fit pl-8 sm:p-0 md:p-0 relative">
             <Image src={AboutPond} alt="Pond" className="" />
             <div className="absolute flex top-[36%] left-[36%]">
               <div className="relative flex flex-col items-center justify-center">
