@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 import Card2 from '@/components/Card2';
 import Text from '@/components/Text';
 import Anvil from '../../assets/anvil.svg';

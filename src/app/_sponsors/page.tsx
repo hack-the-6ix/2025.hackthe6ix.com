@@ -1,25 +1,27 @@
 'use client';
 
 import Image from 'next/image';
-import Text from '@/components/Text';
+// import Text from '@/components/Text';
 import AxeChain from '../../assets/axe-chain.svg';
 import Axe from '../../assets/axe.svg';
 import Chain1 from '../../assets/chain1.svg';
 import Chain2 from '../../assets/chain2.svg';
 import Chain3 from '../../assets/chain3.svg';
-import Firefly from '../../assets/firefly.svg';
+// import Firefly from '../../assets/firefly.svg';
 import LeftBrickCorner from '../../assets/left-brick-corner.svg';
 import RightBrickCorner from '../../assets/right-brick-corner.svg';
-import RockGround from '../../assets/rock-ground.svg';
+// import RockGround from '../../assets/rock-ground.svg';
 import RockTop from '../../assets/rock-top.svg';
-import Stalagmite from '../../assets/stalagmites.svg';
+// import Stalagmite from '../../assets/stalagmites.svg';
 import BecomeSponsor from './becomeSponsor';
-import LogoGrid from './logoGrid';
+// import LogoGrid from './logoGrid';
 import PartnershipInfo from './partnershipInfo';
-import styles from './Sponsors.module.scss';
+
+// import styles from './Sponsors.module.scss';
 
 export default function Sponsors() {
-  const haveSponsors = false;
+  // const haveSponsors = false;
+
   return (
     <section
       className="flex flex-col w-full h-full overflow-x-clip"
