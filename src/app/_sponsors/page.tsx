@@ -1,28 +1,30 @@
 'use client';
 
 import Image from 'next/image';
-import Text from '@/components/Text';
+// import Text from '@/components/Text';
 import AxeChain from '../../assets/axe-chain.svg';
 import Axe from '../../assets/axe.svg';
 import Chain1 from '../../assets/chain1.svg';
 import Chain2 from '../../assets/chain2.svg';
 import Chain3 from '../../assets/chain3.svg';
-import Firefly from '../../assets/firefly.svg';
+// import Firefly from '../../assets/firefly.svg';
 import LeftBrickCorner from '../../assets/left-brick-corner.svg';
 import RightBrickCorner from '../../assets/right-brick-corner.svg';
-import RockGround from '../../assets/rock-ground.svg';
+// import RockGround from '../../assets/rock-ground.svg';
 import RockTop from '../../assets/rock-top.svg';
-import Stalagmite from '../../assets/stalagmites.svg';
+// import Stalagmite from '../../assets/stalagmites.svg';
 import BecomeSponsor from './becomeSponsor';
-import LogoGrid from './logoGrid';
+// import LogoGrid from './logoGrid';
 import PartnershipInfo from './partnershipInfo';
-import styles from './Sponsors.module.scss';
+
+// import styles from './Sponsors.module.scss';
 
 export default function Sponsors() {
-  const haveSponsors = false;
+  // const haveSponsors = false;
+
   return (
     <section
-      className="flex flex-col w-full h-full overflow-x-clip -translate-y-1/50"
+      className="flex flex-col w-full h-full overflow-x-clip"
       id="sponsors"
     >
       {/* First section with a background image and top rocks image */}
@@ -68,7 +70,8 @@ export default function Sponsors() {
         </div>
       </div>
       {/* Second section with a dark background and grainy pattern */}
-      <div className="relative flex flex-col items-center w-full bg-[#191919] bg-[url('/grainy-background.png')] pb-60 md:pb-125 2xl:pb-1130">
+      <div className="relative flex flex-col items-center w-full bg-[#28406C]">
+        {/* bg-[url('/grainy-background.png')] pb-60 md:pb-125 2xl:pb-1130 */}
         <div className="flex flex-row w-full">
           <Image
             src={LeftBrickCorner}
@@ -86,22 +89,22 @@ export default function Sponsors() {
           />
         </div>
         {/* Sponsor logos or message if no sponsors area*/}
-        <div className="flex flex-row items-start w-full">
+        <div className="flex flex-row items-start w-full relative">
           <Image
             src={AxeChain}
             alt="Axe Chain"
             width={500}
             height={500}
-            className="items-start z-10 pl-10 w-37 2xl:w-40 hidden md:block"
+            className="items-start z-10 pl-10 w-37 2xl:w-40 hidden md:block absolute"
           />
           <Image
             src={Axe}
             alt="Axe"
             width={500}
             height={500}
-            className="items-start z-10 pl-15 w-32 -translate-y-1/3 md:hidden"
+            className="items-start z-10 pl-15 w-32 -translate-y-1/3 md:hidden absolute"
           />
-          {haveSponsors ?
+          {/* {haveSponsors ?
             <LogoGrid />
           : <div className="absolute flex z-5 left-1/2 -translate-x-1/2 max-w-250 translate-y-30">
               <Text
@@ -113,24 +116,24 @@ export default function Sponsors() {
                 Sponsors coming soon
               </Text>
             </div>
-          }
+          } */}
           <Image
             src={Chain2}
             alt="Chain 2"
             width={500}
             height={500}
-            className="ml-auto z-10 pr-15 w-25 2xl:w-27 hidden md:block"
+            className="ml-auto z-10 pr-15 w-25 2xl:w-27 hidden md:block absolute right-0"
           />
           <Image
             src={Chain3}
             alt="Chain 3"
             width={500}
             height={500}
-            className="ml-auto z-10 pr-3 w-10 md:hidden"
+            className="ml-auto z-10 pr-3 w-10 md:hidden absolute"
           />
         </div>
         {/* Background elements like the rock ground and fireflies */}
-        <div className="absolute justify-center w-[110%] z-[10] top-7/10 lg:top-11/20 2xl:top-9/20">
+        {/* <div className="absolute justify-center w-[110%] z-[10] top-7/10 lg:top-11/20 2xl:top-9/20">
           <Image
             src={RockGround}
             alt="Rock Ground"
@@ -164,7 +167,7 @@ export default function Sponsors() {
             alt="stalagmites"
             className=" w-[90%] absolute top-[75%] left-[4.5%]"
           ></Image>
-        </div>
+        </div> */}
       </div>
     </section>
   );

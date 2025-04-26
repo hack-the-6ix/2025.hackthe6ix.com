@@ -70,7 +70,7 @@
 .thing {
   position: absolute;
   top: -330px;
-  z-index: 10;
+  z-index: 0;
   @include mixins.media(mobile) {
     display: none;
   }
@@ -84,7 +84,7 @@
 
 .bat {
   @extend %assets;
-  z-index: 1;
+  z-index: 0;
 
   // animation: flyBat 30s ease-in-out infinite
 }
@@ -93,7 +93,7 @@
   position: absolute;
   left: 80%;
   bottom: 10px;
-  z-index: 1;
+  z-index: 0;
   animation: bobbing 2s ease-in-out infinite;
   @include mixins.media(mobile) {
     width: 20%;
@@ -146,9 +146,8 @@
 .buttons {
   // For mobile screens (small devices like phones)
   @include mixins.media(mobile) {
-    flex-direction: row; // Stack buttons vertically on small screens
+    flex-direction: column; // Stack buttons vertically on small screens
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 2rem; // Or use a variable for 'huge' gap size
@@ -169,6 +168,10 @@
   position: absolute;
   bottom: 150px;
   right: 0;
+
+  @include mixins.media(laptop) {
+    bottom: 50px;
+  }
 
   @include mixins.media(mobile) {
     width: 20%;

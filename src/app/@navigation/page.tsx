@@ -25,7 +25,7 @@ export default function Navigation() {
       className="px-16 z-20 absolute top-0 w-full transparent h-32"
     >
       <Container className="max-w-[1700px] w-full relative mx-auto flex items-center justify-between">
-        <Image src={icon} alt="logo" className="w-24 z-30" />
+        <Image src={icon} alt="logo" className="w-10 z-30" />
         <Container className="flex items-center gap-8 w-full">
           <Container
             className="mr-30 ml-auto z-30"

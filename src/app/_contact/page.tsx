@@ -89,7 +89,7 @@ export default function About() {
           <Text
             textType="paragraph-lg"
             textColor="white"
-            className="sm:text-start text-center"
+            className="sm:text-start text-center leading-normal"
           >
             Send your question our way and we&apos;ll get back to you as soon as
             possible! You can also reach out to us at{' '}
@@ -179,6 +179,7 @@ export default function About() {
                   borderWidth={1}
                   padding={6}
                   borderColor="shades-100"
+                  className="hover:opacity-75 transition-opacity active:opacity-50 cursor-pointer w-full md:w-auto"
                   backgroundColor="#406FAA"
                 >
                   <Text
@@ -206,7 +207,7 @@ export default function About() {
             <Text
               textType="paragraph-lg"
               textColor="white"
-              className="sm:text-start text-center"
+              className="sm:text-start text-center leading-normal"
             >
               How was your experience with our website?
             </Text>

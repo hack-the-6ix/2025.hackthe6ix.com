@@ -154,18 +154,30 @@ export default function Hero() {
             textType="subtitle-sm"
             textColor="primary"
             className="sm:flex hidden"
-            textWeight="600"
+            textWeight="medium"
           >
             July 18-20, 2025 • In-Person event • YorkU
           </Text>
           <div className="flex flex-col items-center sm:hidden">
-            <Text textType="subtitle-sm" textWeight="600" textColor="primary">
+            <Text
+              textType="subtitle-sm"
+              textWeight="medium"
+              textColor="primary"
+            >
               July 18-20, 2025
             </Text>
-            <Text textType="subtitle-sm" textWeight="600" textColor="primary">
+            <Text
+              textType="subtitle-sm"
+              textWeight="medium"
+              textColor="primary"
+            >
               In-Person event
             </Text>
-            <Text textType="subtitle-sm" textWeight="600" textColor="primary">
+            <Text
+              textType="subtitle-sm"
+              textWeight="medium"
+              textColor="primary"
+            >
               YorkU
             </Text>
           </div>
@@ -200,6 +212,7 @@ export default function Hero() {
             radius={10}
             borderWidth={1}
             padding={25}
+            verticalPaddingPercentageMultiplier={50}
             borderColor="randoms-100"
             backgroundColor="#43603f"
             className="sm:flex hidden"
@@ -241,7 +254,7 @@ export default function Hero() {
                   padding={4}
                   borderColor="shades-100"
                   backgroundColor={isLoading ? '#999' : '#74A600'}
-                  className="sm:w-auto w-full"
+                  className="sm:w-auto w-full hover:opacity-75 transition-opacity active:opacity-50 cursor-pointer"
                 >
                   <Text
                     textType={'label'}

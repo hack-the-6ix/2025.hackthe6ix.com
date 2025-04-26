@@ -15,3 +15,7 @@
 .animate-scale {
   animation: scaleUpDown 0.3s ease-in-out;
 }
+
+html {
+  scroll-behavior: smooth;
+}
