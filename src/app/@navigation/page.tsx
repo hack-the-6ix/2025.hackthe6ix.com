@@ -6,7 +6,7 @@ import Link from 'next/link';
 import hamburger from '@/assets/hamburger.svg';
 import Container from '@/components/Container';
 import Text from '@/components/Text';
-import icon from '../icon.png';
+import icon from '../logo.png';
 
 const Links = [
   { name: 'About', href: '#about' },
