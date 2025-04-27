@@ -148,7 +148,11 @@ export default function Showcase() {
                       borderColor="secondary"
                       padding={-5.8}
                     >
-                      <Link href={selectedProject.link}>
+                      <Link
+                        href={selectedProject.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Image
                           src={selectedProject.image}
                           alt="project"
@@ -207,7 +211,11 @@ export default function Showcase() {
                     </Text>
                   </Flex>
                   <Flex justify="left" className="p-4 pt-0">
-                    <Link href={see_all_proj_link}>
+                    <Link
+                      href={see_all_proj_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Button
                         pixelSize={5}
                         radius={4}

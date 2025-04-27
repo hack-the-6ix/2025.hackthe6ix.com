@@ -19,6 +19,7 @@ export default function About() {
   // const [_, setLoaded] = useState(false);
   const [rating, setRating] = useState(0);
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   const query = async (body: FormData, el: HTMLFormElement) => {
     setLoading(true);
@@ -218,8 +219,13 @@ export default function About() {
                   className={`cursor-pointer text-2xl transition-transform duration-200 
                   ${clickedIndex && clickedIndex > index ? 'animate-scale' : ''}`}
                   onClick={() => handleClick(index)}
+                  onMouseEnter={() => setHoverIndex(index)}
+                  onMouseLeave={() => setHoverIndex(null)}
                 >
-                  {index < rating ?
+                  {(
+                    (hoverIndex !== null && index <= hoverIndex) ||
+                    index < rating
+                  ) ?
                     <Image src={HeartFull} alt="Heart" width={30} height={30} />
                   : <Image
                       src={HeartEmpty}
