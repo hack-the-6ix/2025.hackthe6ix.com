@@ -93,7 +93,10 @@ export default function About() {
                   textWeight="regular"
                   className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">197</span>Schools
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    197
+                  </span>
+                  Schools
                 </Text>
               </div>
             </div>
@@ -109,7 +112,10 @@ export default function About() {
                   textWeight="regular"
                   className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">440+</span>Hackers
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    440+
+                  </span>
+                  Hackers
                 </Text>
               </div>
             </div>
@@ -125,7 +131,10 @@ export default function About() {
                   textWeight="regular"
                   className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">68</span>Projects
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    68
+                  </span>
+                  Projects
                 </Text>
               </div>
             </div>
@@ -141,7 +150,10 @@ export default function About() {
                   textWeight="regular"
                   className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">$15k</span>In Prizes
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    $15k
+                  </span>
+                  In Prizes
                 </Text>
               </div>
             </div>
@@ -157,7 +169,10 @@ export default function About() {
                   textWeight="regular"
                   className="absolute inset-0 flex flex-col ml-8 p-8 sm:mt-0 mt-6 text-center text-[#3E2523] text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">15</span>Mentors
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    15
+                  </span>
+                  Mentors
                 </Text>
               </div>
             </div>

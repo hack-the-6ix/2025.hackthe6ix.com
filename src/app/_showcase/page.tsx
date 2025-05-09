@@ -78,7 +78,12 @@ export default function Showcase() {
           justify="center"
           direction="row"
         >
-          <Text className="text-center" textType="heading-lg" textWeight="black" textColor="white">
+          <Text
+            className="text-center"
+            textType="heading-lg"
+            textWeight="black"
+            textColor="white"
+          >
             Explore previous projects
           </Text>
         </Flex>
