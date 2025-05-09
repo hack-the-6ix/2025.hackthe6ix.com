@@ -43,5 +43,9 @@
   "placement": {
     "mode": "smart"
   },
+  "vars": {
+    "NEXT_PUBLIC_API_URL": "https://landingapi.hackthe6ix.com",
+    "NEXT_PUBLIC_TURNSTILE": "0x4AAAAAAAFF3ncbVCIeDTrF"
+  },
   "keep_vars": true
 }
