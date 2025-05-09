@@ -60,8 +60,8 @@ export default function About() {
       </div>
       {/* pond content */}
       <div className="flex md:flex-row flex-col relative h-full">
-        <div className="flex flex-col w-1/8">
-          <div className="flex flex-col gap-4 max-w-xl mt-40 pl-12 sm:pl-32 md:pl-40">
+        <div className="flex flex-col sm:w-1/5 w-1/4">
+          <div className="flex flex-col gap-4 max-w-xl sm:mt-40 mt-0 pl-12 sm:pl-32 md:pl-40">
             <Text
               textType="heading-lg"
               textWeight="bold"
@@ -74,7 +74,7 @@ export default function About() {
             <Image
               src={AboutFountain}
               alt="Fountain"
-              className="absolute top-[100px] left-0 z-0"
+              className="absolute sm:top-[100px] top-[10px] left-0 z-0"
             />
           </div>
         </div>
@@ -93,7 +93,10 @@ export default function About() {
                   textWeight="regular"
                   className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold">197</span>Schools
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    197
+                  </span>
+                  Schools
                 </Text>
               </div>
             </div>
@@ -109,7 +112,10 @@ export default function About() {
                   textWeight="regular"
                   className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold">440+</span>Hackers
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    440+
+                  </span>
+                  Hackers
                 </Text>
               </div>
             </div>
@@ -125,7 +131,10 @@ export default function About() {
                   textWeight="regular"
                   className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold">68</span>Projects
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    68
+                  </span>
+                  Projects
                 </Text>
               </div>
             </div>
@@ -141,7 +150,10 @@ export default function About() {
                   textWeight="regular"
                   className="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold">$15k</span>In Prizes
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    $15k
+                  </span>
+                  In Prizes
                 </Text>
               </div>
             </div>
@@ -155,9 +167,12 @@ export default function About() {
                 <Text
                   textType="heading-sm"
                   textWeight="regular"
-                  className="absolute inset-0 flex flex-col ml-8 p-8 text-center text-[#3E2523] text-[16px] md:text-[40px]"
+                  className="absolute inset-0 flex flex-col ml-8 p-8 sm:mt-0 mt-6 text-center text-[#3E2523] text-[16px] md:text-[40px]"
                 >
-                  <span className="font-extrabold">15</span>Mentors
+                  <span className="font-extrabold sm:leading-[34px] leading-[4px]">
+                    15
+                  </span>
+                  Mentors
                 </Text>
               </div>
             </div>
