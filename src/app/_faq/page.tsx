@@ -46,6 +46,11 @@ const faqQuestions: FaqQuestionSection[] = [
           "That's completely OK! Many participants attend Hack the 6ix as their first hackathon. We welcome hackers of all skill levels. We will provide resources, mentorship, and workshops to help you learn and develop your project.",
       },
       {
+        question: 'Are travel reimbursements provided?',
+        answer:
+          'No, unfortunately travel reimbursements will not be provided this year at Hack the 6ix.',
+      },
+      {
         question: "What if my question isn't answered here?",
         answer:
           'If you have any other questions, feel free to reach out to us by emailing hello@hackthe6ix.com. Our team would be happy to help you out.',

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-// import Text from '@/components/Text';
+import Text from '@/components/Text';
 import AxeChain from '../../assets/axe-chain.svg';
 import Axe from '../../assets/axe.svg';
 import Chain1 from '../../assets/chain1.svg';
@@ -14,13 +14,14 @@ import RightBrickCorner from '../../assets/right-brick-corner.svg';
 import RockTop from '../../assets/rock-top.svg';
 // import Stalagmite from '../../assets/stalagmites.svg';
 import BecomeSponsor from './becomeSponsor';
-// import LogoGrid from './logoGrid';
+import LogoGrid from './logoGrid';
+import PartnersLogos from './partnersLogos';
 import PartnershipInfo from './partnershipInfo';
 
 // import styles from './Sponsors.module.scss';
 
 export default function Sponsors() {
-  // const haveSponsors = false;
+  const haveSponsors = true;
 
   return (
     <section
@@ -117,6 +118,7 @@ export default function Sponsors() {
               </Text>
             </div>
           } */}
+          <PartnersLogos />
           <Image
             src={Chain2}
             alt="Chain 2"

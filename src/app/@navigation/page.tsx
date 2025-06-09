@@ -75,12 +75,12 @@ export default function Navigation() {
           <a
             id="mlh-trust-badge"
             className="block max-w-[100px] min-w-[60px] w-[15%] z-[10000] absolute top-0 right-0"
-            href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=blue"
+            href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=blue"
             target="_blank"
           >
             <Image
-              src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-blue.svg"
-              alt="Major League Hacking 2025 Hackathon Season"
+              src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-blue.svg"
+              alt="Major League Hacking 2026 Hackathon Season"
               className="w-full"
               width={100}
               height={100}
