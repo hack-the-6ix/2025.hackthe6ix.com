@@ -65,7 +65,7 @@ export default function Showcase() {
   };
 
   return (
-    <section className="" id="showcase">
+    <section className="pt-[20rem] sm:pt-[10rem]" id="showcase">
       <Flex
         className={styles.header_text}
         align="center"

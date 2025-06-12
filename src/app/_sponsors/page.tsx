@@ -118,7 +118,6 @@ export default function Sponsors() {
               </Text>
             </div>
           } */}
-          <PartnersLogos />
           <Image
             src={Chain2}
             alt="Chain 2"
@@ -135,8 +134,9 @@ export default function Sponsors() {
           />
         </div>
         {/* Background elements like the rock ground and fireflies */}
-        {/* <div className="absolute justify-center w-[110%] z-[10] top-7/10 lg:top-11/20 2xl:top-9/20">
-          <Image
+        <div className="absolute justify-center w-[110%] z-[10] top-7/10 lg:top-11/20 2xl:top-9/20">
+          <PartnersLogos />
+          {/* <Image
             src={RockGround}
             alt="Rock Ground"
             width={500}
@@ -168,8 +168,8 @@ export default function Sponsors() {
             src={Stalagmite}
             alt="stalagmites"
             className=" w-[90%] absolute top-[75%] left-[4.5%]"
-          ></Image>
-        </div> */}
+          ></Image> */}
+        </div>
       </div>
     </section>
   );

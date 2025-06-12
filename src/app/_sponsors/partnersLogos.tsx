@@ -15,7 +15,7 @@ export default function PartnersLogos() {
     {
       src: '/sponsors/cshub.png',
       alt: 'CSHub',
-      href: 'https://www.cshub.tech/',
+      href: 'https://www.linkedin.com/showcase/yorkcshub',
     },
     {
       src: '/sponsors/mlh.png',
