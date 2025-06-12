@@ -91,8 +91,8 @@ export default function PartnershipInfo() {
               textColor="primary"
               className="w-[75%] text-center"
             >
-              And your logo could be to the left! Contact us email@domain.com
-              for details on sponsoring the event.
+              And your logo could be to the left! Contact us
+              sponsors@hackthe6ix.com for details on sponsoring the event.
             </Text>
           </div>
         </Card2>
