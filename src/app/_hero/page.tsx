@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 // import Button from '@/components/Button';
 import Card from '@/components/Card';
-import Input from '@/components/Input';
+// import Input from '@/components/Input';
 import Text from '@/components/Text';
 import AppleCharacter from '../../assets/apple-character.svg';
 import Fire from '../../assets/fire.svg';
@@ -19,13 +19,13 @@ const NUM_FIREFLIES = 20;
 
 export default function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [email, setEmail] = useState<string>('');
+  // const [email, setEmail] = useState<string>('');
   const [typedWord, setTypedWord] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    message: string;
-    isError: boolean;
-  } | null>(null);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [submitStatus, setSubmitStatus] = useState<{
+  //   message: string;
+  //   isError: boolean;
+  // } | null>(null);
   const [fireflies, setFireflies] = useState(
     Array.from({ length: NUM_FIREFLIES }, () => ({
       top: '50%',
@@ -86,65 +86,65 @@ export default function Hero() {
     };
   }, [fireflies]);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
 
-    if (!email.trim()) {
-      setSubmitStatus({
-        message: 'Please provide an email',
-        isError: true,
-      });
-      return;
-    }
+  //   if (!email.trim()) {
+  //     setSubmitStatus({
+  //       message: 'Please provide an email',
+  //       isError: true,
+  //     });
+  //     return;
+  //   }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setSubmitStatus({
-        message: 'Please provide a valid email',
-        isError: true,
-      });
-      return;
-    }
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   if (!emailRegex.test(email)) {
+  //     setSubmitStatus({
+  //       message: 'Please provide a valid email',
+  //       isError: true,
+  //     });
+  //     return;
+  //   }
 
-    setIsLoading(true);
-    setSubmitStatus(null);
+  //   setIsLoading(true);
+  //   setSubmitStatus(null);
 
-    try {
-      const formData = new FormData();
-      formData.append('email', email);
+  //   try {
+  //     const formData = new FormData();
+  //     formData.append('email', email);
 
-      const response = await fetch('/api/mailingList', {
-        method: 'POST',
-        body: formData,
-      });
+  //     const response = await fetch('/api/mailingList', {
+  //       method: 'POST',
+  //       body: formData,
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (data.status === 'success') {
-        setSubmitStatus({
-          message: data.message,
-          isError: false,
-        });
-        setEmail('');
-      } else {
-        const errorMessage =
-          data.error?.email?._errors[0] ||
-          'Failed to subscribe. Please try again.';
-        setSubmitStatus({
-          message: errorMessage,
-          isError: true,
-        });
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus({
-        message: 'An error occurred. Please try again later.',
-        isError: true,
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //     if (data.status === 'success') {
+  //       setSubmitStatus({
+  //         message: data.message,
+  //         isError: false,
+  //       });
+  //       setEmail('');
+  //     } else {
+  //       const errorMessage =
+  //         data.error?.email?._errors[0] ||
+  //         'Failed to subscribe. Please try again.';
+  //       setSubmitStatus({
+  //         message: errorMessage,
+  //         isError: true,
+  //       });
+  //     }
+  //   } catch (error) {
+  //     console.error('Error submitting form:', error);
+  //     setSubmitStatus({
+  //       message: 'An error occurred. Please try again later.',
+  //       isError: true,
+  //     });
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
   return (
     <>
