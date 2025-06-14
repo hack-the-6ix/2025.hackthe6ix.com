@@ -207,7 +207,7 @@ export default function Hero() {
             <div className="absolute top-[calc(100%)] left-[calc(100%)] z-50 bg-[#d9eec2]  h-[4px] w-[4px]"></div>
           </div>
 
-          <Card
+          {/* <Card
             pixelSize={4}
             radius={10}
             borderWidth={1}
@@ -223,9 +223,9 @@ export default function Hero() {
             <Text textType={'label'} textColor="white">
               latest updates in your inbox.
             </Text>
-          </Card>
+          </Card> */}
           <div className="flex sm:flex-row flex-col gap-4 items-center">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            {/* <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <Input
                 currentBackground="#cfedaf"
                 borderColor="#494440"
@@ -266,7 +266,31 @@ export default function Hero() {
                   </Text>
                 </Card>
               </button>
-            </form>
+            </form> */}
+            <button
+              onClick={() => {
+                window.open('https://apply.hackthe6ix.com');
+              }}
+            >
+              <Card
+                pixelSize={4}
+                radius={4}
+                borderWidth={1}
+                padding={4}
+                borderColor="shades-100"
+                backgroundColor="#74A600"
+                className="sm:w-auto w-full hover:opacity-75 transition-opacity active:opacity-50 cursor-pointer"
+              >
+                <Text
+                  textType="subtitle-sm"
+                  textColor="white"
+                  textWeight="bold"
+                  className="mx-2"
+                >
+                  Apply now!
+                </Text>
+              </Card>
+            </button>
           </div>
         </div>
         <Image
