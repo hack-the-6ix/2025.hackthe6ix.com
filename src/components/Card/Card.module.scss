@@ -1,11 +1,11 @@
 @layer card, flex;
 
-$_padding_percentages:(
+$_padding_percentages: (
   0: 0,
   25: 0.25,
   50: 0.5,
   75: 0.75,
-  100: 1
+  100: 1,
 );
 
 @layer card {
