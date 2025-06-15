@@ -193,7 +193,7 @@ export default function Hero() {
             <span className="text-accent ml-4">[{typedWord}]</span>
           </Text>
 
-          <div className="relative bg-[#74A600] border-[4px] border-[#3E2523] py-2 flex items-center justify-center w-[180px] sm:hidden mb-12">
+          {/* <div className="relative bg-[#74A600] border-[4px] border-[#3E2523] py-2 flex items-center justify-center w-[180px] sm:hidden mb-12">
             <Text
               textType="subtitle-sm"
               textColor="white"
@@ -205,7 +205,7 @@ export default function Hero() {
             <div className="absolute top-[-4px] left-[calc(100%)] z-50  bg-[#d9eec2] h-[4px] w-[4px]"></div>
             <div className="absolute top-[calc(100%)] left-[-4px] z-50 bg-[#d9eec2]  h-[4px] w-[4px]"></div>
             <div className="absolute top-[calc(100%)] left-[calc(100%)] z-50 bg-[#d9eec2]  h-[4px] w-[4px]"></div>
-          </div>
+          </div> */}
 
           {/* <Card
             pixelSize={4}
