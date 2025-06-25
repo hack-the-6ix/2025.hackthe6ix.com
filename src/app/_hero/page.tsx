@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 // import Button from '@/components/Button';
-import Card from '@/components/Card';
+// import Card from '@/components/Card';
 // import Input from '@/components/Input';
 import Text from '@/components/Text';
 import AppleCharacter from '../../assets/apple-character.svg';
@@ -193,13 +193,13 @@ export default function Hero() {
             <span className="text-accent ml-4">[{typedWord}]</span>
           </Text>
 
-          <div className="relative bg-[#74A600] border-[4px] border-[#3E2523] py-2 flex items-center justify-center w-[180px] sm:hidden mb-12">
+          <div className="relative bg-[#74A600] border-[4px] border-[#3E2523] p-4 whitespace-nowrap flex items-center justify-center mb-12">
             <Text
               textType="subtitle-sm"
               textColor="white"
               textWeight="semi-bold"
             >
-              Applications open soon!
+              Applications Closed
             </Text>
             <div className="absolute top-[-4px] left-[-4px] z-50 bg-[#d9eec2] h-[4px] w-[4px]"></div>
             <div className="absolute top-[-4px] left-[calc(100%)] z-50  bg-[#d9eec2] h-[4px] w-[4px]"></div>
@@ -267,7 +267,7 @@ export default function Hero() {
                 </Card>
               </button>
             </form> */}
-            <button
+            {/* <button
               onClick={() => {
                 window.open('https://apply.hackthe6ix.com');
               }}
@@ -290,7 +290,7 @@ export default function Hero() {
                   Apply now!
                 </Text>
               </Card>
-            </button>
+            </button> */}
           </div>
         </div>
         <Image
