@@ -80,6 +80,11 @@ const faqQuestions: FaqQuestionSection[] = [
         answer:
           "Don't sweat it - we will be coordinating team formation and idea generation events leading up to, as well as during the event.",
       },
+      {
+        question: 'How do I attend as a judge?',
+        answer:
+          'Feel free to reach out to us at hello@hackthe6ix.com if you would like to come to HT6 as a judge, but be aware that all judges must be available in person.',
+      },
     ],
   },
   {
