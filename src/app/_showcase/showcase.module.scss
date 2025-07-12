@@ -32,7 +32,7 @@
   position: relative;
   z-index: auto; /* Prevents interference */
   padding-top: 30%;
-  padding-bottom: 20%;
+  padding-bottom: 15%;
   overflow: visible; // Allow content to overflow if needed
   width: 100%;
   @include mixins.media(mobile) {

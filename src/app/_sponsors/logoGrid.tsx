@@ -1,66 +1,209 @@
 'use client';
 
 import Image from 'next/image';
+import Text from '@/components/Text';
 import styles from './Sponsors.module.scss';
 
 export default function LogoGrid() {
-  // Array containing logo tiers with their respective logos and heights
   const allLogos = [
     {
       tier: 1,
       height: 10,
       logos: [
-        { src: '/logo.png', alt: 'CSSU' },
-        { src: '/logo.png', alt: 'Jane Street' },
+        {
+          src: '/sponsors/vellum.png',
+          alt: 'Vellum',
+          href: 'https://www.vellum.ai',
+        },
       ],
     },
     {
       tier: 2,
       height: 6.4,
       logos: [
-        { src: '/logo.png', alt: 'Warp' },
-        { src: '/logo.png', alt: 'University of Toronto' },
-        { src: '/logo.png', alt: 'Best Buy' },
+        { src: '/sponsors/qnx.png', alt: 'QNX', href: 'https://www.qnx.com' },
+        {
+          src: '/sponsors/ribbon.png',
+          alt: 'Ribbon',
+          href: 'https://www.ribbon.ai',
+        },
       ],
     },
     {
       tier: 3,
       height: 4.8,
       logos: [
-        { src: '/logo.png', alt: 'FGF' },
-        { src: '/logo.png', alt: 'Awake' },
-        { src: '/logo.png', alt: 'Balsamiq' },
-        { src: '/logo.png', alt: 'Taskade' },
+        {
+          src: '/sponsors/twelvelabs.png',
+          alt: 'TwelveLabs',
+          href: 'https://www.twelvelabs.io',
+        },
+        {
+          src: '/sponsors/uoft.png',
+          alt: 'University of Toronto, Department of Computer Science',
+          href: 'https://web.cs.toronto.edu',
+        },
+        {
+          src: '/sponsors/tks.png',
+          alt: 'The Knowledge Society (TKS)',
+          href: 'https://tks.world',
+        },
+        {
+          src: '/sponsors/deloitte.png',
+          alt: 'Deloitte',
+          href: 'https://www2.deloitte.com',
+        },
+        {
+          src: '/sponsors/linear.png',
+          alt: 'Linear',
+          href: 'https://linear.app',
+        },
+        {
+          src: '/sponsors/nokia.png',
+          alt: 'Nokia',
+          href: 'https://www.nokia.com',
+        },
+        {
+          src: '/sponsors/warp.png',
+          alt: 'Warp',
+          href: 'https://www.warp.dev',
+        },
+      ],
+    },
+    {
+      tier: 4,
+      height: 3.2,
+      logos: [
+        {
+          src: '/sponsors/solcoa.jpg',
+          alt: 'Solcoa Industries',
+          href: 'https://solcoa.industries',
+        },
+        {
+          src: '/sponsors/taskade.png',
+          alt: 'Taskade',
+          href: 'https://www.taskade.com',
+        },
+        {
+          src: '/sponsors/awake.png',
+          alt: 'Awake Chocolate',
+          href: 'https://awakechocolate.com',
+        },
+        {
+          src: '/sponsors/incogni.png',
+          alt: 'Incogni',
+          href: 'https://incogni.com',
+        },
+        {
+          src: '/sponsors/nordvpn.png',
+          alt: 'NordVPN',
+          href: 'https://nordvpn.com',
+        },
+        {
+          src: '/sponsors/nordpass.png',
+          alt: 'NordPass',
+          href: 'https://nordpass.com',
+        },
+        { src: '/sponsors/saily.png', alt: 'Saily', href: 'https://saily.com' },
+        {
+          src: '/sponsors/cryptochicks.png',
+          alt: 'CryptoChicks',
+          href: 'https://cryptochicks.ca',
+        },
+        {
+          src: '/sponsors/microsoft.png',
+          alt: 'Microsoft Reactor',
+          href: 'https://reactor.microsoft.com',
+        },
+        {
+          src: '/sponsors/nomadff.png',
+          alt: 'Nomad Futurist Foundation',
+          href: 'https://nomadfuturist.org',
+        },
+        {
+          src: '/sponsors/fgf.png',
+          alt: 'FGF Brands',
+          href: 'https://fgfbrands.com',
+        },
+        {
+          src: '/sponsors/tailed.png',
+          alt: "Tail'ed",
+          href: 'https://tailed.ca',
+        },
       ],
     },
   ];
 
+  const partners = [
+    {
+      src: '/sponsors/cshub.png',
+      alt: 'CSHub',
+      href: 'https://www.linkedin.com/showcase/yorkcshub',
+    },
+    {
+      src: '/sponsors/mlh.png',
+      alt: 'MLH',
+      border: true,
+      href: 'https://www.mlh.io',
+    },
+  ];
+
   return (
-    <div className="absolute flex flex-col z-5 left-1/2 -translate-x-1/2 gap-7 md:gap-16 pt-30 md:pt-8">
-      {/* Iterating through logo tiers */}
+    <div className="flex flex-col items-center gap-7 md:gap-16 w-full max-w-6xl mx-auto z-20">
       {allLogos.map((tierLogos) => (
         <div
           key={tierLogos.tier}
-          className="flex flex-warp justify-center gap-2 md:gap-6 2xl:gap-10 w-full"
+          className="flex flex-wrap justify-center gap-2 md:gap-6 2xl:gap-10 w-full"
         >
-          {/* Iterating through each logo within a tier */}
           {tierLogos.logos.map((logo, index) => (
-            <Image
+            <div
               key={index}
-              src={logo.src}
-              alt={logo.alt}
-              width={500}
-              height={500}
-              className={`w-auto rounded-lg md:rounded-xl 2xl:rounded-2xl max-w-full ${styles.logo}`}
-              style={
-                {
-                  '--default-height': `${tierLogos.height}rem`,
-                } as React.CSSProperties
-              }
-            />
+              className="bg-white rounded-lg md:rounded-xl 2xl:rounded-2xl p-2 md:p-3 2xl:p-4"
+            >
+              <a href={logo.href} target="_blank" rel="noreferrer">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={500}
+                  height={500}
+                  className={`w-auto rounded-lg md:rounded-xl 2xl:rounded-2xl max-w-full ${styles.logo}`}
+                  style={
+                    {
+                      '--default-height': `${tierLogos.height}rem`,
+                    } as React.CSSProperties
+                  }
+                />
+              </a>
+            </div>
           ))}
         </div>
       ))}
+
+      <div className="flex flex-col items-center gap-7 md:gap-16">
+        <Text
+          textType="display"
+          textWeight="medium"
+          textColor="white"
+          className="text-center"
+        >
+          Our Partners
+        </Text>
+        <div className="flex flex-wrap justify-center gap-2 md:gap-6 2xl:gap-10 w-full">
+          {partners.map((partner, index) => (
+            <a key={index} href={partner.href} target="_blank" rel="noreferrer">
+              <div className="bg-white rounded-lg md:rounded-xl 2xl:rounded-2xl p-2 md:p-3 2xl:p-4">
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={500}
+                  height={500}
+                  className={`w-auto rounded-lg md:rounded-xl 2xl:rounded-2xl max-w-full h-20 md:h-24 2xl:h-30 ${partner.border ? 'border-16 border-white' : ''}`}
+                />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
