@@ -8,7 +8,7 @@ export default function LogoGrid() {
   const allLogos = [
     {
       tier: 1,
-      height: 10,
+      height: 8,
       logos: [
         {
           src: '/sponsors/vellum.png',
@@ -31,7 +31,7 @@ export default function LogoGrid() {
     },
     {
       tier: 3,
-      height: 4.8,
+      height: 3.5,
       logos: [
         {
           src: '/sponsors/twelvelabs.png',
@@ -42,6 +42,11 @@ export default function LogoGrid() {
           src: '/sponsors/uoft.png',
           alt: 'University of Toronto, Department of Computer Science',
           href: 'https://web.cs.toronto.edu',
+        },
+        {
+          src: '/sponsors/warp.png',
+          alt: 'Warp',
+          href: 'https://www.warp.dev',
         },
         {
           src: '/sponsors/tks.png',
@@ -63,16 +68,11 @@ export default function LogoGrid() {
           alt: 'Nokia',
           href: 'https://www.nokia.com',
         },
-        {
-          src: '/sponsors/warp.png',
-          alt: 'Warp',
-          href: 'https://www.warp.dev',
-        },
       ],
     },
     {
       tier: 4,
-      height: 3.2,
+      height: 2.5,
       logos: [
         {
           src: '/sponsors/solcoa.jpg',
@@ -149,7 +149,7 @@ export default function LogoGrid() {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-7 md:gap-16 w-full max-w-6xl mx-auto z-20">
+    <div className="flex flex-col items-center gap-5 md:gap-9 w-full max-w-[75%] mx-auto z-20 translate-y-1 md:-translate-y-1">
       {allLogos.map((tierLogos) => (
         <div
           key={tierLogos.tier}
@@ -179,7 +179,7 @@ export default function LogoGrid() {
         </div>
       ))}
 
-      <div className="flex flex-col items-center gap-7 md:gap-16">
+      <div className="flex flex-col items-center gap-5 md:gap-9 pt-9">
         <Text
           textType="display"
           textWeight="medium"
