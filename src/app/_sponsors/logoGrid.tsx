@@ -72,7 +72,7 @@ export default function LogoGrid() {
     },
     {
       tier: 4,
-      height: 2.5,
+      height: 2.2,
       logos: [
         {
           src: '/sponsors/solcoa.jpg',
@@ -103,6 +103,11 @@ export default function LogoGrid() {
           src: '/sponsors/nordpass.png',
           alt: 'NordPass',
           href: 'https://nordpass.com',
+        },
+        {
+          src: '/sponsors/nordprotect.png',
+          alt: 'NordProtect',
+          href: 'https://nordprotect.com/',
         },
         { src: '/sponsors/saily.png', alt: 'Saily', href: 'https://saily.com' },
         {
