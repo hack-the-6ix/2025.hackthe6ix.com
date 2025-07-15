@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Text from '@/components/Text';
 import AxeChain from '../../assets/axe-chain.svg';
-import Axe from '../../assets/axe.svg';
+//import Axe from '../../assets/axe.svg';
 import Chain1 from '../../assets/chain1.svg';
 import Chain2 from '../../assets/chain2.svg';
 import Chain3 from '../../assets/chain3.svg';
@@ -69,7 +69,7 @@ export default function Sponsors() {
         </div>
       </div>
       {/* Second section with a dark background and grainy pattern */}
-      <div className="relative flex flex-col items-center w-full bg-[#28406C] bg-[url('/grainy-background.png')] pb-20 md:pb-32 2xl:pb-40">
+      <div className="relative flex flex-col items-center w-full bg-[#28406C] bg-[url('/grainy-background.png')] pb-50 md:pb-70">
         <div className="flex flex-row w-full">
           <Image
             src={LeftBrickCorner}
@@ -87,20 +87,13 @@ export default function Sponsors() {
           />
         </div>
         {/* Sponsor logos or message if no sponsors area*/}
-        <div className="flex flex-row items-start w-full relative pt-16 md:pt-24 2xl:pt-32">
+        <div className="flex flex-row items-start w-full relative">
           <Image
             src={AxeChain}
             alt="Axe Chain"
             width={500}
             height={500}
             className="items-start z-10 pl-10 w-37 2xl:w-40 hidden md:block absolute"
-          />
-          <Image
-            src={Axe}
-            alt="Axe"
-            width={500}
-            height={500}
-            className="items-start z-10 pl-15 w-32 -translate-y-1/3 md:hidden absolute"
           />
           {haveSponsors ?
             <LogoGrid />
@@ -131,7 +124,7 @@ export default function Sponsors() {
           />
         </div>
         {/* Background elements like the rock ground and fireflies */}
-        <div className="absolute justify-center w-[110%] z-[10] bottom-[-10rem]">
+        <div className="absolute justify-center w-[110%] z-[10] bottom-[-3rem] md:bottom-[-10rem]">
           <Image
             src={RockGround}
             alt="Rock Ground"
@@ -163,7 +156,7 @@ export default function Sponsors() {
           <Image
             src={Stalagmite}
             alt="stalagmites"
-            className=" w-[90%] absolute top-[75%] left-[4.5%]"
+            className=" w-[95%] absolute top-[75%] left-[4.5%]"
           ></Image>
         </div>
       </div>
