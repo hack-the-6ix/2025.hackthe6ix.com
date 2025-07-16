@@ -97,7 +97,7 @@ export default function LogoGrid() {
         {
           src: '/sponsors/nordvpn.png',
           alt: 'NordVPN',
-          href: 'https://nordvpn.com',
+          href: ' https://nordvpn.com/hackathons',
         },
         {
           src: '/sponsors/nordpass.png',
