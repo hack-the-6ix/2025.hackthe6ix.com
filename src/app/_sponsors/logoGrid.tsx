@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Text from '@/components/Text';
 import styles from './Sponsors.module.scss';
 
-
 export default function LogoGrid() {
   const allLogos = [
     {
