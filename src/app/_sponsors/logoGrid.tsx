@@ -165,7 +165,7 @@ export default function LogoGrid() {
               key={index}
               className="bg-white rounded-lg md:rounded-xl 2xl:rounded-2xl p-2 md:p-3 2xl:p-4"
             >
-              <a href={logo.href} target="_blank" rel="noreferrer">
+              <a href={logo.href} target="_blank" rel="sponsored">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
